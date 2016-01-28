@@ -26,11 +26,13 @@
     ga('create', 'UA-48084505-3', 'auto');
     ga('send', 'pageview');
 
+    window.onload=function(){
+
     var items=['0078D7','B4009E','5C2D91','008272','107C10','00188F','5C005C','A80000','002050','004B50','004B1C'];
     var bg=  items[Math.floor(Math.random()*items.length)];
     var body= document.getElementsByTagName("body")[0];
     body.style.backgroundColor="#"+bg;
-
+    };
 
   </script>
   </head>
