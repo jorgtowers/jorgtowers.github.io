@@ -1,0 +1,46 @@
+html{
+	font-size: 10px;
+}
+body{
+	font-size: 1rem;
+	font-family:Lato
+}
+img{
+	width:100%
+}
+nav{
+	text-align: center;
+
+}
+nav>a{
+	    color: black;
+    margin: 2px;
+    font-size: 1.6em;
+}
+h1{
+    margin: 9px 0;
+    font-family: Segoe UI Light,Segoe UI,Lato,Tahoma;
+    font-size: 2.6em;
+}
+h3{
+	font-size: 1.9em;
+    margin: .4em 0;
+}
+
+#prhase::before{	
+	content:'"';
+}
+#prhase::after{
+	content:'"';
+}
+#prhase{
+     font-size: 1.4em;
+    font-style: italic;
+    text-align: center;
+    font-family: segoe ui;
+    margin-bottom: 2em;
+}
+p{
+	font-size: 1.2em;
+    margin: 0;
+}
