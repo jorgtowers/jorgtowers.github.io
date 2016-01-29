@@ -55,3 +55,17 @@ p{
 	font-size: 1.2em;
     margin: 0;
 }
+
+@media only screen and (max-device-width: 480px) {
+	h1{
+    	font-size: 8rem;
+	}
+	#logoMicrosoft{
+		    width: 200px;
+	    float: right;
+	}
+	nav>a {
+    margin: .5em;
+    font-size: 3em;
+}
+}
