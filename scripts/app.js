@@ -67,7 +67,7 @@
          *   Listeners por Pahts            
          * ------------------------- */
         var path = location.href.split("/")[4];
-        if(path===null)
+        if(path===undefined)
             path="\\";
         if (path.indexOf("?") > 0)
             path = path.substring(0, location.href.split("/")[4].indexOf("?"));   
