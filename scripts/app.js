@@ -74,7 +74,7 @@
 
         switch (path) {
             case "\\": {
-                self.Utils.SKL();               
+                this.Utils.SKL();               
                 break;
             }
             case "path1.aspx": {               
@@ -84,7 +84,7 @@
                 break;
             }            
             case "path3.aspx": {
-                self.Utils.Validation.Container("editPanel");
+                this.Utils.Validation.Container("editPanel");
                   break;
             }
             default: {
