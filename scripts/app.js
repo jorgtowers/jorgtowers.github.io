@@ -67,10 +67,14 @@
          *   Listeners por Pahts            
          * ------------------------- */
         var path = location.href.split("/")[4];
+        if(path===null)
+            path="\\";
         if (path.indexOf("?") > 0)
             path = path.substring(0, location.href.split("/")[4].indexOf("?"));   
+
         switch (path) {
-            case "\\": {               
+            case "\\": {
+                self.Utils.SKL();               
                 break;
             }
             case "path1.aspx": {               
