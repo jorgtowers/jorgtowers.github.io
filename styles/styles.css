@@ -1,71 +1,161 @@
-html{
-	font-size: 10px;
-	
+html {
+    font-size: 10px;
 }
-body{
-	font-size: 1rem;
-	font-family:Lato;
-	background-color:#0078D7;
-	color: white;
-}
-img{
-	width:50%;
-	margin-left:-2em;
-}
-nav{
-	text-align: center;
 
+body {
+    font-size: 1rem;
+    font-family: Lato;
+    background-color: #0078D7;
+    color: white;
 }
-a{color: white;}
-nav>a{
-	    color: white;
+
+img {
+    width: 50%;
+    margin-left: -2em;
+}
+
+nav {
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+nav > a {
+    color: white;
     margin: 2px;
     font-size: 1.6em;
 }
-h1{
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+}
+
+    nav > ul > li {
+        display: inline-block;
+        margin: 1em;
+        font-size: 1.4em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0);
+        width: 20%;
+        padding-bottom: 1em;
+        transition: all 2s;
+    }
+
+        nav > ul > li:hover {
+            border-bottom: 1px solid white;
+        }
+
+        nav > ul > li > a {
+            text-decoration: none;
+        }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0;
+    font-family: Segoe UI Light,Segoe UI,Lato,Tahoma;
+    font-size: 2.8em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 2em;
+    margin-left: 1em;
+}
+
+h4 {
+    font-size: 1.5em;
+    margin-left: 2em;
+}
+
+.tituloPrincipal {
     margin: 9px 0;
     font-family: Segoe UI Light,Segoe UI,Lato,Tahoma;
     font-size: 3.5em;
+    font-weight: normal;
 }
-h3{
-	font-size: 7em;
+
+.tituloSecundario {
+    font-size: 5em;
     margin: .4em 0;
     font-family: Segoe UI Light,Segoe UI,Lato,Tahoma;
-    
+    font-weight: normal;
 }
+
 #logoMicrosoft {
     width: 70px;
-    margin:1em 0;    
+    margin: 1em 0;
 }
-#prhase::before{	
-	content:'"';
+
+#prhase::before {
+    content: '"';
 }
-#prhase::after{
-	content:'"';
+
+#prhase::after {
+    content: '"';
 }
-#prhase{
-     font-size: 1.4em;
+
+#prhase {
+    font-size: 1.4em;
     font-style: italic;
     text-align: center;
     font-family: segoe ui;
     margin-bottom: 2em;
     text-align: right;
 }
-p{
-	font-size: 1.2em;
+
+p {
+    font-size: 1.2em;
     margin: 0;
 }
 
-@media only screen and (max-device-width: 480px) {
-	h1{
-    	font-size: 8rem;
-	}
-	#logoMicrosoft{
-		    width: 200px;
-	    float: right;
-	}
-	nav>a {
-    margin: .5em;
-    font-size: 3em;
+    p.texto {
+        font-size: 1.4em;
+        margin-left: 3em;
+    }
+
+.divExplicacion {
+    background-color: #f2f2f2;
+    padding: 1em;
+    font-size: 1.3em;
+    color:#444
 }
+
+    .divExplicacion > table {
+        font-size: 1.3em;
+        color: #444;
+    }
+
+        .divExplicacion > table > tr {
+            padding: 1em;
+        }
+
+        .divExplicacion > table > tbody > tr > td {
+            padding: .5em;
+        }
+
+            .divExplicacion > table > tbody > tr > td > input {
+                padding: .3em;
+            }
+            .FeedBackLabel {
+    font-size: 1.2rem!important;
+}
+
+@media only screen and (max-device-width: 480px) {
+    h1 {
+        font-size: 8rem;
+    }
+
+    #logoMicrosoft {
+        width: 200px;
+        float: right;
+    }
+
+    nav > a {
+        margin: .5em;
+        font-size: 3em;
+    }
 }
