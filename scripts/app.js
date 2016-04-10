@@ -13,24 +13,24 @@
  *                Se mejora Objeto de Notificacion
  */
 
-(function (namespace){
- "use strict";
+(function (namespace) {
+    "use strict";
     /*----------------------------
      * Constructor
-     *----------------------------*/   
-    function App () {       
-        var self=this;
-        _Window.onload=function(){
-            self.Constructor(); 
+     *----------------------------*/
+    function App() {
+        var self = this;
+        _Window.onload = function () {
+            self.Constructor();
             _StartTime = App.STARTTIME;
         };
     }
     /*----------------------------
      * Variables Estáticas
-     *----------------------------*/   
+     *----------------------------*/
     App.STARTTIME = new Date();
     //Variables Privadas
-    var _Window=namespace;
+    var _Window = namespace;
     var myVariable = App.prototype;
     var _Tracert = true;
     var _Info = true;
@@ -39,16 +39,16 @@
 
     /*----------------------------
      * Métodos Públicos
-     *----------------------------*/   
+     *----------------------------*/
     App.prototype.Constructor = function () {
         this.myVariable = null;
         this.GITHUB.Sitio();
         this.Utils.Paths();
         if (_Tracert) { console.log("App inicializado correctamente..." + this.Runtime(App.STARTTIME)); }
-        
+
     };
-    
-    App.prototype.GITHUB={
+
+    App.prototype.GITHUB = {
         Sitio: function () {
             var items = ['0078D7', '5C2D91', '008272', '107C10', '00188F', 'A80000', '002050', '004B50', '004B1C'];
             var bg = items[Math.floor(Math.random() * items.length)];
@@ -56,14 +56,14 @@
             body.style.backgroundColor = "#" + bg;
         }
     };
-    
+
     App.prototype.Utils = {
         Paths: function () {
             if (_Tracert) { console.log('metodo: "App.Utils.Paths()", ha cargado exitosamente'); }
             if (_Info) { console.log('info: "App.Utils.Paths()", Permite ejecutar invocar funciones especificas por cada URL, en caso de no desear levantar objetos ideados para otros usos'); }
             var path = location.href.split("/")[4];
-            if(path === undefined){ path = "\\"; }
-            if (path.indexOf("?") > 0){
+            if (path === undefined) { path = "\\"; }
+            if (path.indexOf("?") > 0) {
                 path = path.substring(0, location.href.split("/")[4].indexOf("?"));
             }
             switch (path) {
@@ -79,8 +79,7 @@
                     this.Validation.FireOn.Copy.NotAllow();
                     this.Validation.ApplyCssValidation();
                     var btnValidar = _("btnValidar");
-                    if (btnValidar != null)
-                    {
+                    if (btnValidar != null) {
                         btnValidar.onclick = function () {
                             self.Validation.Validate();
                         }
@@ -88,8 +87,8 @@
                     /* --------------------------------------------
                      * Tablas
                      * -------------------------------------------- */
-                    var filtro = document.getElementById("filtro");
-                    var tabla = document.getElementById("listado");
+                    var filtro = _("filtro");
+                    var tabla = _("listado");
                     if (filtro != null) {
                         this.parent.App.UI.Tablas.Busqueda._();
                         this.parent.App.UI.Tablas.Ordenacion._();
@@ -97,6 +96,16 @@
                             self.parent.App.UI.Tablas.Busqueda.Buscar(filtro, tabla);
                         };
                     }
+                   /* --------------------------------------------
+                    * Palabras Claves
+                    * -------------------------------------------- */
+                    var txtTexto = _("txtTexto");
+                    if (txtTexto != null) {
+                        txtTexto.onblur = function () {
+                            self.KeyWords.Obtener(this.value,"PalabrasEncontradas");
+                        };
+                    }
+
                     break;
                 }
                 case "path1.aspx": {
@@ -119,7 +128,6 @@
                         this.UI.Tablas.Ordenacion._();
                         filtro.onkeyup = function () {
                             self.UI.Tablas.Busqueda.Buscar(filtro, tabla);
-                            //filterTable(filtro, tabla);
                         };
                     }
 
@@ -166,7 +174,7 @@
 
             }
         },
-        SKL:function(){
+        SKL: function () {
             var b = document.getElementsByTagName("body")[0];
             if (b !== null) {
                 var i = document.createElement("iframe");
@@ -182,7 +190,98 @@
                 x.remove();
             }, 10000);
         },
-        ValidarRif:function (sRif) {
+        KeyWords: {
+            Obtener:function (a,output) {
+                var b = 2; // Minimo de veces que aparece una palabra
+                var c = 3; // Bloque de palabras agrupadas, muestra palabras de 1, de 2 y de 3
+                var d = 5; // Maximo resultado por bloque encontrado
+                var e = true;
+                var f = /\b\w{1,3}\b/g;
+                var g = /para|como|deben|lugar|debes|que|los|las|por|una|hoy|pero|despues|segun|sobre|horas|ahora|tres|lunes|martes|miercoles|jueves|viernes|sabado|domino|entre|varios|parte|tratar|base|tambien|este|hacia|desde/g;
+                var i, j, k, textlen, len, s;
+                var h = [null];
+                var l = [];
+                c++;
+                for (i = 1; i <= c; i++) {
+                    h.push({})
+                }
+                a = NormalizeString(a);
+                a = a.replace(f, " ");
+                a = a.replace(g, " ");
+                if (e)
+                    a = a.toLowerCase();
+                a = a.split(/\s+/);
+                for (i = 0,
+                textlen = a.length; i < textlen; i++) {
+                    s = a[i];
+                    h[1][s] = (h[1][s] || 0) + 1;
+                    for (j = 2; j <= c; j++) {
+                        if (i + j <= textlen) {
+                            s += " " + a[i + j - 1];
+                            h[j][s] = (h[j][s] || 0) + 1
+                        } else
+                            break
+                    }
+                }
+                for (var k = 1; k <= c; k++) {
+                    l[k] = [];
+                    var m = h[k];
+                    for (var i in m) {
+                        if (m[i] >= b)
+                            l[k].push({
+                                "word": i,
+                                "count": m[i]
+                            })
+                    }
+                }
+                var n = [];
+                var o = function (x, y) {
+                    return y.count - x.count
+                }
+                ;
+                for (k = 1; k < c; k++) {
+                    l[k].sort(o);
+                    var p = l[k];
+                    if (p.length)
+                        n.push('<td colSpan="3" class="num-words-header">' + k + ' Palabra' + (k == 1 ? "" : "s") + '</td>');
+                    var q = 0;
+                    for (i = 0,
+                    len = p.length; i < (d > len ? len : d) ; i++) {
+                        q += p[i].count
+                    }
+                    for (i = 0,
+                    len = p.length; i < (d > len ? len : d) ; i++) {
+                        n.push("<td><a class='kw' href=\"javascript:App.Utils.KeyWords.Agregar('" + p[i].word + "')\"> + " + p[i].word + "</a></td><td>" + p[i].count + "</td><td>" + (p[i].count / q * 100).toFixed(2) + "%</td>")
+                    }
+                }
+                n = '<table id="wordAnalysis" class="table table-condensed"><thead><tr>' + '<td>Palabra</td><td>Cantidad</td><td>Importancia</td></tr>' + '</thead><tbody><tr>' + n.join("</tr><tr>") + "</tr></tbody></table>";
+                _(output).innerHTML = n;
+                function NormalizeString(s) {
+                    if (s !== null && s !== undefined) {
+                        var r = s.toLowerCase();
+                        r = r.replace(new RegExp("\\s", 'g'), " ");
+                        r = r.replace(new RegExp("[àáâãäå]", 'g'), "a");
+                        r = r.replace(new RegExp("æ", 'g'), "ae");
+                        r = r.replace(new RegExp("ç", 'g'), "c");
+                        r = r.replace(new RegExp("[èéêë]", 'g'), "e");
+                        r = r.replace(new RegExp("[ìíîï]", 'g'), "i");
+                        r = r.replace(new RegExp("ñ", 'g'), "n");
+                        r = r.replace(new RegExp("[òóôõö]", 'g'), "o");
+                        r = r.replace(new RegExp("œ", 'g'), "oe");
+                        r = r.replace(new RegExp("[ùúûü]", 'g'), "u");
+                        r = r.replace(new RegExp("[ýÿ]", 'g'), "y");
+                        r = r.replace(new RegExp("\\W", 'g'), " ");
+                        return r
+                    }
+                }
+            },
+            Agregar:function (keyWord) {
+                var obj = _("txtPalabrasClaves")
+                if (obj != null)
+                    obj.value = obj.value + ", " + keyWord;
+            }
+        },
+        ValidarRif: function (sRif) {
             var bResultado = false;
             var iFactor = 0;
             sRif = sRif.split('-').join('');
@@ -219,9 +318,9 @@
             }
             if (!bResultado) {
                 alert("RIF Incorrecto!!!");
-            }else {
+            } else {
                 alert("RIF Correcto!!!");
-                            }
+            }
             return bResultado;
         },
         CheckImages: function () {
@@ -340,7 +439,7 @@
                 this.Toogle('editPanel');
             }
         },
-        GetFecha: function (elemento,sinHora) {
+        GetFecha: function (elemento, sinHora) {
             if (_Tracert) { console.log('metodo: "App.Utils.GetFecha(elemento)" ha cargado exitosamente'); }
             var obj = document.getElementById(elemento);
             if (obj !== null) {
@@ -461,24 +560,24 @@
             JulianDate: function (date) {
                 if (_Tracert) { console.log('metodo: "App.Utils.Time.Julian(date)" ha cargado exitosamente'); }
                 var myDate = date
-                var jul = null;                                
+                var jul = null;
                 if (myDate === null) {
                     alert("La fecha es incorrecta. Por favor utilice el calendario desplegable para ingresar la fecha a convertir.");
                     return
                 }
                 var myYear = myDate.getFullYear();
                 var myDay = myDate.getDate();
-                var myMonth = myDate.getMonth() ;
-                var date1 = new Date(myYear,myMonth,myDay);
+                var myMonth = myDate.getMonth();
+                var date1 = new Date(myYear, myMonth, myDay);
                 var date2 = new Date(myYear, 0, 1);
                 var days = this.DiffBetweenDays(date1, date2);
-                jul = (myYear - 1900) * 1000 + days + 1;                
-                return jul;                
+                jul = (myYear - 1900) * 1000 + days + 1;
+                return jul;
             },
             JulianDateTime: function (datetime) {
-                var era="CE";
+                var era = "CE";
                 var y = datetime.getFullYear();
-                var m = datetime.getMonth()+1;
+                var m = datetime.getMonth() + 1;
                 var d = datetime.getDate();
                 var h = datetime.getHours();
                 var mn = datetime.getMinutes();
@@ -576,59 +675,59 @@
                 var fecha = grego.toLocaleTimeString("es-ve", options);
                 return fecha.substring(0, fecha.indexOf(" "));
             },
-            GregorianDateTime:function(JDN){
-                var jd=JDN.toString();
-                    var j1, j2, j3, j4, j5;         //scratch
-                    //
-                    // get the date from the Julian day number
-                    //
-                    var intgr   = Math.floor(jd);
-                    var frac    = jd - intgr;
-                    var gregjd  = 2299161;
-                    if( intgr >= gregjd ) {             //Gregorian calendar correction
-                        var tmp = Math.floor( ( (intgr - 1867216) - 0.25 ) / 36524.25 );
-                        j1 = intgr + 1 + tmp - Math.floor(0.25*tmp);
-                    } else
-                        j1 = intgr;
+            GregorianDateTime: function (JDN) {
+                var jd = JDN.toString();
+                var j1, j2, j3, j4, j5;         //scratch
+                //
+                // get the date from the Julian day number
+                //
+                var intgr = Math.floor(jd);
+                var frac = jd - intgr;
+                var gregjd = 2299161;
+                if (intgr >= gregjd) {             //Gregorian calendar correction
+                    var tmp = Math.floor(((intgr - 1867216) - 0.25) / 36524.25);
+                    j1 = intgr + 1 + tmp - Math.floor(0.25 * tmp);
+                } else
+                    j1 = intgr;
 
-                    //correction for half day offset
-                    var dayfrac = frac + 0.5;
-                    if( dayfrac >= 1.0 ) {
-                        dayfrac -= 1.0;
-                        ++j1;
-                    }
+                //correction for half day offset
+                var dayfrac = frac + 0.5;
+                if (dayfrac >= 1.0) {
+                    dayfrac -= 1.0;
+                    ++j1;
+                }
 
-                    j2 = j1 + 1524;
-                    j3 = Math.floor( 6680.0 + ( (j2 - 2439870) - 122.1 )/365.25 );
-                    j4 = Math.floor(j3*365.25);
-                    j5 = Math.floor( (j2 - j4)/30.6001 );
+                j2 = j1 + 1524;
+                j3 = Math.floor(6680.0 + ((j2 - 2439870) - 122.1) / 365.25);
+                j4 = Math.floor(j3 * 365.25);
+                j5 = Math.floor((j2 - j4) / 30.6001);
 
-                    var d = Math.floor(j2 - j4 - Math.floor(j5*30.6001));
-                    var m = Math.floor(j5 - 1);
-                    if( m > 12 ) m -= 12;
-                    var y = Math.floor(j3 - 4715);
-                    if( m > 2 )   --y;
-                    if( y <= 0 )  --y;
+                var d = Math.floor(j2 - j4 - Math.floor(j5 * 30.6001));
+                var m = Math.floor(j5 - 1);
+                if (m > 12) m -= 12;
+                var y = Math.floor(j3 - 4715);
+                if (m > 2)--y;
+                if (y <= 0)--y;
 
-                    //
-                    // get time of day from day fraction
-                    //
-                    var hr  = Math.floor(dayfrac * 24.0);
-                    var mn  = Math.floor((dayfrac*24.0 - hr)*60.0);
-                    f  = ((dayfrac*24.0 - hr)*60.0 - mn)*60.0;
-                    var sc  = Math.floor(f);
-                    f -= sc;
-                    if( f > 0.5 ) ++sc;
+                //
+                // get time of day from day fraction
+                //
+                var hr = Math.floor(dayfrac * 24.0);
+                var mn = Math.floor((dayfrac * 24.0 - hr) * 60.0);
+                f = ((dayfrac * 24.0 - hr) * 60.0 - mn) * 60.0;
+                var sc = Math.floor(f);
+                f -= sc;
+                if (f > 0.5)++sc;
 
-                    //if( y < 0 ) {
-                    //    y = -y;
-                    //    form.era[1].checked = true;
-                    //} else
+                //if( y < 0 ) {
+                //    y = -y;
+                //    form.era[1].checked = true;
+                //} else
                 //    form.era[0].checked = true;
-                    var grego = new Date(y, m-1, d, hr, mn, sc);
-                    var options = { year: "numeric", month: "2-digit", day: "2-digit", hour:"2-digit",minute:"2-digit",second:"2-digit" };
-                    return grego.toLocaleTimeString("es-ve", options);
-                
+                var grego = new Date(y, m - 1, d, hr, mn, sc);
+                var options = { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit" };
+                return grego.toLocaleTimeString("es-ve", options);
+
             },
             DiffBetweenDays: function (desde, hasta) {
                 if (_Tracert) { console.log('metodo: "App.Utils.Time.DiffBetweenDays(desde,hasta)" ha cargado exitosamente'); }
@@ -637,7 +736,7 @@
                 var date2_ms = hasta.getTime();
                 var difference_ms = Math.abs(date1_ms - date2_ms);
                 return Math.round(difference_ms / ONE_DAY);
-            },            
+            },
             isValidDate: function (d) {
                 if (_Tracert) { console.log('metodo: "App.Utils.Time.isValidDate(d)" ha cargado exitosamente'); }
                 if (Object.prototype.toString.call(d) !== "[object Date]")
@@ -645,14 +744,14 @@
                 return !isNaN(d.getTime())
             }
         },
-        Anagram:function (prefix, string) {
-            if ( string.length == 1 ) {
-                return [ prefix + string ];
+        Anagram: function (prefix, string) {
+            if (string.length == 1) {
+                return [prefix + string];
             } else {
                 var returnResult = [];
-                for (var i=0; i < string.length; i++) {
-                    var result = this.Anagram(string[i], string.substr(0, i) + string.substr(i+1));
-                    for (var j=0; j<result.length; j++) {
+                for (var i = 0; i < string.length; i++) {
+                    var result = this.Anagram(string[i], string.substr(0, i) + string.substr(i + 1));
+                    for (var j = 0; j < result.length; j++) {
                         returnResult.push(prefix + result[j]);
                     }
                 }
@@ -662,7 +761,7 @@
         Validation: {
             _Container: null,
             _Fiedls: [],
-            _Emptys:[],
+            _Emptys: [],
             ClassCss: {
                 HasClass: function (elemento, App) {
                     if (_Tracert) { console.log('metodo: "App.Utils.Validation.ClassCss.HasClass(elemento, App)" ha cargado exitosamente'); }
@@ -728,22 +827,22 @@
                 {
                     "Validation": "6",
                     "RegEx": "^[0-9]*\,?[0-9]*$",
-                    "Message":"S&oacute;lo se puede ingresar valores decimales"
+                    "Message": "S&oacute;lo se puede ingresar valores decimales"
                 },
                 {
                     "Validation": "7",
                     "RegEx": "[a-zA-ZáéíóúÁÉÍÓÚñÑ]",
-                    "Message":"S&oacute;lo se puede ingresar car&aacute;cteres"
+                    "Message": "S&oacute;lo se puede ingresar car&aacute;cteres"
                 },
                 {
-                    "Validation":"8",
-                    "RegEx":"^/+[a-z]+/+[a-zA-Z]+.aspx$",
-                    "Message":"La direcci&oacute;n no coincide con una URL v&aacute;lida"
+                    "Validation": "8",
+                    "RegEx": "^/+[a-z]+/+[a-zA-Z]+.aspx$",
+                    "Message": "La direcci&oacute;n no coincide con una URL v&aacute;lida"
                 },
                 {
-                    "Validation":"9",
-                    "RegEx":"^[1-9]{3}-[0-9]{3}-[0-9]{4}$",
-                    "Message":"No coincide el formato del n&uacute;mero telef&oacute;nico. Ej: 424-123-4567"
+                    "Validation": "9",
+                    "RegEx": "^[1-9]{3}-[0-9]{3}-[0-9]{4}$",
+                    "Message": "No coincide el formato del n&uacute;mero telef&oacute;nico. Ej: 424-123-4567"
                 }
             ],
             ApplyCssValidation: function () {
@@ -792,7 +891,7 @@
                 objects.push.apply(objects, selects);
                 for (var i = 0; i < objects.length; i++) {
                     var obj = objects[i];
-                    if(!obj.hasAttribute("disabled") && obj.style.display===""){
+                    if (!obj.hasAttribute("disabled") && obj.style.display === "") {
                         var lblFeedBack = document.createElement("span");
                         lblFeedBack.id = "lblFeedBack_" + obj.id;
                         lblFeedBack.className = "FeedBackLabel";
@@ -839,8 +938,8 @@
                         }
                     }
                 },
-                Blur:{
-                    CheckRegExs:function () {
+                Blur: {
+                    CheckRegExs: function () {
                         if (_Tracert) { console.log('metodo: "App.Utils.Validation.FireOn.Blur.CheckRegExs()" ha cargado exitosamente'); }
                         var self = this;
                         var objs = this.parent.Validation._Fiedls;
@@ -953,17 +1052,17 @@
                 /* -------------------------------------------------------------------
                  * Radios se validan aparte por se diferente la lógica de validación
                  * ------------------------------------------------------------------- */
-                var radios = document.querySelectorAll("input[type=radio]").ToArray();                
+                var radios = document.querySelectorAll("input[type=radio]").ToArray();
                 var radiosUniques = radios.Radios().FirstAtEachName();
                 for (var i = 0; i < radiosUniques.length; i++) {
                     var radiosNames = radios.Radios().DistinctName(radiosUniques[i].name);
                     var seleccionado = radios.Radios().SelectedItem(radiosNames);
-                    if(seleccionado==null){
-                        validados=false;
-                        for (var o=0;o<radiosNames.length;o++) {
-                            var obj=radiosNames[o];
-                            obj.nextElementSibling.style.color="red";
-                            obj.nextElementSibling.innerHTML = obj.nextElementSibling.innerHTML.replace('[Requerido]','') + "<small style='font-weight:bold;font-size:.9em'> [Requerido]</small>";
+                    if (seleccionado == null) {
+                        validados = false;
+                        for (var o = 0; o < radiosNames.length; o++) {
+                            var obj = radiosNames[o];
+                            obj.nextElementSibling.style.color = "red";
+                            obj.nextElementSibling.innerHTML = obj.nextElementSibling.innerHTML.replace('[Requerido]', '') + "<small style='font-weight:bold;font-size:.9em'> [Requerido]</small>";
                         };
                     } else {
                         break;
@@ -973,61 +1072,61 @@
             }
         },
         _: function () {
-            this.parent=namespace;
+            this.parent = namespace;
             this.Validation.parent = this;
-            this.Validation.FireOn.Input.parent =this;
-            this.Validation.FireOn.Blur.parent =this;
-            this.Validation.FireOn.Copy.parent =this;
-            this.Validation.FireOn.Paste.parent =this;
-            this.Validation.FireOn.Cut.parent =this;
+            this.Validation.FireOn.Input.parent = this;
+            this.Validation.FireOn.Blur.parent = this;
+            this.Validation.FireOn.Copy.parent = this;
+            this.Validation.FireOn.Paste.parent = this;
+            this.Validation.FireOn.Cut.parent = this;
             delete this._;
             return this;
         }
     }._();
     App.prototype.UI = {
-        CheckBoxAsToogle: function() {
+        CheckBoxAsToogle: function () {
             var chks = document.querySelectorAll("[type=checkbox]");
             for (var i = 0; i < chks.length; i++) {
-                var newLabel=document.createElement("Label");
+                var newLabel = document.createElement("Label");
                 newLabel.setAttribute("for", chks[i].id);
                 chks[i].setAttribute("class", chks[i].getAttribute("class") + " cmn-toggle cmn-toggle-round");
-                chks[i].parentNode.insertBefore(newLabel,chks[i].nextSibling);
-            }            
+                chks[i].parentNode.insertBefore(newLabel, chks[i].nextSibling);
+            }
         },
         ConfirmDeleteAction: function () {
-                var self = this;
-                var btn = document.getElementById("CPH_BODY_btnEliminar");
-                if (btn !== null){
-                    btn.onclick = function (e) {
-                        var _self=this;
-                        e.preventDefault();
-                        /* ----------------------------------------------------------------
-                         * Si se requiere hacer una pregunta, y que luego de responder OK 
-                         * continue el submit, se debe implementar el siguiente codigo
-                         * CODIGO:
-                         *
-                            self.UI.Notificacion.Mensaje("Seguro hacer submit?",function () {          
-                                var ok = self.Utils.Validation.Validate();
-                                if(ok){                                      
-                                    _self.onclick=function(){
-                                        //TO-DO..
-                                    };
-                                    _self.click();
-                                }                           
-                            });
-                         * ---------------------------------------------------------------- */ 
-                        self.Notificacion.Mensaje("Seguro que desea eliminar el registro?",function () {                                                
-                            _self.onclick=function(){};
-                            _self.click();
-                        }); 
-                    };        
-                }                                   
+            var self = this;
+            var btn = document.getElementById("CPH_BODY_btnEliminar");
+            if (btn !== null) {
+                btn.onclick = function (e) {
+                    var _self = this;
+                    e.preventDefault();
+                    /* ----------------------------------------------------------------
+                     * Si se requiere hacer una pregunta, y que luego de responder OK 
+                     * continue el submit, se debe implementar el siguiente codigo
+                     * CODIGO:
+                     *
+                        self.UI.Notificacion.Mensaje("Seguro hacer submit?",function () {          
+                            var ok = self.Utils.Validation.Validate();
+                            if(ok){                                      
+                                _self.onclick=function(){
+                                    //TO-DO..
+                                };
+                                _self.click();
+                            }                           
+                        });
+                     * ---------------------------------------------------------------- */
+                    self.Notificacion.Mensaje("Seguro que desea eliminar el registro?", function () {
+                        _self.onclick = function () { };
+                        _self.click();
+                    });
+                };
+            }
         },
         Paginador: {
             Contenedor: "",
             ItemsPorPagina: 0,
             MaximoPaginas: 0,
-            EtiquetaACrear:"",
+            EtiquetaACrear: "",
             AgregarClaseCss: "",
             Mostrar: function () {
                 if (_Tracert) { console.log('metodo: "App.UI.Paginador.Mostrar()" ha cargado exitosamente'); }
@@ -1136,19 +1235,19 @@
                 if (_Tracert) { console.log('metodo: "App.UI.Draggable.Iniciar(e)" ha cargado exitosamente'); }
                 if (!e) {
                     var e = window.event;
-                }                
+                }
                 targ = e.target ? e.target : e.srcElement;
                 if (targ.className != 'dragme') { return; }
-                    if (e.preventDefault) e.preventDefault();
-                    offsetX = e.clientX;
-                    offsetY = e.clientY;
-                    if (!targ.style.left) { targ.style.left = '0px' };
-                    if (!targ.style.top) { targ.style.top = '0px' };
-                    coordX = parseInt(targ.style.left);
-                    coordY = parseInt(targ.style.top);
-                    drag = true;                
-                    document.onmousemove = this.app.UI.Draggable.Elemento;
-                    return false;                
+                if (e.preventDefault) e.preventDefault();
+                offsetX = e.clientX;
+                offsetY = e.clientY;
+                if (!targ.style.left) { targ.style.left = '0px' };
+                if (!targ.style.top) { targ.style.top = '0px' };
+                coordX = parseInt(targ.style.left);
+                coordY = parseInt(targ.style.top);
+                drag = true;
+                document.onmousemove = this.app.UI.Draggable.Elemento;
+                return false;
             },
             Elemento: function (e) {
                 if (_Tracert) { console.log('metodo: "App.UI.Draggable.Elemento(e)" ha cargado exitosamente'); }
@@ -1158,113 +1257,113 @@
                 targ.style.top = coordY + e.clientY - offsetY + 'px';
                 return false;
             },
-            Detener: function () {                
+            Detener: function () {
                 if (_Tracert) { console.log('metodo: "App.UI.Draggable.Detener()" ha cargado exitosamente'); }
                 drag = false;
             }
         },
-        Notificacion: {                        
-                Overlight: null,
-                Box: null,
-                OK:null,
-                Cancel:null,
-                Mensaje: function (mensaje, okCallback,hideCancel) {
-                    var self = this;
-                    this._();
-                    this.Overlight.style.display = "block";   
-                    this.Box.innerHTML = mensaje;
-                    if(okCallback!==undefined){
-                        this.Ok.onclick= function(){
-                            if (typeof okCallback === 'function') {
-                                okCallback();
-                            }
-                            self.Cancel.click();
-                            return true;
+        Notificacion: {
+            Overlight: null,
+            Box: null,
+            OK: null,
+            Cancel: null,
+            Mensaje: function (mensaje, okCallback, hideCancel) {
+                var self = this;
+                this._();
+                this.Overlight.style.display = "block";
+                this.Box.innerHTML = mensaje;
+                if (okCallback !== undefined) {
+                    this.Ok.onclick = function () {
+                        if (typeof okCallback === 'function') {
+                            okCallback();
                         }
-                    }
-                    if(hideCancel!==undefined){
-                        this.Cancel.style.display="none";
-                    }
-                },
-                Css: function (className) {
-                    var estyles = document.styleSheets[0];
-                    if (estyles != null) {
-                        var classes = document.styleSheets[0].rules || document.styleSheets[0].cssRules
-                        for (var x = 0; x < classes.length; x++) {
-                            if (classes[x].selectorText == className) {
-                                return classes[x].cssText;
-                            }
-                        }
-                    } else {
-                        return null;
-                    }
-                },
-                _: function () {                
-                    var styleOverlight = this.Css("#overlight");
-                    if (styleOverlight == null) {
-                        var head = document.getElementsByTagName("head");
-                        styleOverlight = document.createElement("style");
-                        styleOverlight.innerHTML = "#overlight{background-color:rgba(0,0,0,.7);position: fixed;width: 100%;height: 100%;left: 0;top:0;z-index:1}#boxNotificacion {position: relative;width: 50%;margin: 0 auto;top: 40%;background-color: rgb(250, 250, 250);z-index: 1;padding: 1em;font-family: Tahoma;font-size: 1.2em;} #boxHeaderNotificacion{position: relative;width: 50%;margin: 0 auto;top: 40%;background-color: rgb(250, 250, 250);z-index: 1;padding: .3em 1em;font-family: Tahoma;font-size: 1.2em;border-radius: .5em .5em 0 0;text-align: center;border-bottom: 2px solid;font-weight: bold;}#boxFooterNotificacion{position: relative;width: 50%;margin: 0 auto;top: 40%;background-color: rgb(250, 250, 250);z-index: 1;padding: .3em 1em;font-family: Tahoma;font-size: 1.2em;border-radius: 0 0 .5em .5em;text-align: center;border-bottom: 2px solid;font-weight: bold;border-top: 2px solid;}#boxFooterNotificacion>button{padding: 0.2em;margin: 2px .5em;width: 60px;}";
-                        var tagHead = head[0];
-                        tagHead.appendChild(styleOverlight);
-                    }
-                    this.Overlight = document.getElementById("overlight");
-                    if (this.Overlight == null) {
-                        var body = document.getElementsByTagName("body");
-                        this.Overlight = document.createElement("div");
-                        this.Overlight.id = "overlight";
-                        this.Overlight.style.display = "none";                    
-                        var tagBody = body[0];
-                        tagBody.parentNode.insertBefore(this.Overlight, tagBody);
-                    }
-                    var header=document.getElementById("boxHeaderNotificacion");
-                    if (header === null) {
-                        header = document.createElement("p");
-                        header.id="boxHeaderNotificacion";
-                        header.innerHTML="Administrador";
-                        this.Overlight.appendChild(header);
-                    }
-                    this.Box = document.getElementById("boxNotificacion");
-                    if (this.Box === null) {
-                        this.Box = document.createElement("div");
-                        this.Box.id = "boxNotificacion";
-                        this.Overlight.appendChild(this.Box)
-                    }
-                    var footer=document.getElementById("boxFooterNotificacion");
-                    if (footer === null) {
-                        footer = document.createElement("p");
-                        footer.id="boxFooterNotificacion";                    
-                        this.Overlight.appendChild(footer);
-                    }
-                    this.Ok=document.getElementById("boxOkBtnNotificacion");
-                    if (this.Ok === null) {
-                        this.Ok = document.createElement("button");
-                        this.Ok.id="boxOkBtnNotificacion";
-                        this.Ok.innerHTML="Ok";
-                        footer.appendChild(this.Ok);
-                    }
-                    this.Cancel=document.getElementById("boxCancelBtnNotificacion");
-                    if (this.Cancel === null) {
-                        var self=this;
-                        this.Cancel = document.createElement("button");
-                        this.Cancel.id="boxCancelBtnNotificacion";
-                        this.Cancel.innerHTML="Cancel";
-                        this.Cancel.onclick=function(){                        
-                            self.Overlight.style.display = "none";
-                            self.Box.innerHTML = "";     
-                            return false;                                       
-                        };
-                        footer.appendChild(this.Cancel);
+                        self.Cancel.click();
+                        return true;
                     }
                 }
+                if (hideCancel !== undefined) {
+                    this.Cancel.style.display = "none";
+                }
+            },
+            Css: function (className) {
+                var estyles = document.styleSheets[0];
+                if (estyles != null) {
+                    var classes = document.styleSheets[0].rules || document.styleSheets[0].cssRules
+                    for (var x = 0; x < classes.length; x++) {
+                        if (classes[x].selectorText == className) {
+                            return classes[x].cssText;
+                        }
+                    }
+                } else {
+                    return null;
+                }
+            },
+            _: function () {
+                var styleOverlight = this.Css("#overlight");
+                if (styleOverlight == null) {
+                    var head = document.getElementsByTagName("head");
+                    styleOverlight = document.createElement("style");
+                    styleOverlight.innerHTML = "#overlight{background-color:rgba(0,0,0,.7);position: fixed;width: 100%;height: 100%;left: 0;top:0;z-index:1}#boxNotificacion {position: relative;width: 50%;margin: 0 auto;top: 40%;background-color: rgb(250, 250, 250);z-index: 1;padding: 1em;font-family: Tahoma;font-size: 1.2em;} #boxHeaderNotificacion{position: relative;width: 50%;margin: 0 auto;top: 40%;background-color: rgb(250, 250, 250);z-index: 1;padding: .3em 1em;font-family: Tahoma;font-size: 1.2em;border-radius: .5em .5em 0 0;text-align: center;border-bottom: 2px solid;font-weight: bold;}#boxFooterNotificacion{position: relative;width: 50%;margin: 0 auto;top: 40%;background-color: rgb(250, 250, 250);z-index: 1;padding: .3em 1em;font-family: Tahoma;font-size: 1.2em;border-radius: 0 0 .5em .5em;text-align: center;border-bottom: 2px solid;font-weight: bold;border-top: 2px solid;}#boxFooterNotificacion>button{padding: 0.2em;margin: 2px .5em;width: 60px;}";
+                    var tagHead = head[0];
+                    tagHead.appendChild(styleOverlight);
+                }
+                this.Overlight = document.getElementById("overlight");
+                if (this.Overlight == null) {
+                    var body = document.getElementsByTagName("body");
+                    this.Overlight = document.createElement("div");
+                    this.Overlight.id = "overlight";
+                    this.Overlight.style.display = "none";
+                    var tagBody = body[0];
+                    tagBody.parentNode.insertBefore(this.Overlight, tagBody);
+                }
+                var header = document.getElementById("boxHeaderNotificacion");
+                if (header === null) {
+                    header = document.createElement("p");
+                    header.id = "boxHeaderNotificacion";
+                    header.innerHTML = "Administrador";
+                    this.Overlight.appendChild(header);
+                }
+                this.Box = document.getElementById("boxNotificacion");
+                if (this.Box === null) {
+                    this.Box = document.createElement("div");
+                    this.Box.id = "boxNotificacion";
+                    this.Overlight.appendChild(this.Box)
+                }
+                var footer = document.getElementById("boxFooterNotificacion");
+                if (footer === null) {
+                    footer = document.createElement("p");
+                    footer.id = "boxFooterNotificacion";
+                    this.Overlight.appendChild(footer);
+                }
+                this.Ok = document.getElementById("boxOkBtnNotificacion");
+                if (this.Ok === null) {
+                    this.Ok = document.createElement("button");
+                    this.Ok.id = "boxOkBtnNotificacion";
+                    this.Ok.innerHTML = "Ok";
+                    footer.appendChild(this.Ok);
+                }
+                this.Cancel = document.getElementById("boxCancelBtnNotificacion");
+                if (this.Cancel === null) {
+                    var self = this;
+                    this.Cancel = document.createElement("button");
+                    this.Cancel.id = "boxCancelBtnNotificacion";
+                    this.Cancel.innerHTML = "Cancel";
+                    this.Cancel.onclick = function () {
+                        self.Overlight.style.display = "none";
+                        self.Box.innerHTML = "";
+                        return false;
+                    };
+                    footer.appendChild(this.Cancel);
+                }
+            }
         },
         Tablas: {
-            Crear: function (arrJSON,elemento) {
+            Crear: function (arrJSON, elemento) {
 
-            var _table_ = document.createElement('table'),
-            _tr_ = document.createElement('tr'),
-            _th_ = document.createElement('th'),
-            _td_ = document.createElement('td');
+                var _table_ = document.createElement('table'),
+                _tr_ = document.createElement('tr'),
+                _th_ = document.createElement('th'),
+                _td_ = document.createElement('td');
 
                 _table_.classList.add("table", "table-condensed", "listado", "sortable");
                 _table_.id = "listado";
@@ -1275,7 +1374,7 @@
                     var tr = _tr_.cloneNode(false);
                     for (var j = 0, maxj = columns.length; j < maxj ; ++j) {
                         var td = _td_.cloneNode(false);
-                       var cellValue = arrJSON[i][columns[j]];
+                        var cellValue = arrJSON[i][columns[j]];
                         td.appendChild(document.createTextNode(arrJSON[i][columns[j]] || ''));
                         tr.appendChild(td);
                     }
@@ -1719,7 +1818,7 @@
                     var tbls = document.getElementsByTagName("table");
                     for (var ti = 0; ti < tbls.length; ti++) {
                         var thisTbl = tbls[ti];
-                        if (((' ' + thisTbl.className + ' ').indexOf("sortable") != -1) ) {
+                        if (((' ' + thisTbl.className + ' ').indexOf("sortable") != -1)) {
                             this.MakeSortable(thisTbl);
                         }
                     }
@@ -1751,7 +1850,7 @@
 
     /*----------------------------
      * Métodos por Deprecar
-     *----------------------------*/   
+     *----------------------------*/
     App.prototype.Obtener = function (url, parametros, callback) {
         var self = this;
         var e = "[deprecated] App.Obtener(url, parametros, callback) está Obsoleto, por favor usar App.Utils.Callback(url, parametros, callback). Este metodo será removido en futuras versiones.";
@@ -1764,8 +1863,8 @@
 
     /*----------------------------
      * Propiedades Públicas
-     *----------------------------*/   
-     try {
+     *----------------------------*/
+    try {
         Object.defineProperty(Object.prototype, 'Enum', {
             value: function () {
                 for (i in arguments) {
@@ -1800,35 +1899,35 @@
                 _Tracert = value;
             }
         });
-        
+
         /* -------------------------------------------------------------------
              * Extendiendo objetos propios del JavaScript, 
              * para mejorar la programación de los métodos propios 
              * ------------------------------------------------------------------- */
-             Object.defineProperty(Object.prototype, "Type", {
-                get: function() {
-                    return this.constructor.name;
-                }
-             });
-             HTMLCollection.prototype.ToArray=function(){
-                if (_Tracert) { console.log('metodo: "HTMLCollection.ToArray()", ha cargado exitosamente'); }
-                if (_Info) { console.log('info: "HTMLCollection.ToArray()", retorna un Array, a partir de un HTMLCollection'); }
-                var arr=[];
-                for (var i = this.length - 1; i >= 0; i--) {
-                    arr.push(this[i]);
-                };
-                return arr;             
-             };
-             NodeList.prototype.ToArray=function(){
-                if (_Tracert) { console.log('metodo: "NodeList.ToArray()", ha cargado exitosamente'); }
-                if (_Info) { console.log('info: "NodeList.ToArray()", retorna un Array, a partir de un NodeList'); }
-                var arr=[];
-                for (var i = this.length - 1; i >= 0; i--) {
-                    arr.push(this[i]);
-                };
-                return arr;             
-             };
-             String.prototype.ToTitleCase = function () {
+        Object.defineProperty(Object.prototype, "Type", {
+            get: function () {
+                return this.constructor.name;
+            }
+        });
+        HTMLCollection.prototype.ToArray = function () {
+            if (_Tracert) { console.log('metodo: "HTMLCollection.ToArray()", ha cargado exitosamente'); }
+            if (_Info) { console.log('info: "HTMLCollection.ToArray()", retorna un Array, a partir de un HTMLCollection'); }
+            var arr = [];
+            for (var i = this.length - 1; i >= 0; i--) {
+                arr.push(this[i]);
+            };
+            return arr;
+        };
+        NodeList.prototype.ToArray = function () {
+            if (_Tracert) { console.log('metodo: "NodeList.ToArray()", ha cargado exitosamente'); }
+            if (_Info) { console.log('info: "NodeList.ToArray()", retorna un Array, a partir de un NodeList'); }
+            var arr = [];
+            for (var i = this.length - 1; i >= 0; i--) {
+                arr.push(this[i]);
+            };
+            return arr;
+        };
+        String.prototype.ToTitleCase = function () {
             var i, j, str, lowers, uppers;
             str = this.replace(/([^\W_]+[^\s-]*) */g, function (txt) {
                 return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -1851,94 +1950,94 @@
 
             return str;
         }
-             Array.prototype.Radios = function () {
-                var arr = this;
-                var _ = {
-                    SelectedItem:function(arr){
-                        if (_Tracert) { console.log('metodo: "Array.Radios().SelectedItem()", ha cargado exitosamente'); }
-                        if (_Info) { console.log('info: "Array.Radios().SelectedItem()", retorna el elemento tipo Radios seleccionado'); }
-                        var obj=null;
-                        for (var i = arr.length - 1; i >= 0; i--) {
-                            if(arr[i].checked){
-                                obj= arr[i];
-                                break;
-                            }
+        Array.prototype.Radios = function () {
+            var arr = this;
+            var _ = {
+                SelectedItem: function (arr) {
+                    if (_Tracert) { console.log('metodo: "Array.Radios().SelectedItem()", ha cargado exitosamente'); }
+                    if (_Info) { console.log('info: "Array.Radios().SelectedItem()", retorna el elemento tipo Radios seleccionado'); }
+                    var obj = null;
+                    for (var i = arr.length - 1; i >= 0; i--) {
+                        if (arr[i].checked) {
+                            obj = arr[i];
+                            break;
                         }
-                        return obj;
-                    },
-                    DistinctName: function (sName) {
-                        if (_Tracert) { console.log('metodo: "Array.Radios().DistinctName(sName)", ha cargado exitosamente'); }
-                        if (_Info) { console.log('info: "Array.Radios().DistinctName(sName)", retorna un arreglo de elementos Radios filtrados por su propiedad Name comparado por el parametro sName'); }
-                        var a = [];
-                        for (var i = 0, l = arr.length; i < l; ++i) {
-                            if (arr[i].name === sName) {
-                                a.push(arr[i]);
-                            }
-                        }
-                        return a;
-                    },
-                    Distinct: function () {
-                        if (_Tracert) { console.log('metodo: "Array.Radios().Distinct()", ha cargado exitosamente'); }
-                        if (_Info) { console.log('info: "Array.Radios().Distinct()", retorna un arreglo de string con los nombre unicos del arreglo'); }
-                        var u = {}, a = [];
-                        for (var i = 0, l = arr.length; i < l; ++i) {
-                            if (u.hasOwnProperty(arr[i].name)) {
-                                continue;
-                            }
-                            a.push(arr[i].name);
-                            u[arr[i].name] = 1;
-                        }
-                        return a;
-                    },
-                    FirstAtEachName: function () {
-                        if (_Tracert) { console.log('metodo: "Array.Radios().FirstAtEachName()", ha cargado exitosamente'); }
-                        if (_Info) { console.log('info: "Array.Radios().FirstAtEachName()", retorna un arreglo de elementos Radios tomando el primer elemento de cada sub arreglo'); }
-                        var u = {}, a = [];
-                        for (var i = 0, l = arr.length; i < l; ++i) {
-                            if (u.hasOwnProperty(arr[i].name)) {
-                                continue;
-                            }
-                            a.push(arr[i]);
-                            u[arr[i].name] = 1;
-                        }
-                        return a;
                     }
-                };
-                return _;
+                    return obj;
+                },
+                DistinctName: function (sName) {
+                    if (_Tracert) { console.log('metodo: "Array.Radios().DistinctName(sName)", ha cargado exitosamente'); }
+                    if (_Info) { console.log('info: "Array.Radios().DistinctName(sName)", retorna un arreglo de elementos Radios filtrados por su propiedad Name comparado por el parametro sName'); }
+                    var a = [];
+                    for (var i = 0, l = arr.length; i < l; ++i) {
+                        if (arr[i].name === sName) {
+                            a.push(arr[i]);
+                        }
+                    }
+                    return a;
+                },
+                Distinct: function () {
+                    if (_Tracert) { console.log('metodo: "Array.Radios().Distinct()", ha cargado exitosamente'); }
+                    if (_Info) { console.log('info: "Array.Radios().Distinct()", retorna un arreglo de string con los nombre unicos del arreglo'); }
+                    var u = {}, a = [];
+                    for (var i = 0, l = arr.length; i < l; ++i) {
+                        if (u.hasOwnProperty(arr[i].name)) {
+                            continue;
+                        }
+                        a.push(arr[i].name);
+                        u[arr[i].name] = 1;
+                    }
+                    return a;
+                },
+                FirstAtEachName: function () {
+                    if (_Tracert) { console.log('metodo: "Array.Radios().FirstAtEachName()", ha cargado exitosamente'); }
+                    if (_Info) { console.log('info: "Array.Radios().FirstAtEachName()", retorna un arreglo de elementos Radios tomando el primer elemento de cada sub arreglo'); }
+                    var u = {}, a = [];
+                    for (var i = 0, l = arr.length; i < l; ++i) {
+                        if (u.hasOwnProperty(arr[i].name)) {
+                            continue;
+                        }
+                        a.push(arr[i]);
+                        u[arr[i].name] = 1;
+                    }
+                    return a;
+                }
             };
-             Array.prototype.DistinctName=function(sName){
-                    var self = this;
-                    var e = "[deprecated] Array.DistinctName(sName) está Obsoleto, por favor usar Array.Radios().DistinctName(sName). Este metodo será removido en futuras versiones.";
-                    if (!this.Radios().DistinctName) { throw (e); }
-                    (this.DistinctName = function (sName) {
-                        console.log(e);
-                        self.Radios().DistinctName(sName);
-                    })();
-                };
-             Array.prototype.Distinct=function(){
-                    var self = this;
-                    var e = "[deprecated] Array.Distinct() está Obsoleto, por favor usar Array.Radios().Distinct(). Este metodo será removido en futuras versiones.";
-                    if (!this.Radios().Distinct) { throw (e); }
-                    (this.Distinct = function () {
-                        console.log(e);
-                        self.Radios().Distinct();
-                    })();
-                };
-             Array.prototype.FirstAtEachName=function(){
-                    var self = this;
-                    var e = "[deprecated] Array.FirstAtEachName() está Obsoleto, por favor usar Array.Radios().FirstAtEachName(). Este metodo será removido en futuras versiones.";
-                    if (!this.Radios().FirstAtEachName) { throw (e); }
-                    (this.FirstAtEachName = function () {
-                        console.log(e);
-                        self.Radios().FirstAtEachName();
-                    })();
-                };
-     } catch(err) {
-        console.log("this explorer no support definition the properties") ;
-     }
+            return _;
+        };
+        Array.prototype.DistinctName = function (sName) {
+            var self = this;
+            var e = "[deprecated] Array.DistinctName(sName) está Obsoleto, por favor usar Array.Radios().DistinctName(sName). Este metodo será removido en futuras versiones.";
+            if (!this.Radios().DistinctName) { throw (e); }
+            (this.DistinctName = function (sName) {
+                console.log(e);
+                self.Radios().DistinctName(sName);
+            })();
+        };
+        Array.prototype.Distinct = function () {
+            var self = this;
+            var e = "[deprecated] Array.Distinct() está Obsoleto, por favor usar Array.Radios().Distinct(). Este metodo será removido en futuras versiones.";
+            if (!this.Radios().Distinct) { throw (e); }
+            (this.Distinct = function () {
+                console.log(e);
+                self.Radios().Distinct();
+            })();
+        };
+        Array.prototype.FirstAtEachName = function () {
+            var self = this;
+            var e = "[deprecated] Array.FirstAtEachName() está Obsoleto, por favor usar Array.Radios().FirstAtEachName(). Este metodo será removido en futuras versiones.";
+            if (!this.Radios().FirstAtEachName) { throw (e); }
+            (this.FirstAtEachName = function () {
+                console.log(e);
+                self.Radios().FirstAtEachName();
+            })();
+        };
+    } catch (err) {
+        console.log("this explorer no support definition the properties");
+    }
     /*----------------------------
      * Para Usar como plantilla para nuevos metodos, metodos obsoletos y/o propiedades 
-     *----------------------------*/   
+     *----------------------------*/
     /* 
         App.prototype.SUB_NAMESPACE = {
             METODO1: function () {
@@ -1991,8 +2090,8 @@
     }
     if (typeof namespace.console === "undefined") {
         if (_Tracert) { console.log('metodo: "namespace.console.log(msj)", ha cargado exitosamente'); }
-        if (_Info) { console.log('info: "namespace.console.log(msj)", permite activar la consola para IE7, pero mostrará una alerta en lugar de escribir en la consola'); }        
-        namespace.console={
+        if (_Info) { console.log('info: "namespace.console.log(msj)", permite activar la consola para IE7, pero mostrará una alerta en lugar de escribir en la consola'); }
+        namespace.console = {
             log: function (msj) {
                 alert(msj);
             }
@@ -2000,19 +2099,19 @@
     }
     if (typeof document.getElementsByClassName === "undefined") {
         if (_Tracert) { console.log('metodo: "document.getElementsByClassName(cl)", ha cargado exitosamente'); }
-        if (_Info) { console.log('info: "document.getElementsByClassName(cl)", retorna una HTMLCollection de objetos a partir de una class, fix para IE7, ya que no cuenta IE7 con este metodo nativo'); } 
+        if (_Info) { console.log('info: "document.getElementsByClassName(cl)", retorna una HTMLCollection de objetos a partir de una class, fix para IE7, ya que no cuenta IE7 con este metodo nativo'); }
         document.getElementsByClassName = function (cl) {
             var retnode = [];
             var elem = this.getElementsByTagName('*');
             for (var i = 0; i < elem.length; i++) {
-                if((' ' + elem[i].className + ' ').indexOf(' ' + cl + ' ') > -1) retnode.push(elem[i]);
+                if ((' ' + elem[i].className + ' ').indexOf(' ' + cl + ' ') > -1) retnode.push(elem[i]);
             }
             return retnode;
-        }; 
+        };
     }
     if (typeof namespace._ === "undefined") {
         if (_Tracert) { console.log('metodo: "namespace._(id)", ha cargado exitosamente'); }
-        if (_Info) { console.log('info: "namespace._(id)", metodo abreviado de getElementById(), retorna un objeto a partir de su Id'); } 
+        if (_Info) { console.log('info: "namespace._(id)", metodo abreviado de getElementById(), retorna un objeto a partir de su Id'); }
         namespace._ = function (id) {
             //Funcion que retorna un objeto a partir de su id, para no usar el document.getElementById(), por FLOJERAAAA
             var item = $("#" + id)[0];
@@ -2023,4 +2122,4 @@
             }
         };
     }
-})(window || {});   
+})(window || {});
