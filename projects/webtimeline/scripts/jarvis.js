@@ -207,10 +207,10 @@
                         };                                      
                         activarBotones();  
                         var desde = self.data.First();
-                        var hasta = self.data.Last();
-                        desde = self.LPad(desde.Horas, 2) + ":" + self.LPad(desde.Minutos, 2);
-                        hasta = self.LPad(hasta.Horas, 2) + ":" + self.LPad(hasta.Minutos, 2);
+                        var hasta = self.data.Last();                        
                         if(desde!=null && hasta!=null){
+                            desde = self.LPad(desde.Horas, 2) + ":" + self.LPad(desde.Minutos, 2);
+                            hasta = self.LPad(hasta.Horas, 2) + ":" + self.LPad(hasta.Minutos, 2);
                             var tiempoTotal=self.parent.Jarvis.Utils.Time.RestarHoras(desde,hasta);
                             lblLeyenda.innerHTML="Tiempo empleado "+tiempoTotal + " horas";    
                         }
