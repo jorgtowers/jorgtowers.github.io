@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Web Timeline</title>
+
+    <!-- Bootstrap -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <link href="styles/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/StylesSheet.css" rel="stylesheet">
+    
+  
+  </head>
+
+  <body >
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Web Timeline</h1>        
+        </div>
+    </div>
+    <div class="row">     
+    <div class="col-xs-4">
+            <table id="formCreacion" >
+            <tbody>
+                
+                    <td><input id="txtId" placeholder="Id" disabled="true" class="form-control" style="display:none" /></td>
+                
+                    <td><input id="txtFecha" placeholder="Fecha" disabled="true" class="form-control" style="display:none" /></td>
+                
+                <tr>
+                    <td><input id="txtProyecto" type="text" placeholder="Nombre del Proyecto" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><textarea id="txtObservacion" placeholder="Ingrese Observacion" maxlength="255" class="form-control" style="height:150px"></textarea></td>
+                </tr>
+                <tr>
+                <td colspan="2">
+                    <a id="btnAgregar" href="javascript:void(0)"  ><b class="fa fa-plus"></b> Agregar</a>  
+                    <a id="btnGuardar" href="javascript:void(0)"   style="display:none"><b class="fa fa-save"></b> Guardar</a>  
+                    <a id="btnEliminar" href="javascript:void(0)"   style="display:none"><b class="fa fa-times"></b> Eliminar</a>  
+                    <a id="btnLimpiar" href="javascript:void(0)"  ><b class="fa fa-refresh"></b> Limpiar</a>  
+                    <br/><br/>
+                    <a id="btnBorrarBBDD" href="javascript:void(0)"  ><b class="fa fa-times"></b> Reiniciar BBDD</a>  
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>   
+        <div class="col-xs-8">
+            <a style="font-family: Lato, Tahoma; color:forestgreen" download="InformeDiario.xls"
+                                        href="#"
+                                        onclick="return ExcellentExport.excel(this, 'listado');">
+                                        <b class="fa fa-download"></b>&nbsp;Exportar a Excel</a>
+            <input id="filtro" class="form-control" placeholder="Ingrese frase a buscar..." />
+            <div id="result">
+            </div>
+            <p id="lblLeyenda"></p>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+</div>
+    
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/excellentexport.js"></script>
+    <script type="text/javascript" src="scripts/jarvis.js"></script>
+  </body>
+</html>
