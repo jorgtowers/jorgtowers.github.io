@@ -1,0 +1,30 @@
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 1.4em;
+    font-family: "Segoe UI Light";
+}
+
+td[trigger]{
+	cursor: pointer;
+}
+#formCreacion {
+    width: 100%;
+}
+
+#formCreacion>tbody>tr>td {
+    padding: .3em;
+}
+input,textarea {
+    font-size: 1.1em!important;
+    height: auto!important;
+}
+
+textarea {
+    height: 250px!important;
+}
+/*
+td:nth-child(4), td:nth-child(5), td:nth-child(6), td:nth-child(7), td:nth-child(8), th:nth-child(4), th:nth-child(5), th:nth-child(6), th:nth-child(7), th:nth-child(8) {
+    display: none;
+}*/
