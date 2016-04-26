@@ -85,6 +85,7 @@
             var bg = items[Math.floor(Math.random() * items.length)];
             var body = document.getElementsByTagName("body")[0];
             body.style.backgroundColor = "#" + bg;
+            body.style.color="white";
         },
         WebTimeline:function(){
             this.data=[];
