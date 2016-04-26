@@ -43,6 +43,7 @@
     Jarvis.prototype.Constructor = function () {
         this.myVariable = null;
         //this.NAMESPACE_PROJECT_PERSONAL.Sitio();
+        this.Projects.Github();
         this.Utils.Paths();
         if (_Tracert) { console.log("Jarvis inicializado correctamente..." + this.Runtime(Jarvis.STARTTIME)); }
         
@@ -78,6 +79,12 @@
     };
 
     Jarvis.prototype.Projects={
+        Github:function(){
+            var items = ['0078D7', '5C2D91', '008272', '107C10', '00188F', 'A80000', '002050', '004B50', '004B1C'];
+            var bg = items[Math.floor(Math.random() * items.length)];
+            var body = document.getElementsByTagName("body")[0];
+            body.style.backgroundColor = "#" + bg;
+        },
         WebTimeline:function(){
             this.data=[];
             var self =this;                    
@@ -516,7 +523,44 @@
             }
             switch (path) {
                 case "\\": {
-                    //this.Utils.SKL();               
+                    //this.Utils.SKL();
+                     var self = this;
+
+                    /* --------------------------------------------
+                     * Validation
+                     * -------------------------------------------- */
+                    this.Validation.Container("formContacto");
+                    this.Validation.FireOn.Blur.CheckRegExs();
+                    this.Validation.FireOn.Input.NotAllowSpecialCharactersToStartAText();
+                    this.Validation.FireOn.Copy.NotAllow();
+                    this.Validation.ApplyCssValidation();
+                    var btnValidar = _("btnValidar");
+                    if (btnValidar != null) {
+                        btnValidar.onclick = function () {
+                            self.Validation.Validate();
+                        }
+                    }
+                    /* --------------------------------------------
+                     * Tablas
+                     * -------------------------------------------- */
+                    var filtro = _("filtro");
+                    var tabla = _("listado");
+                    if (filtro != null) {
+                        this.parent.App.UI.Tablas.Busqueda._();
+                        this.parent.App.UI.Tablas.Ordenacion._();
+                        filtro.onkeyup = function () {
+                            self.parent.App.UI.Tablas.Busqueda.Buscar(filtro, tabla);
+                        };
+                    }
+                   /* --------------------------------------------
+                    * Palabras Claves
+                    * -------------------------------------------- */
+                    var txtTexto = _("txtTexto");
+                    if (txtTexto != null) {
+                        txtTexto.onblur = function () {
+                            self.KeyWords.Obtener(this.value,"PalabrasEncontradas");
+                        };
+                    }              
                     break;
                 }
                 case "path1.aspx": {
