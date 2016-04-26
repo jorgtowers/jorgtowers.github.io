@@ -546,8 +546,8 @@
                     var filtro = _("filtro");
                     var tabla = _("listado");
                     if (filtro != null) {
-                        this.parent.App.UI.Tablas.Busqueda._();
-                        this.parent.App.UI.Tablas.Ordenacion._();
+                        self.parent.App.UI.Tablas.Busqueda._();
+                        self.parent.App.UI.Tablas.Ordenacion._();
                         filtro.onkeyup = function () {
                             self.parent.App.UI.Tablas.Busqueda.Buscar(filtro, tabla);
                         };
