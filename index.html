@@ -34,7 +34,7 @@
 
 
     </script>
-    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/jarvis.js"></script>
 </head>
 <body>
     <div class="container">
@@ -114,10 +114,10 @@
                 <h2>JavaScript: Especialista Microsoft certificado, interesado en implementar Programación Orientada a Objetos en JavaScript </h2>
             </header>
             <footer>
-                <h3>App.js: Libreria especializada que implementa ProtoType </h3>
+                <h3>Jarvis.js: Libreria especializada que implementa ProtoType </h3>
                 <p class="texto">Recolecta funciones importantes para el uso de cualquier pàgina web, facilitando labores bàsicas de validaciones</p>
                 <p class="texto">Ofrece la bondad que solo es cargado el objeto una sola vez, optimizando el uso de memoria destinada para el procesamiento de datos</p>
-                <h4>App.Utils.Validation: Ofrece opciones de validaciones a los formularios</h4>
+                <h4>Jarvis.Utils.Validation: Ofrece opciones de validaciones a los formularios</h4>
                 <p>
 
                     <div class="divExplicacion">
@@ -148,7 +148,7 @@
                             </tbody>
                         </table>
                         <pre>
-                        var this = App.Utils;
+                        var this = Jarvis.Utils;
                         var self = this;
                         this.Validation.Container("formContacto");
                         this.Validation.FireOn.Blur.CheckRegExs();
@@ -165,7 +165,7 @@
 </pre>
                     </div>
                 </p>
-                <h4>App.Utils.Paths: Ofrece la opción de cargar métodos propios de cada pantalla</h4>
+                <h4>Jarvis.Utils.Paths: Ofrece la opción de cargar métodos propios de cada pantalla</h4>
                 <p>
                     <div class="divExplicacion">
 
@@ -193,7 +193,7 @@
                       </pre>
                     </div>
                 </p>
-                <h4>App.UI.Tablas: Ofrece metodos de Creacion, Ordenacion y Busqueda sobre tablas HTML</h4>
+                <h4>Jarvis.UI.Tablas: Ofrece metodos de Creacion, Ordenacion y Busqueda sobre tablas HTML</h4>
 
                 <p>
                     <div class="divExplicacion">
@@ -211,22 +211,22 @@
                         </table>
 
                         <pre>
-                    var this=App.Utils;
+                    var this=Jarvis.Utils;
                     var self=this; //this = App;
                     var filtro = document.getElementById("filtro");
                     var tabla = document.getElementById("listado");
                     if (filtro != null) {
-                        this.parent.App.UI.Tablas.Busqueda._();
-                        this.parent.App.UI.Tablas.Ordenacion._();
+                        this.parent.Jarvis.UI.Tablas.Busqueda._();
+                        this.parent.Jarvis.UI.Tablas.Ordenacion._();
                         filtro.onkeyup = function () {
-                            self.parent.App.UI.Tablas.Busqueda.Buscar(filtro, tabla);
+                            self.parent.Jarvis.UI.Tablas.Busqueda.Buscar(filtro, tabla);
                         };
                     }
                       </pre>
                     </div>
                 </p>
 
-                <h4>App.Utils.KeyWords: Ofrece un listado de palabras claves a partir de un texto</h4>
+                <h4>Jarvis.Utils.KeyWords: Ofrece un listado de palabras claves a partir de un texto</h4>
 
                 <p>
                     <div class="divExplicacion">
