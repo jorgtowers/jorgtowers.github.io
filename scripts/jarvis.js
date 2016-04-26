@@ -96,15 +96,15 @@
             btnEliminar.style.display="none";
             btnGuardar.style.display="none";
             var guardarDatos=function(){
-                if(localStorage.getItem("bbdd")!=null){ 
+                if(localStorage.getItem("bbdd_webtimeline")!=null){ 
                     var datos= JSON.parse(localStorage.getItem("bbdd"));
                     if(self.data.length>datos.length){
-                        localStorage.setItem("bbdd",JSON.stringify(self.data));
+                        localStorage.setItem("bbdd_webtimeline",JSON.stringify(self.data));
                     } else {
                         self.data = datos;
                     }                           
                 } else {
-                    localStorage.setItem("bbdd",JSON.stringify(self.data));
+                    localStorage.setItem("bbdd_webtimeline",JSON.stringify(self.data));
                 } 
             };
             var limpiarCampos=function(){
@@ -284,23 +284,23 @@
             btnEliminar.style.display="none";
             btnGuardar.style.display="none";
             var guardarDatos=function(){
-                if(localStorage.getItem("bbdd")!=null){ 
+                if(localStorage.getItem("bbdd_checklist")!=null){ 
                     var datos= JSON.parse(localStorage.getItem("bbdd"));
                     if(self.data.length>datos.length){
-                        localStorage.setItem("bbdd",JSON.stringify(self.data));
+                        localStorage.setItem("bbdd_checklist",JSON.stringify(self.data));
                     } else {
                         self.data = datos;
                     }                           
                 } else {
-                    localStorage.setItem("bbdd",JSON.stringify(self.data));
+                    localStorage.setItem("bbdd_checklist",JSON.stringify(self.data));
                 } 
             };
             var actualizarDatos=function(){
-                if(localStorage.getItem("bbdd")!=null){ 
+                if(localStorage.getItem("bbdd_checklist")!=null){ 
                     var datos= JSON.parse(localStorage.getItem("bbdd"));                    
-                    localStorage.setItem("bbdd",JSON.stringify(self.data));                                               
+                    localStorage.setItem("bbdd_checklist",JSON.stringify(self.data));                                               
                 } else {
-                    localStorage.setItem("bbdd",JSON.stringify(self.data));
+                    localStorage.setItem("bbdd_checklist",JSON.stringify(self.data));
                 } 
             };
             var limpiarCampos=function(){
