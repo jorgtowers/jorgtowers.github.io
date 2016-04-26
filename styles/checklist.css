@@ -5,7 +5,15 @@ body {
     font-size: 1.4em;
     font-family: "Segoe UI Light";
 }
+a {
+    color: white;
+}
 
+nav > a {
+    color: white;
+    margin: 2px;
+    font-size: 1.6em;
+}
 td[trigger]{
 	cursor: pointer;
 }
