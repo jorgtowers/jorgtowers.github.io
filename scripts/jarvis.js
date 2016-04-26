@@ -329,18 +329,15 @@
                 }
             };
             var actualizarListado=function(){                        
-                /*self.parent.Jarvis.UI.Tablas.Crear(self.data,divResult);
+                self.parent.Jarvis.UI.Tablas.Crear(self.data,divResult);
                 var tabla = _("listado");
                 self.parent.Jarvis.UI.Tablas.Ordenacion._();
                 self.parent.Jarvis.UI.Tablas.Busqueda._();
                 filtro.onkeyup = function () {                            
                     self.parent.Jarvis.UI.Tablas.Busqueda.Buscar(filtro, tabla);
-                };*/          
+                };         
                 guardarDatos();
-
-                self.parent.Jarvis.JSource.UL(self.data);
-
-                /*
+                //self.parent.Jarvis.JSource.UL(self.data);                
                 var items=document.querySelectorAll("td[trigger]");
                 for (var i = items.length - 1; i >= 0; i--) {
                     var trigger= items[i];
@@ -349,7 +346,7 @@
                         llenarCampos(selectedItem);              
                         activarBotones();                  
                     };
-                };*/                        
+                };                     
                 activarBotones();  
                 graficar();                
             };
