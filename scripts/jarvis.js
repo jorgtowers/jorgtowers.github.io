@@ -58,10 +58,10 @@
     };
     
     Jarvis.prototype.JSource={ 
-        UL:function(){
+        UL:function(datos){
             var model = document.querySelectorAll("ul[JSource]")[0];
-            var estruct=model.children[0];
-            model.innerText="";
+            var estruct=model.children[0];            
+            model.innerHTML="";
             for (var i = 0; i < datos.length; i++) {
                 var item =datos[i];
                 var targets=estruct.innerHTML.match(/{[a-zA-Z]+}/g);
@@ -329,14 +329,18 @@
                 }
             };
             var actualizarListado=function(){                        
-                self.parent.Jarvis.UI.Tablas.Crear(self.data,divResult);
+                /*self.parent.Jarvis.UI.Tablas.Crear(self.data,divResult);
                 var tabla = _("listado");
                 self.parent.Jarvis.UI.Tablas.Ordenacion._();
                 self.parent.Jarvis.UI.Tablas.Busqueda._();
                 filtro.onkeyup = function () {                            
                     self.parent.Jarvis.UI.Tablas.Busqueda.Buscar(filtro, tabla);
-                };          
+                };*/          
                 guardarDatos();
+
+                self.parent.Jarvis.JSource.UL(self.data);
+
+                /*
                 var items=document.querySelectorAll("td[trigger]");
                 for (var i = items.length - 1; i >= 0; i--) {
                     var trigger= items[i];
@@ -345,7 +349,7 @@
                         llenarCampos(selectedItem);              
                         activarBotones();                  
                     };
-                };                        
+                };*/                        
                 activarBotones();  
                 graficar();                
             };
