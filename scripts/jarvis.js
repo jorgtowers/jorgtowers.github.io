@@ -294,7 +294,7 @@
             btnGuardar.style.display="none";
             var guardarDatos=function(){
                 if(localStorage.getItem("bbdd_checklist")!=null){ 
-                    var datos= JSON.parse(localStorage.getItem("bbdd"));
+                    var datos= JSON.parse(localStorage.getItem("bbdd_checklist"));
                     if(self.data.length>datos.length){
                         localStorage.setItem("bbdd_checklist",JSON.stringify(self.data));
                     } else {
