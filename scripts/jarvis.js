@@ -61,20 +61,52 @@
     
     Jarvis.prototype.JSource={ 
         UL:function(datos){
-            var model = document.querySelectorAll("ul[JSource]")[0];
-            var estruct=model.children[0];            
-            model.innerHTML="";
+            var ulP = document.querySelectorAll("ul[JSource]")[0];
+            var liP=ulP.children[0];            
+            ulP.innerHTML="";
+            var ulC=liP.querySelectorAll("ul[JDesendant]")[0];
+            var liC=ulC.children[0];
+            ulC.innerHTML="";
             for (var i = 0; i < datos.length; i++) {
                 var item =datos[i];
-                var targets=estruct.innerHTML.match(/{[a-zA-Z]+}/g);
-                var string=estruct.innerHTML;
+                var targets=liP.innerHTML.match(/{[a-zA-Z]+}/g);
+                var string=liP.innerHTML;
+                var iData=[];
                 for (var o = 0; o < targets.length; o++) {
                     var columna = targets[o].replace(/{|}/g,"");
+                    var object = item[columna];
+                    if(typeof object !=="undefined" && object.constructor.name ==="Array"){
+                        iData=object;
+                    }
                     string=string.replace(columna,item[columna]);
                 };
-                var li= document.createElement("li");       
-                li.innerHTML =  string.replace(/{|}/g,"") ;
-                model.appendChild(li);
+                var newLiP= document.createElement("li");  
+                if(iData.length>0){
+                    var newUlC=document.createElement("ul");
+                    newLiP.innerHTML =  string.replace(/{|}/g,"") ;                    
+                    for (var a = 0; a < iData.length; a++) {
+                        var internalItem=iData[a];
+                        var internalTargets=liC.innerHTML.match(/{[a-zA-Z]+}/g);
+                        var internalString=liC.innerHTML;
+                        for (var b = 0; b < internalTargets.length; b++) {
+                            var internalColumna = internalTargets[b].replace(/{|}/g,"");
+                            var object = internalItem[internalColumna];
+                            internalString=internalString.replace(internalColumna,internalItem[internalColumna]);
+                        };
+                        var newLiC= document.createElement("li");       
+                        newLiC.innerHTML =  internalString.replace(/{|}/g,"") ;
+                        newUlC.appendChild(newLiC);
+                    };                    
+                    newLiP.appendChild(newUlC);
+                } else {
+                    newLiP.innerHTML =  string.replace(/{|}/g,"") ;
+                }
+                ulP.appendChild(newLiP);
+            };
+            ulP.removeAttribute("JSource");
+            var uls=document.querySelectorAll("ul[JDesendant]");
+            for (var c = 0; c < uls.length; c++) {
+                uls[c].remove(this);
             };
         }
     };
