@@ -43,12 +43,37 @@
     Jarvis.prototype.Constructor = function () {
         this.myVariable = null;
         //this.NAMESPACE_PROJECT_PERSONAL.Sitio();
-        this.Projects.Github();
-        this.Utils.Paths();
+        //this.Projects.Github();
+        //this.Utils.Paths();
+        this.MCSD.Noticias();
         if (_Tracert) { console.log("Jarvis inicializado correctamente..." + this.Runtime(Jarvis.STARTTIME)); }
         
     };
     
+
+    Jarvis.prototype.MCSD={
+        Noticias:function(){
+            var self=this.parent;
+            var lblStatus=document.getElementById("lblStatus");
+            var desde = new Date();
+            this.parent.Jarvis.Utils.Callback("http://webservice.notitarde.com/site/binary/json.aspx?idcat=20&cantidad=100",null,function(){
+                var data=JSON.parse(self.Jarvis.Resultado);
+                self.Jarvis.JSource.UL(data.noticias);
+                var hasta = new Date();                
+                if(desde!=null && hasta!=null){
+                    var c = ((desde-hasta)/1000);                                        
+                    lblStatus.innerHTML="Tiempo empleado "+c ;    
+                }
+            })
+        },
+        _: function () {
+            this.parent=namespace;
+            this.Noticias.parent =this;
+            delete this._;
+            return this;
+        }
+    }._();
+
     Jarvis.prototype.NAMESPACE_PROJECT_PERSONAL={
         Sitio: function () {
             var items = ['0078D7', '5C2D91', '008272', '107C10', '00188F', 'A80000', '002050', '004B50', '004B1C'];
@@ -65,8 +90,12 @@
             var liP=ulP.children[0];            
             ulP.innerHTML="";
             var ulC=liP.querySelectorAll("ul[JDesendant]")[0];
-            var liC=ulC.children[0];
-            ulC.innerHTML="";
+            var liC=null;
+            if(typeof ulC!=="undefined"){
+                liC=ulC.children[0];    
+                ulC.innerHTML="";
+            }           
+            
             for (var i = 0; i < datos.length; i++) {
                 var item =datos[i];
                 var targets=liP.innerHTML.match(/{[a-zA-Z]+}/g);
@@ -104,7 +133,7 @@
                 ulP.appendChild(newLiP);
             };
             ulP.removeAttribute("JSource");
-            var uls=document.querySelectorAll("ul[JDesendant]");
+            var uls=document.querySelectorAll("ul[JDesendant]");            
             for (var c = 0; c < uls.length; c++) {
                 uls[c].remove(this);
             };
@@ -156,7 +185,7 @@
             };
             var llenarCampos=function(item){
                 txtId.value=item.Id;
-                txtFecha.value=item.Dia+"/"+item.Mes+"/" + item.Año + " " + item.Horas +":" +item.Minutos;
+                txtFecha.value=item.Dia+"/"+item.Mes+"/" + item.Anio + " " + item.Horas +":" +item.Minutos;
                 txtProyecto.value=item.Proyecto;
                 txtObservacion.value=item.Observacion;
             };
@@ -222,7 +251,7 @@
                     if(item!==null){
                         var date = new Date();
                         item.Id=txtId.value;
-                        item.Año= date.getFullYear(); 
+                        item.Anio= date.getFullYear(); 
                         item.Mes= date.getMonth() + 1;
                         item.Dia= date.getDate();
                         item.Horas= date.getHours();
@@ -261,7 +290,7 @@
                         var item= { "Id": Math.floor((Math.random() * 9999) + 1) ,                                             
                                     "Proyecto": txtProyecto.value, 
                                     "Observacion": txtObservacion.value,
-                                    "Año": date.getFullYear(), 
+                                    "Anio": date.getFullYear(), 
                                     "Mes": date.getMonth() + 1,
                                     "Dia":date.getDate(),
                                     "Horas":date.getHours(),
@@ -2610,26 +2639,26 @@
                     }
                 }           
             };
-            Array.prototype.Distinct= function () {
+            Array.prototype.Distinct= function (column) {
                 if (_Tracert) { console.log('metodo: "Array.Radios().Distinct()", ha cargado exitosamente'); }
                 if (_Info) { console.log('info: "Array.Radios().Distinct()", retorna un arreglo de string con los nombre unicos del arreglo'); }
                 var u = {}, a = [];
-                for (var i = 0, l = arr.length; i < l; ++i) {
-                    if (u.hasOwnProperty(arr[i].name)) {
+                for (var i = 0, l = this.length; i < l; ++i) {
+                    if (u.hasOwnProperty(this[i][column])) {
                         continue;
                     }
-                    a.push(arr[i].name);
-                    u[arr[i].name] = 1;
+                    a.push(this[i][column]);
+                    u[this[i][column]] = 1;
                 }
                 return a;
             };
-            Array.prototype.DistinctName= function (sName) {
-                if (_Tracert) { console.log('metodo: "Array.Radios().DistinctName(sName)", ha cargado exitosamente'); }
-                if (_Info) { console.log('info: "Array.Radios().DistinctName(sName)", retorna un arreglo de elementos Radios filtrados por su propiedad Name comparado por el parametro sName'); }
+            Array.prototype.DistinctValue= function (column,value) {
+                if (_Tracert) { console.log('metodo: "Array.Radios().DistinctName(column,value)", ha cargado exitosamente'); }
+                if (_Info) { console.log('info: "Array.Radios().DistinctName(column,value)", retorna un arreglo de elementos Radios filtrados por su propiedad Name comparado por el parametro sName'); }
                 var a = [];
-                for (var i = 0, l = arr.length; i < l; ++i) {
-                    if (arr[i].name === sName) {
-                        a.push(arr[i]);
+                for (var i = 0, l = this.length; i < l; ++i) {
+                    if (this[i][column] === value) {
+                        a.push(this[i]);
                     }
                 }
                 return a;
