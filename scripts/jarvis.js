@@ -44,7 +44,7 @@
         this.myVariable = null;
         //this.NAMESPACE_PROJECT_PERSONAL.Sitio();
         this.Projects.Github();
-        //this.Utils.Paths();
+        this.Utils.Paths();
         //this.MCSD.Noticias();
         if (_Tracert) { console.log("Jarvis inicializado correctamente..." + this.Runtime(Jarvis.STARTTIME)); }
         
