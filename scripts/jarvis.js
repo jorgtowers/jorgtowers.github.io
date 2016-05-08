@@ -661,7 +661,12 @@
                         txtTexto.onblur = function () {
                             self.KeyWords.Obtener(this.value,"PalabrasEncontradas");
                         };
-                    }              
+                    }
+                    /* --------------------------------------------
+                    * JSource
+                    * -------------------------------------------- */
+                    self.parent.Jarvis.MCSD.Noticias();
+                    
                     break;
                 }
                 case "path1.aspx": {
