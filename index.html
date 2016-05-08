@@ -245,7 +245,7 @@
                     <pre>
                     //JAVASCRIPT:
                     var self =this;
-                    self.Jarvis.Utils.Callback("http://webservice.notitarde.com/site/binary/json.aspx?idcat=20&cantidad=100",null,function(){               
+                    self.Jarvis.Utils.Callback("http://webservice.notitarde.com/site/binary/json.aspx?idcat=20&cantidad=5",null,function(){               
                     var data=JSON.parse(self.Jarvis.Resultado);
 
                                     var datos=[];
@@ -259,7 +259,7 @@
                                         datos.push(obj);
                                     };
                                     
-                                    self.Jarvis.JSource.UL(datos);
+                                    self.Jarvis.JSource.UL(datos,{MaxLength:500});
                     });
                     //HTML:
                         &lt;ul id="noticias" JSource="data"&gt;
