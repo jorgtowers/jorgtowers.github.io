@@ -286,16 +286,21 @@
 
                         <ul id="noticias" JSource="data">
                         <li>
-                        <article>
-                            <section>
-                                <header>
-                                    <h2>{titulo}</h2>
-                                </header>
-                                <footer>
-                                    <div><img src="{urlImage}" width="150" />{texto}</div>
-                                </footer>
-                            </section>
-                        </article>
+                        {categoria}
+                            <ul JDesendant="{noticias}"> 
+                                <li>
+                                    <article>
+                                        <section>
+                                            <header>
+                                                <h2>{titulo}</h2>
+                                            </header>
+                                            <footer>
+                                                <div><img src="{urlImage}" width="150" />{texto}</div>
+                                            </footer>
+                                        </section>
+                                    </article>
+                                </li>
+                            </ul>
                         <li>
                         </ul>
                     </div>
