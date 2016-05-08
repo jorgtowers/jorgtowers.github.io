@@ -72,8 +72,8 @@
                     datos.push(obj);
                 };
                 
-                self.Jarvis.JSource.UL(datos);
-                //self.Jarvis.JSource.UL(datos,{"MaxLenght":500});
+                //self.Jarvis.JSource.UL(datos);
+                self.Jarvis.JSource.UL(datos,{"MaxLenght":500});
 
                 __("h2[item]").ForEach(function(e){
                     e.onclick=function(){
