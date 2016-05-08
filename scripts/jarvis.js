@@ -73,7 +73,7 @@
                 };
                 
                 //self.Jarvis.JSource.UL(datos);
-                self.Jarvis.JSource.UL(datos,{"MaxLenght":500});
+                self.Jarvis.JSource.UL(datos,{"MaxLenght":1000});
 
                 __("h2[item]").ForEach(function(e){
                     e.onclick=function(){
@@ -2707,8 +2707,8 @@
                 }
             };
             Array.prototype.ForEach = function (callback) {
-            for (var i = 0; i < items.length; i++) {
-                callback(items[i]);
+            for (var i = 0; i < this.length; i++) {
+                callback(this[i]);
             };
         };
           
