@@ -238,6 +238,64 @@
                     </div>
                 </p>
 
+                 <h4>Jarvis.JSorce.UL: Es capar de llenar un listado UL a partir de un listado JSON</h4>
+
+                <p>
+                    <div class="divExplicacion">
+                    <pre>
+                    //JAVASCRIPT:
+                    var self =this;
+                    self.Jarvis.Utils.Callback("http://webservice.notitarde.com/site/binary/json.aspx?idcat=20&cantidad=100",null,function(){               
+                    var data=JSON.parse(self.Jarvis.Resultado);
+
+                                    var datos=[];
+                                    var categorias=data.noticias.Distinct("categoria");
+                                    for (var i = 0 ; i<categorias.length; i ++) {
+                                        var categoria = categorias[i];
+                                        var obj={
+                                            "categoria":categoria,
+                                            "noticias":data.noticias.Distinct("categoria",categoria)
+                                        };
+                                        datos.push(obj);
+                                    };
+                                    
+                                    self.Jarvis.JSource.UL(datos);
+                    });
+                    //HTML:
+                        <ul id="noticias" JSource="data">
+                            <li>
+                            <article>
+                                <section>
+                                    <header>
+                                        <h2>{titulo}</h2>
+                                    </header>
+                                    <footer>
+                                        <div><img src="{urlImage}" />{texto}</div>
+                                    </footer>
+                                </section>
+                            </article>
+                            <li>
+                        </ul>
+                    </pre>
+
+
+                        <ul id="noticias" JSource="data">
+                        <li>
+                        <article>
+                            <section>
+                                <header>
+                                    <h2>{titulo}</h2>
+                                </header>
+                                <footer>
+                                    <div><img src="{urlImage}" />{texto}</div>
+                                </footer>
+                            </section>
+                        </article>
+                        <li>
+                        </ul>
+                    </div>
+                </p>
+
             </footer>
         </section>
         <section id="CSS3"></section>
