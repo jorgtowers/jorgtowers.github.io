@@ -614,6 +614,34 @@
     }._();
 
     Jarvis.prototype.Utils = {
+        Autoguardado : {
+            TextBoxs:{},            
+            Guardar: function(){                
+                this._();
+                localStorage.setItem("autoguardado",JSON.stringify(this.TextBoxs));                
+                console.log("autoguardado ejecutado...");
+            },
+            Recuerpar: function(){                
+                this._();
+                var data = JSON.parse(localStorage.getItem("autoguardado"));
+                if(data!==null){
+                    var campos = __("input");                                
+                    for (var i = 0; i < campos.length; i++) {
+                        var campo=campos[i];
+                        if(typeof this.TextBoxs[campo.id] !== "undefined"){
+                           campo.value = data[campo.id];
+                        }                        
+                    }
+                }
+            },
+            _:function(){
+                var campos =__("input");                                
+                for (var i = 0; i < campos.length; i++) {
+                    var campo=campos[i];
+                    this.TextBoxs[campo.id]=campo.value;
+                }
+            }
+        },
         Paths: function () {
             if (_Tracert) { console.log('metodo: "Jarvis.Utils.Paths()", ha cargado exitosamente'); }
             if (_Info) { console.log('info: "Jarvis.Utils.Paths()", Permite ejecutar invocar funciones especificas por cada URL, en caso de no desear levantar objetos ideados para otros usos'); }            
