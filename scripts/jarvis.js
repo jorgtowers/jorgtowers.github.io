@@ -44,9 +44,11 @@
         //this.NAMESPACE_PROJECT_PERSONAL.Sitio();
         this.CV.Perfil.InfoUsuario();
         this.Projects.Github();
+        try{
         this.Utils.Paths();
-        this.MCSD.Noticias();
         
+        this.MCSD.Noticias();
+        }catch(ex){}
         if (_Tracert) {
             console.log("Jarvis inicializado correctamente..." + this.Runtime(Jarvis.STARTTIME));
         }
