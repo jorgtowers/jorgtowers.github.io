@@ -45,6 +45,7 @@
         this.Projects.Github();
         this.Utils.Paths();
         this.MCSD.Noticias();
+        this.CV.Perfil.InfoUsuario();
         if (_Tracert) {
             console.log("Jarvis inicializado correctamente..." + this.Runtime(Jarvis.STARTTIME));
         }
