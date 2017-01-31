@@ -3258,8 +3258,8 @@
         return (((new Date() - starTime) / 1000).toFixed(2) + " segundos...");
     };
     /*----------------------------
-     * Propiedades Públicas
-     *----------------------------*/
+    * Propiedades Públicas
+    *----------------------------*/
     try {
         Object.defineProperty(Object.prototype, 'Enum', {
             value: function () {
@@ -3314,8 +3314,8 @@
             }
         });
         /* -------------------------------------------------------------------
-        * Extendiendo objetos propios del JavaScript, 
-        * para mejorar la programación de los métodos propios 
+        * Extendiendo objetos propios del JavaScript,
+        * para mejorar la programación de los métodos propios
         * ------------------------------------------------------------------- */
         HTMLCollection.prototype.ToArray = function () {
             if (_Tracert) {
@@ -3345,7 +3345,7 @@
             ;
             return arr;
         };
-         String.prototype.Formato = function (controlAValidar) {
+        String.prototype.Formato = function (controlAValidar) {
             var texto = this.toString();
             function _LimpiarYNotificar(mensaje) {
                 controlAValidar.value = "";
@@ -3354,7 +3354,7 @@
                 if (lblFeedBack !== null) {
                     lblFeedBack.innerHTML = mensaje;
                     lblFeedBack.style.color = "red";
-                }                
+                }
             }
             var _ = {
                 Cedula: function () {
@@ -3386,7 +3386,7 @@
                             } else {
                                 _LimpiarYNotificar("El formato de cédula no coincide... Ej. V-12.345.678");
                                 return "";
-                            }                            
+                            }
                         }
                         else {
                             _LimpiarYNotificar("El formato de cédula no coincide... Ej. V-12.345.678");
@@ -3410,7 +3410,6 @@
                                 _LimpiarYNotificar("El formato de fecha no coincide... Ej. 01/01/2016");
                                 return "";
                             }
-
                         } else {
                             _LimpiarYNotificar("El formato de fecha no coincide... Ej. 01/01/2016");
                             return "";
@@ -3449,7 +3448,7 @@
             str = this.replace(/([^\W_]+[^\s-]*) */g, function (txt) {
                 return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
             });
-            // Certain minor words should be left lowercase unless 
+            // Certain minor words should be left lowercase unless
             // they are the first or last words in the string
             lowers = ['El', 'En', 'Lo', 'Con', 'Un', 'La', 'Los', 'De', 'Desde', 'Hasta', 'Del', 'Las'];
             for (i = 0,
@@ -3510,7 +3509,7 @@
                         console.log('info: "Array.Radios().Distinct()", retorna un arreglo de string con los nombre unicos del arreglo');
                     }
                     var u = {}
-                      , a = [];
+                    , a = [];
                     for (var i = 0, l = arr.length; i < l; ++i) {
                         if (u.hasOwnProperty(arr[i].name)) {
                             continue;
@@ -3528,7 +3527,7 @@
                         console.log('info: "Array.Radios().FirstAtEachName()", retorna un arreglo de elementos Radios tomando el primer elemento de cada sub arreglo');
                     }
                     var u = {}
-                      , a = [];
+                    , a = [];
                     for (var i = 0, l = arr.length; i < l; ++i) {
                         if (u.hasOwnProperty(arr[i].name)) {
                             continue;
@@ -3584,7 +3583,7 @@
             }
             if (typeof value === "undefined") {
                 var u = {}
-                  , a = [];
+                , a = [];
                 for (var i = 0, l = this.length; i < l; ++i) {
                     if (u.hasOwnProperty(this[i][column])) {
                         continue;
@@ -3612,8 +3611,8 @@
         console.log("this explorer no support definition the properties");
     }
     /*--------------------------------------------
-     * Extendiendo window para metodos abreviados
-     *--------------------------------------------*/
+    * Extendiendo window para metodos abreviados
+    *--------------------------------------------*/
     if (typeof namespace.$ === "undefined") {
         if (_Tracert) {
             console.log('metodo: "namespace.$(id)", ha cargado exitosamente');
@@ -3664,7 +3663,7 @@
             console.log('info: "namespace._(id)", metodo abreviado de getElementById(), retorna un objeto a partir de su Id');
         }
         namespace._ = function (id) {
-            var item = $("#"+id)[0];
+            var item = $(id);
             if (item !== null) {
                 return item;
             } else {
@@ -3686,48 +3685,60 @@
         }
         ;
     }
-    /*----------------------------
-     * Para Usar como plantilla para nuevos metodos, metodos obsoletos y/o propiedades 
-     *----------------------------*/
-    /* 
-        Jarvis.prototype.SUB_NAMESPACE = {
-            METODO1: function () {
-            },
-            SUBCLASE: {
-                METODO1: function () { },
-                METODO2: function () { }
-            }
-        };
-        Jarvis.prototype.NuevoMetodo = function (callback) {
-            if (_Tracert) { console.log('metodo: "Jarvis.NuevoMetodo()" ha cargado exitosamente'); }
-            var STARTTIME = new Date();
-            var self = this;
-
-            if (typeof callback === 'function') {
-                callback();
-            }
-
-            if (_Tracert) { console.log('"Jarvis.NuevoMetodo()" realizado en ' + this.Runtime(STARTTIME)); }
-        };
-        //Marcar MÃ©todo Obsoleto
-        Jarvis.prototype.MetodoObsoleto = function () {
-            var self = this;
-            var e = "[deprecated] MetodoObsoleto estÃ¡ Obsoleto y serÃ¡ removido en futuras versiones. Usar el siguiente mÃ©todo NOMBRE_NUEVO_METODO";
-            if (!this.NOMBRE_NUEVO_METODO) { throw (e); }
-            (this.MetodoObsoleto = function () {
-                console.log(e);
-                self.NOMBRE_NUEVO_METODO();
-            })();
+    if (typeof namespace.j === "undefined") {
+        if (_Tracert) {
+            console.log('metodo: "namespace.__(selector)", ha cargado exitosamente');
         }
-        Object.defineProperty(Jarvis.prototype, "Propiedad", {
-            get: function Propiedad() {
-                return myVariable;
-            },
-            set: function Propiedad(value) {
-                unidad = myVariable;
-            }
-        });
-        */
+        if (_Info) {
+            console.log('info: "namespace.__(selector)", metodo abreviado de querySelectorAll(selector), retorna un arreglo de objetos a partir de su selector');
+        }
+        namespace.j = function (selector,firstElement) {
+            var items = document.querySelectorAll(selector);
+            if (typeof(firstElement) !== "undefined")
+                return items.ToArray().First();                
+            else
+                return items.ToArray();
+            };
+    }
+    /*----------------------------
+    * Para Usar como plantilla para nuevos metodos, metodos obsoletos y/o propiedades
+    *----------------------------*/
+    /*
+    Jarvis.prototype.SUB_NAMESPACE = {
+    METODO1: function () {
+    },
+    SUBCLASE: {
+    METODO1: function () { },
+    METODO2: function () { }
+    }
+    };
+    Jarvis.prototype.NuevoMetodo = function (callback) {
+    if (_Tracert) { console.log('metodo: "Jarvis.NuevoMetodo()" ha cargado exitosamente'); }
+    var STARTTIME = new Date();
+    var self = this;
+    if (typeof callback === 'function') {
+    callback();
+    }
+    if (_Tracert) { console.log('"Jarvis.NuevoMetodo()" realizado en ' + this.Runtime(STARTTIME)); }
+    };
+    //Marcar MÃ©todo Obsoleto
+    Jarvis.prototype.MetodoObsoleto = function () {
+    var self = this;
+    var e = "[deprecated] MetodoObsoleto estÃ¡ Obsoleto y serÃ¡ removido en futuras versiones. Usar el siguiente mÃ©todo NOMBRE_NUEVO_METODO";
+    if (!this.NOMBRE_NUEVO_METODO) { throw (e); }
+    (this.MetodoObsoleto = function () {
+    console.log(e);
+    self.NOMBRE_NUEVO_METODO();
+    })();
+    }
+    Object.defineProperty(Jarvis.prototype, "Propiedad", {
+    get: function Propiedad() {
+    return myVariable;
+    },
+    set: function Propiedad(value) {
+    unidad = myVariable;
+    }
+    });
+    */
     namespace.Jarvis = new Jarvis();
 })(window || {});
-
