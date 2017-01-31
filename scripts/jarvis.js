@@ -392,7 +392,7 @@
                         ],
                     },
                     "kwonledge":{
-                        "title":"Conocimientos Técnicas",
+                        "title":"Conocimientos Técnicos",
                         "items":[{
                             "title":"Instructor HTML5, Css3 y Javascript",
                             "description":"Creating and Styling HTML Pages"                            
