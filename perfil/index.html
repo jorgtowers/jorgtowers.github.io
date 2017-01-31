@@ -3,35 +3,35 @@
 <head>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
 	<title></title>
-	<script type="text/javascript" src="js/jarvis.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles/cv.css">
+	<script type="text/javascript" src="/scripts/jarvis.js"></script>
+	<link rel="stylesheet" type="text/css" href="/styles/cv.css">
 </head>
 <body>
 <div class="row">
 	<div class="col-4 bg-green txt-grey">
 		<section  title="Candidate" class="candidato">
-			<img src="images/@{candidate.image}" alt="Candidato">
+			<img src="/images/@{candidate.image}" alt="Candidato">
 			<p>@{candidate.firstName}, @{candidate.lastName} </p>
 			<span>@{candidate.specialty}</span>
 		</section>
 		<article title="Profile">
-			<header><h3><img src="images/11.png" alt=""/> @{profile.title}</h3></header>
+			<header><h3><img src="/images/11.png" alt=""/> @{profile.title}</h3></header>
 			<section class='txtSmallSize'>@{profile.description}</section>
 		</article>
 		<article title="Contact">
-			<header><h3><img src="images/22.png" alt=""/> @{contact.title}</h3></header>
+			<header><h3><img src="/images/22.png" alt=""/> @{contact.title}</h3></header>
 			<section>
 				<ul id='ulContact'>
-					<li><img src="images/phone.png" /> @{contact.phone}</li>
-					<li><img src="images/email.png" /> @{contact.mail}</li>
-					<li><img src="images/skype.png" /> @{contact.skype}</li>
-					<li><img src="images/web.png" /> @{contact.website}</li>
-					<li><img src="images/point.png" /> @{contact.location}</li>
+					<li><img src="/images/phone.png" /> @{contact.phone}</li>
+					<li><img src="/images/email.png" /> @{contact.mail}</li>
+					<li><img src="/images/skype.png" /> @{contact.skype}</li>
+					<li><img src="/images/web.png" /> @{contact.website}</li>
+					<li><img src="/images/point.png" /> @{contact.location}</li>
 				</ul>
 			</section>
 		</article>
 		<article title="Personal Skills">
-			<header><h3><img src="images/222.png" alt=""/> @{personalSkill.title}</h3></header>
+			<header><h3><img src="/images/222.png" alt=""/> @{personalSkill.title}</h3></header>
 			<section>
 				<ul id='ulPersonalSkill' ds='@{personalSkill.items}'>
 					<li>@[personalSkill.items.title] <div><b style="width:@[personalSkill.items.percent]%"></b></div></li>
@@ -42,7 +42,7 @@
 	<div class="col-8 bg-gray txt-green">
 		<article title="Work Experience">
 			<header>
-				<h3><img src="images/3.png" alt=""> @{workExperience.title}</h3>
+				<h3><img src="/images/3.png" alt=""> @{workExperience.title}</h3>
 			</header>
 			<section>
 				<ul id='ulWorkExperience' ds='@{workExperience.items}'>
@@ -56,7 +56,7 @@
 		</article>
 		<article  title="Courses" style="padding-bottom: 37px;">
 			<header>
-				<h3><img src="images/5.png" alt=""> @{courses.title}</h3>
+				<h3><img src="/images/5.png" alt=""> @{courses.title}</h3>
 			</header>
 			<section>
 			<ul id='ulCourses' ds='@{courses.items}'>
@@ -73,7 +73,7 @@
 	<div class="col-11 bg-gray txt-green">
 		<article title="ProfessionalSkills">
 			<header>
-				<h3><img src="images/5.png" alt=""> @{professionalSkill.title}</h3>
+				<h3><img src="/images/5.png" alt=""> @{professionalSkill.title}</h3>
 			</header>
 			<section>
 			<ul id='ulProfessionalSkill' ds='@{professionalSkill.items}'>
@@ -83,12 +83,12 @@
 		</article>
 		<article title="Certifications">
 			<header>
-				<h3><img src="images/4.png" alt=""> @{certification.title}</h3>
+				<h3><img src="/images/4.png" alt=""> @{certification.title}</h3>
 			</header>
 			<section>
 			<ul id='ulCertification' ds='@{certification.items}'>
 				<li>
-					<img src="images/@[certification.items.logo]" alt=""> 
+					<img src="/images/@[certification.items.logo]" alt=""> 
 					<p>@[certification.items.title]</p>
 						<span>@[certification.items.description]</span>
 						<small>@[certification.items.duration]</small>
@@ -98,7 +98,7 @@
 		</article>
 		<article title="Awards">
 			<header>
-				<h3><img src="images/88.png" alt=""> @{awards.title}</h3>
+				<h3><img src="/images/88.png" alt=""> @{awards.title}</h3>
 			</header>
 			<section>
 			<ul id='ulAwards' ds='@{awards.items}'>
@@ -111,7 +111,7 @@
 		</article>
 		<article title="Projects">
 			<header>
-				<h3><img src="images/9.png" alt=""> @{projects.title}</h3>
+				<h3><img src="/images/9.png" alt=""> @{projects.title}</h3>
 			</header>
 			<section>
 			<ul id='ulProjects' ds='@{projects.items}'>
@@ -133,7 +133,7 @@
 	<div class="col-11 bg-gray txt-green">
 		<article title="Knowledge">
 			<header>
-				<h3><img src="images/5.png" alt=""> @{kwonledge.title}</h3>
+				<h3><img src="/images/5.png" alt=""> @{kwonledge.title}</h3>
 			</header>
 			<section>			
 			<ul id='ulKnowLedge' ds='@{kwonledge.items}'>
@@ -143,7 +143,7 @@
 		</article>
 		<article title="References">
 			<header>
-				<h3><img src="images/13.png" alt=""> @{references.title}</h3>
+				<h3><img src="/images/13.png" alt=""> @{references.title}</h3>
 			</header>
 			<section>			
 			<ul id='ulReferences' ds='@{references.items}'>
