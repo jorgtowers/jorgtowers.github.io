@@ -388,6 +388,10 @@
                             "title":"Unity 2D: Video juego de plataformas",
                             "companyName":"Video2Brain",
                             "duration":""
+                            },{
+                            "title":"Course 20410D: Installing and Configuring Windows Server 2012",
+                            "companyName":"Lourtec, S.A.",
+                            "duration":"40 Horas"
                             }
                         ],
                     },
