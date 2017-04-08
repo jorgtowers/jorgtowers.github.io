@@ -139,7 +139,7 @@
                     "workExperience":{
                         "title":"Experiencia Laboral",
                         "items":[{
-                            "title":"Gerente de Tecnología de Información",
+                            "title":"<b>Gerente de Tecnología de Información</b>",
                             "companyName":"Editorial Notitarde, C.A.",
                             "period":"Agosto de 2016 – actualidad (6 meses)"
                             }, {
@@ -217,7 +217,7 @@
                     "courses":{
                         "title":"Formación",
                         "items":[{
-                            "title":"MCPD Microsoft Certified Professional Developer",
+                            "title":"<b>MCPD Microsoft Certified Professional Developer</b>",
                             "companyName":"Lourtec, S.A.",
                             "duration":""
                             }, {
@@ -225,15 +225,15 @@
                             "companyName":"Lourtec, S.A.",
                             "duration":""
                             } , {
-                            "title":"Base de Datos Oracle 10g: Programación PL/SQL",
+                            "title":"<b>Base de Datos Oracle 10g: Programación PL/SQL</b>",
                             "companyName":"",
                             "duration":""
                             } , {
-                            "title":"Object Oriented Programming Using Visual Studio",
+                            "title":"<b>Object Oriented Programming Using Visual Studio</b>",
                             "companyName":"",
                             "duration":""
                             } , {
-                            "title":"Developing Web Applications Using Microsoft Visual Studio",
+                            "title":"<b>Developing Web Applications Using Microsoft Visual Studio</b>",
                             "companyName":"",
                             "duration":""
                             } , {
@@ -285,11 +285,11 @@
                             "companyName":"Keys, S.A.",
                             "duration":""
                             }, {
-                            "title":"MS2400 Implementing and Managing Microsft Exchange Server 2003",
+                            "title":"<b>MS2400 Implementing and Managing Microsft Exchange Server 2003</b>",
                             "companyName":"Conredsis, C.A.",
                             "duration":""
                             }, {
-                            "title":"MCSD Microsoft Certified Solutions Developer",
+                            "title":"<b>MCSD Microsoft Certified Solutions Developer</b>",
                             "companyName":"Lourtec, S.A.",
                             "duration":""
                             }, {
@@ -389,7 +389,11 @@
                             "companyName":"Video2Brain",
                             "duration":""
                             },{
-                            "title":"Course 20410D: Installing and Configuring Windows Server 2012",
+                            "title":"<b>Course 20410D: Installing and Configuring Windows Server® 2012</b>",
+                            "companyName":"Lourtec, S.A.",
+                            "duration":"40 Horas"
+                            },{
+                            "title":"<b>Course 20411D: Administering Windows Server® 2012</b>",
                             "companyName":"Lourtec, S.A.",
                             "duration":"40 Horas"
                             }
