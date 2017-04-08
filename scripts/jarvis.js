@@ -165,13 +165,13 @@
                         "title":"Certificaciones",
                         "items":[{
                             "logo":"microsoft.png",
-                            "title":"MCP: Microsoft Certified Professional",
+                            "title":"<b>MCP: Microsoft Certified Professional</b>",
                             "description":"Microsoft, Número de la licencia: Licencia: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
                             "companyName":"Microsoft",
                             "duration":"Diciembre de 2015 – actualidad"
                             },{
                             "logo":"microsoft.png",
-                            "title":"MS: Programming in HTML5 with JavaScript and CSS3",
+                            "title":"<b>MS: Programming in HTML5 with JavaScript and CSS3</b>",
                             "description":"Microsoft, Número de la licencia: Licencia: F543-1409 Transcript ID: 1176383 Access Code: Certificacion",
                             "companyName":"Microsoft",
                             "duration":"Diciembre de 2015 – actualidad"
@@ -206,7 +206,7 @@
                             "description":"Se innova solución web para la carga de fotos a publicar en el suplemento NOTITA, lo que permite a los usuarios ingresar al portal notita.notitarde.com, optimizando el proceso de envió y publicación de fotos para el suplemento.",
                             "members":"Jorge Torres, Andrés Villanueva"
                             },{                            
-                            "title":"Migración Tecnología COM a .NET",
+                            "title":"<b>Migración Tecnología COM a .NET</b>",
                             "companyName":"Editorial Notitarde, C.A.",
                             "duration":"Fecha de comienzo agosto de 2012",
                             "description":"Se realizó la migración del núcleo de desarrollo del portal www.notitarde.com, el cual estaba desarrollado en tecnología COM (Component Object Model) y se actualió a NetFramework 4.0",
@@ -478,11 +478,14 @@
                     "references":{
                         "title":"Referencias",
                         "items":[{                            
+                            "title":"Natasha Machado",
+                            "phone":"+58(414)594.80.82"
+                            },{                            
                             "title":"Luiz Arraiz",
-                            "phone":"+52 1(81)1865.6905"
+                            "phone":"+52 1(81)1865.69.05"
                             },{                            
                             "title":"Luz Celeste Alvarado",
-                            "phone":"+58(414)593.3011"
+                            "phone":"+58(414)593.30.11"
                             }
                         ]
                     }
