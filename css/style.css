@@ -4,9 +4,9 @@
     right: 0;
     z-index: 99990;
 }
-   .sin-demo {
-    
+.sin-demo {
     width: 100%;
+    margin-bottom: 4em;
 }
        .sin-demo .image {
     width: 360px;
@@ -54,4 +54,31 @@
   letter-spacing: 2px;
   margin: 10px 0 50px;
   text-transform: uppercase;
+}
+
+section#services>div>div>ul {
+    list-style: none;
+    padding: 0;
+}
+
+section#services>div>div>ul>li {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    height: 200px;
+    text-align: center;
+    padding: 0 2em;
+    margin-bottom: 2em;
+}
+
+section#services>div>div>ul>li>p {
+    text-align: center;
+}
+span.fa-stack.fa-3x>.fa-stack-1x {
+    position: absolute;
+    margin-top: -107px;
+}
+
+span.fa-stack.fa-3x>.fa-stack-2x {
+    color: #00afef;
 }
