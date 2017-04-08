@@ -43,7 +43,7 @@
     Jarvis.prototype.Constructor = function () {
         //this.NAMESPACE_PROJECT_PERSONAL.Sitio();
         this.CV.Perfil.InfoUsuario();
-        this.Projects.Github();
+        //this.Projects.Github();
         try{
         this.Utils.Paths();
         
