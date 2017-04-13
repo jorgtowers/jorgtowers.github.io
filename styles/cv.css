@@ -135,7 +135,15 @@ html{
     color: #d9d9d9;
 }
 
-
+ul#language {
+    position: absolute;
+    top: -14px;
+    list-style: none;
+    right: 0;
+}
+ul#language>li {
+    float: left;
+}
 
 h3:after {
     left: 14px;
