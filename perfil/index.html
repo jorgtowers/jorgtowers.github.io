@@ -3,12 +3,19 @@
 <head>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
 	<title></title>
-	<script type="text/javascript" src="/scripts/jarvis.js"></script>
-	<link rel="stylesheet" type="text/css" href="/styles/cv.css">
+	<script type="text/javascript" src="../scripts/jarvis.js"></script>
+	<link rel="stylesheet" type="text/css" href="../styles/cv.css">
 </head>
 <body>
 <div class="row">
-	<div class="col-12" style="height:24px"><a href="/">Volver a la página principal</a></div>
+<div class="col-12" style="height:24px;position:relative">
+<a href="/">Volver a la página principal</a>
+<ul id="language">
+
+	<li><a href="?lang=es"><img src="../images/ve.png"/></a></li>
+	<li><a href="?lang=en"><img src="../images/us.png"/></a></li>
+	</ul>
+</div>
 	<div class="col-4 bg-green txt-grey">
 		<section  title="Candidate" class="candidato">
 			<img src="../images/@{candidate.image}" alt="Candidato">
@@ -69,7 +76,7 @@
 </div>
 <div class="row" style="padding-top: 1px;">
 	<div class="col-1 bg-green txt-grey">
-		<p class="txt90deg">Destrezas - Logros - Proyectos - Certificaciones</p>
+		<p class="txt90deg">@{pages.page1}</p>
 	</div>
 	<div class="col-11 bg-gray txt-green">
 		<article title="ProfessionalSkills">
@@ -129,7 +136,7 @@
 </div>
 <div class="row" style="padding-top: 1px;">
 	<div class="col-1 bg-green txt-grey">
-		<p class="txt90deg">Referencias Personales - Dominio en conocimientos</p>
+		<p class="txt90deg">@{pages.page2}</p>
 	</div>
 	<div class="col-11 bg-gray txt-green">
 		<article title="Knowledge">
