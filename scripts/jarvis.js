@@ -303,25 +303,21 @@
                             "companyName": "World Gold Corp, C.A.",
                             "period": "Octubre de 2017 – actualidad"
                         }, {
-                            "title": "<b>Gerente de Tecnología de Información</b>",
+                            "title": "Gerente de Tecnología de Información",
                             "companyName": "Editorial Notitarde, C.A.",
                             "period": "Agosto de 2016 – Octubre de 2017"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
                             "companyName": "Lourtec, S.A.",
-                            "period": "Abril de 2016 – actualidad (10 meses)"
+                            "period": "Abril de 2016 – Noviembre de 2016"
                         }, {
                             "title": "Supervisor de Desarrollo Web",
                             "companyName": "Editorial Notitarde, C.A.",
-                            "period": "Mayo de 2011 – actualidad (5 años 9 meses)"
+                            "period": "Mayo de 2004 – Agosto de 2016 (12 años)"
                         }, {
                             "title": "Instructor de C#",
                             "companyName": "Lourtec, S.A.",
-                            "period": "Febrero de 2015 – marzo de 2015 (2 meses)"
-                        }, {
-                            "title": "Supervisor de Sistemas",
-                            "companyName": "Editorial Notitarde, C.A.",
-                            "period": "Mayo de 2004 – mayo de 2011 (7 años 1 mes)"
+                            "period": "Febrero de 2015 – Marzo de 2015 (2 meses)"
                         }
                         ]
                     },
@@ -444,11 +440,13 @@
                             "title": "Liderazgo Transformacional",
                             "companyName": "",
                             "duration": ""
-                        }, {
-                            "title": "Introducción a las Redes",
-                            "companyName": "Keys, S.A.",
-                            "duration": ""
-                        }, {
+                        }
+                        //, {
+                        //    "title": "Introducción a las Redes",
+                        //    "companyName": "Keys, S.A.",
+                        //    "duration": ""
+                        //}
+                        , {
                             "title": "<b>MS2400 Implementing and Managing Microsft Exchange Server 2003</b>",
                             "companyName": "Conredsis, C.A.",
                             "duration": ""
@@ -544,11 +542,13 @@
                             "title": "Cómo manejar el estrés",
                             "companyName": "Video2Brain",
                             "duration": ""
-                        }, {
-                            "title": "Cómo mejorar tu confianza",
-                            "companyName": "Video2Brain",
-                            "duration": ""
-                        }, {
+                        },
+                        //{
+                        //    "title": "Cómo mejorar tu confianza",
+                        //    "companyName": "Video2Brain",
+                        //    "duration": ""
+                        //},
+                        {
                             "title": "Unity 2D: Video juego de plataformas",
                             "companyName": "Video2Brain",
                             "duration": ""
@@ -748,25 +748,29 @@
                     "workExperience": {
                         "title": "Work Experience",
                         "items": [{
-                            "title": "<b>Information Technology Manager</b>",
+                            "title": "<b>Developer Senior</b>",
+                            "companyName": "GIGA Automation & IT",
+                            "period": "Jun 2017 – Currently"
+                        }, {
+                            "title": "<b>Director IT</b>",
+                            "companyName": "World Gold Corp, C.A.",
+                            "period": "October 2017 – Currently"
+                        }, {
+                            "title": "Information Technology Manager",
                             "companyName": "Editorial Notitarde, C.A.",
-                            "period": "August de 2016 – Currently (6 months)"
+                            "period": "August 2016 – October 2017"
                         }, {
                             "title": "HTML5, Css3 y Javascript Instructor",
                             "companyName": "Lourtec, S.A.",
-                            "period": "April de 2016 – Currently (10 months)"
+                            "period": "April 2016 – November 2016"
                         }, {
                             "title": "Web Development Supervisor",
                             "companyName": "Editorial Notitarde, C.A.",
-                            "period": "May de 2011 – Currently (5 years 9 months)"
+                            "period": "May 2014 – August 2016"
                         }, {
                             "title": "C# Instructor",
                             "companyName": "Lourtec, S.A.",
-                            "period": "Febrary 2015 – March 2015 (2 months)"
-                        }, {
-                            "title": "Systems Supervisor",
-                            "companyName": "Editorial Notitarde, C.A.",
-                            "period": "May 2004 – Mayo 2011 (7 years 1 month)"
+                            "period": "Febrary 2015 – March 2015"
                         }
                         ]
                     },
@@ -889,11 +893,13 @@
                             "title": "Liderazgo Transformacional",
                             "companyName": "",
                             "duration": ""
-                        }, {
-                            "title": "Introducción a las Redes",
-                            "companyName": "Keys, S.A.",
-                            "duration": ""
-                        }, {
+                        },
+                        //{
+                        //    "title": "Introducción a las Redes",
+                        //    "companyName": "Keys, S.A.",
+                        //    "duration": ""
+                        //},
+                        {
                             "title": "<b>MS2400 Implementing and Managing Microsft Exchange Server 2003</b>",
                             "companyName": "Conredsis, C.A.",
                             "duration": ""
@@ -989,11 +995,13 @@
                             "title": "Cómo manejar el estrés",
                             "companyName": "Video2Brain",
                             "duration": ""
-                        }, {
-                            "title": "Cómo mejorar tu confianza",
-                            "companyName": "Video2Brain",
-                            "duration": ""
-                        }, {
+                        },
+                        //{
+                        //    "title": "Cómo mejorar tu confianza",
+                        //    "companyName": "Video2Brain",
+                        //    "duration": ""
+                        //},
+                        {
                             "title": "Unity 2D: Video juego de plataformas",
                             "companyName": "Video2Brain",
                             "duration": ""
@@ -1003,6 +1011,10 @@
                             "duration": "40 Horas"
                         }, {
                             "title": "<b>Course 20411D: Administering Windows Server® 2012</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": "40 Horas"
+                        }, {
+                            "title": "<b>Course 20412D: Configuring Advanced Windows Server® 2012 Services</b>",
                             "companyName": "Lourtec, S.A.",
                             "duration": "40 Horas"
                         }
@@ -1095,6 +1107,9 @@
                         }, {
                             "title": "Luz Celeste Alvarado",
                             "phone": "+58(414)593.30.11"
+                        }, {
+                            "title": "Lisbet Obispo",
+                            "phone": "+54(9)11-6578-2869"
                         }
                         ]
                     },
