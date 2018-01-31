@@ -44,16 +44,16 @@
         //this.NAMESPACE_PROJECT_PERSONAL.Sitio();
         this.CV.Perfil.InfoUsuario();
         //this.Projects.Github();
-        try{
-        this.Utils.Paths();
-        
-        this.MCSD.Noticias();
-        }catch(ex){}
+        try {
+            this.Utils.Paths();
+
+            this.MCSD.Noticias();
+        } catch (ex) { }
         if (_Tracert) {
             console.log("Jarvis inicializado correctamente..." + this.Runtime(Jarvis.STARTTIME));
         }
     };
-   
+
     Jarvis.prototype.MCSD = {
         Noticias: function () {
             var self = this.parent;
@@ -187,953 +187,968 @@
             ;
         }
     };
-     Jarvis.prototype.CV = {
+    Jarvis.prototype.CV = {
         Perfil: {
             InfoUsuario: function () {
                 var QueryString = function () {
-                      // This function is anonymous, is executed immediately and 
-                      // the return value is assigned to QueryString!
-                      var query_string = {};
-                      var query = window.location.search.substring(1);
-                      var vars = query.split("&");
-                      for (var i=0;i<vars.length;i++) {
+                    // This function is anonymous, is executed immediately and 
+                    // the return value is assigned to QueryString!
+                    var query_string = {};
+                    var query = window.location.search.substring(1);
+                    var vars = query.split("&");
+                    for (var i = 0; i < vars.length; i++) {
                         var pair = vars[i].split("=");
-                            // If first entry with this name
+                        // If first entry with this name
                         if (typeof query_string[pair[0]] === "undefined") {
-                          query_string[pair[0]] = decodeURIComponent(pair[1]);
+                            query_string[pair[0]] = decodeURIComponent(pair[1]);
                             // If second entry with this name
                         } else if (typeof query_string[pair[0]] === "string") {
-                          var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-                          query_string[pair[0]] = arr;
+                            var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+                            query_string[pair[0]] = arr;
                             // If third or later entry with this name
                         } else {
-                          query_string[pair[0]].push(decodeURIComponent(pair[1]));
+                            query_string[pair[0]].push(decodeURIComponent(pair[1]));
                         }
-                      } 
-                      return query_string;
-                    }();
-                var es ={
-                    "candidate":{
-                        "firstName":"Jorge L.",
-                        "lastName":"Torres A.",
-                        "specialty":"Desarrollador FrontEnd",
-                        "image":"candidate.jpg"
+                    }
+                    return query_string;
+                }();
+                var es = {
+                    "candidate": {
+                        "firstName": "Jorge L.",
+                        "lastName": "Torres A.",
+                        "specialty": "Desarrollador FrontEnd",
+                        "image": "candidate.jpg"
                     },
-                    "profile":{
-                        "title":"Perfil",
-                        "description":"Desarrollador profesional certificado por Microsoft, con experiencia desarrollando soluciones empresariales en plataforma .net (C#), certificado en HTML5, CCS3 y JavaScript, interesado en aprender cada día nuevos conocimientos."
+                    "profile": {
+                        "title": "Perfil",
+                        "description": "Desarrollador profesional certificado por Microsoft, con experiencia desarrollando soluciones empresariales en plataforma .net (C#), certificado en HTML5, CCS3 y JavaScript, interesado en aprender cada día nuevos conocimientos."
                     },
-                    "contact":{
-                        "title":"Contacto",
-                        "phone":"+58(424)460.0577",
-                        "mail":"jorgtowers@gmail.com",
-                        "skype":"jorgtowers",
-                        "website":"jorgtowers.github.com",
-                        "location":"Carabobo, Venezuela"
+                    "contact": {
+                        "title": "Contacto",
+                        "phone": "+58(424)460.0577",
+                        "mail": "jorgtowers@gmail.com",
+                        "skype": "jorgtowers",
+                        "website": "jorgtowers.github.com",
+                        "location": "Carabobo, Venezuela"
                     },
-                    "personalSkill":{
-                        "title":"Habilidades Personales",
-                        "items":[{
-                            "title":"Líder",
-                            "percent":"98"
-                            },{
-                             "title":"Paciente",
-                             "percent":"80"   
-                            },{
-                             "title":"Tolerante",
-                             "percent":"70"   
-                            },{
-                             "title":"Guía",
-                             "percent":"30"   
-                            },{
-                             "title":"Motivador",
-                             "percent":"50"   
-                            }
+                    "personalSkill": {
+                        "title": "Habilidades Personales",
+                        "items": [{
+                            "title": "Líder",
+                            "percent": "98"
+                        }, {
+                            "title": "Paciente",
+                            "percent": "80"
+                        }, {
+                            "title": "Tolerante",
+                            "percent": "70"
+                        }, {
+                            "title": "Guía",
+                            "percent": "30"
+                        }, {
+                            "title": "Motivador",
+                            "percent": "50"
+                        }
                         ]
                     },
-                    "professionalSkill":{
-                        "title":"Habilidades Personales",
-                        "items":[{
-                            "title":"Javascript",
-                            "percent":"98"
-                            },{
-                             "title":"CSharp (C#)",
-                             "percent":"98"   
-                            },{
-                             "title":"HTML5",
-                             "percent":"98"   
-                            },{
-                             "title":"CSS3",
-                             "percent":"95"   
-                            },{
-                             "title":"POO",
-                             "percent":"98"   
-                            },{
-                             "title":"Microsoft Excel",
-                             "percent":"80"   
-                            },{
-                             "title":"Microsoft Visio",
-                             "percent":"60"   
-                            },{
-                             "title":"Microsoft Project",
-                             "percent":"40"   
-                            },{
-                             "title":"ITIL",
-                             "percent":"50"   
-                            },{
-                             "title":"PHP",
-                             "percent":"30"   
-                            },{
-                             "title":"JSON",
-                             "percent":"98"   
-                            },{
-                             "title":"AngularJS",
-                             "percent":"30"   
-                            }
+                    "professionalSkill": {
+                        "title": "Habilidades Personales",
+                        "items": [{
+                            "title": "Javascript",
+                            "percent": "98"
+                        }, {
+                            "title": "CSharp (C#)",
+                            "percent": "98"
+                        }, {
+                            "title": "HTML5",
+                            "percent": "98"
+                        }, {
+                            "title": "CSS3",
+                            "percent": "95"
+                        }, {
+                            "title": "POO",
+                            "percent": "98"
+                        }, {
+                            "title": "Microsoft Excel",
+                            "percent": "80"
+                        }, {
+                            "title": "Microsoft Visio",
+                            "percent": "60"
+                        }, {
+                            "title": "Microsoft Project",
+                            "percent": "40"
+                        }, {
+                            "title": "ITIL",
+                            "percent": "50"
+                        }, {
+                            "title": "PHP",
+                            "percent": "30"
+                        }, {
+                            "title": "JSON",
+                            "percent": "98"
+                        }, {
+                            "title": "AngularJS",
+                            "percent": "30"
+                        }
                         ]
                     },
-                    "workExperience":{
-                        "title":"Experiencia Laboral",
-                        "items":[{
-                            "title":"<b>Gerente de Tecnología de Información</b>",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "period":"Agosto de 2016 – actualidad (6 meses)"
-                            }, {
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "companyName":"Lourtec, S.A.",
-                            "period":"Abril de 2016 – actualidad (10 meses)"
-                            } , {
-                            "title":"Supervisor de Desarrollo Web",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "period":"Mayo de 2011 – actualidad (5 años 9 meses)"
-                            } , {
-                            "title":"Instructor de C#",
-                            "companyName":"Lourtec, S.A.",
-                            "period":"Febrero de 2015 – marzo de 2015 (2 meses)"
-                            } , {
-                            "title":"Supervisor de Sistemas",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "period":"Mayo de 2004 – mayo de 2011 (7 años 1 mes)"
-                            }
-                        ]
-                    }, 
-                    "certification":{
-                        "title":"Certificaciones",
-                        "items":[{
-                            "logo":"microsoft.png",
-                            "title":"<b>MCP: Microsoft Certified Professional</b>",
-                            "description":"Microsoft, Número de la licencia: Licencia: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
-                            "companyName":"Microsoft",
-                            "duration":"Diciembre de 2015 – actualidad"
-                            },{
-                            "logo":"microsoft.png",
-                            "title":"<b>MS: Programming in HTML5 with JavaScript and CSS3</b>",
-                            "description":"Microsoft, Número de la licencia: Licencia: F543-1409 Transcript ID: 1176383 Access Code: Certificacion",
-                            "companyName":"Microsoft",
-                            "duration":"Diciembre de 2015 – actualidad"
-                            }
+                    "workExperience": {
+                        "title": "Experiencia Laboral",
+                        "items": [{
+                            "title": "<b>Developer Senior</b>",
+                            "companyName": "GIGA Automation & IT",
+                            "period": "Junio de 2017 – actualidad"
+                        },{
+                            "title": "<b>Director General de Tecnología</b>",
+                            "companyName": "World Gold Corp, C.A.",
+                            "period": "Octubre de 2017 – actualidad"
+                        }, {
+                            "title": "<b>Gerente de Tecnología de Información</b>",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "period": "Agosto de 2016 – Octubre de 2017"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "companyName": "Lourtec, S.A.",
+                            "period": "Abril de 2016 – actualidad (10 meses)"
+                        }, {
+                            "title": "Supervisor de Desarrollo Web",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "period": "Mayo de 2011 – actualidad (5 años 9 meses)"
+                        }, {
+                            "title": "Instructor de C#",
+                            "companyName": "Lourtec, S.A.",
+                            "period": "Febrero de 2015 – marzo de 2015 (2 meses)"
+                        }, {
+                            "title": "Supervisor de Sistemas",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "period": "Mayo de 2004 – mayo de 2011 (7 años 1 mes)"
+                        }
                         ]
                     },
-                    "awards":{
-                        "title":"Reconocimientos",
-                        "items":[{                            
-                            "title":"Cumplimiento exitoso de 5 años en Editorial Notitarde C.A",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"Diciembre de 2009"
-                            },{                            
-                            "title":"Cumplimiento exitoso de 10 años en Editorial Notitarde C.A",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"Diciembre de 2014"
-                            }
+                    "certification": {
+                        "title": "Certificaciones",
+                        "items": [{
+                            "logo": "microsoft.png",
+                            "title": "<b>MCP: Microsoft Certified Professional</b>",
+                            "description": "Microsoft, Número de la licencia: Licencia: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
+                            "companyName": "Microsoft",
+                            "duration": "Diciembre de 2015 – actualidad"
+                        }, {
+                            "logo": "microsoft.png",
+                            "title": "<b>MS: Programming in HTML5 with JavaScript and CSS3</b>",
+                            "description": "Microsoft, Número de la licencia: Licencia: F543-1409 Transcript ID: 1176383 Access Code: Certificacion",
+                            "companyName": "Microsoft",
+                            "duration": "Diciembre de 2015 – actualidad"
+                        }
                         ]
                     },
-                    "projects":{
-                        "title":"Proyectos",
-                        "items":[{                            
-                            "title":"Implementación PROFIT Plus (Administrativo, Nómina, Producción y Contabilidad)",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"Fecha de comienzo enero del 2017",
-                            "description":"Instalación, configuración y puesta en marcha de módulos de PROFIT Plus Administrativo, Nómina, Producción y Contabilidad en la empresa Editorial Notitarde, C.A.",
-                            "members":"Jorge Torres, Alberto Osio"
-                            },{                            
-                            "title":"Portal notita.notitarde.com",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"Fecha de comienzo febrero de 2014",
-                            "description":"Se innova solución web para la carga de fotos a publicar en el suplemento NOTITA, lo que permite a los usuarios ingresar al portal notita.notitarde.com, optimizando el proceso de envió y publicación de fotos para el suplemento.",
-                            "members":"Jorge Torres, Andrés Villanueva"
-                            },{                            
-                            "title":"<b>Migración Tecnología COM a .NET</b>",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"Fecha de comienzo agosto de 2012",
-                            "description":"Se realizó la migración del núcleo de desarrollo del portal www.notitarde.com, el cual estaba desarrollado en tecnología COM (Component Object Model) y se actualió a NetFramework 4.0",
-                            "members":"Jorge Torres, Andrés Villanueva"
-                            }
+                    "awards": {
+                        "title": "Reconocimientos",
+                        "items": [{
+                            "title": "Cumplimiento exitoso de 5 años en Editorial Notitarde C.A",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Diciembre de 2009"
+                        }, {
+                            "title": "Cumplimiento exitoso de 10 años en Editorial Notitarde C.A",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Diciembre de 2014"
+                        }
                         ]
                     },
-                    "courses":{
-                        "title":"Formación",
-                        "items":[{
-                            "title":"<b>MCPD Microsoft Certified Professional Developer</b>",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":""
-                            }, {
-                            "title":"JAVA Programmer",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":""
-                            } , {
-                            "title":"<b>Base de Datos Oracle 10g: Programación PL/SQL</b>",
-                            "companyName":"",
-                            "duration":""
-                            } , {
-                            "title":"<b>Object Oriented Programming Using Visual Studio</b>",
-                            "companyName":"",
-                            "duration":""
-                            } , {
-                            "title":"<b>Developing Web Applications Using Microsoft Visual Studio</b>",
-                            "companyName":"",
-                            "duration":""
-                            } , {
-                            "title":"Desarrollo de Habilidades Supervisorias",
-                            "companyName":"Fundametal, C.A.",
-                            "duration":""
-                            } , {
-                            "title":"Finanzas Personales: En ruta a la libertad financiera",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Photoshop CS2 para Preprensa",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"PDF para Preprensa",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Manejo Operativo del Sistema de Personal Integrado V.8.5.1 Nivel Basico",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Presentación de SPI ORACLE V.8.5.1 – Reconversion Monetaria",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Diseño de Pantallas en Enterprise One 12.0",
-                            "companyName":"Amazzing Global, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"Advanced Report Design JDEdwards Enterprise E812",
-                            "companyName":"Amazzing Global, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"Tool's Foundation JDEdwards Enterprise E812",
-                            "companyName":"Amazzing Global, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"Basic Report Design JDEdwards Enterprise E812",
-                            "companyName":"Amazzing Global, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"Liderazgo Transformacional",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Introducción a las Redes",
-                            "companyName":"Keys, S.A.",
-                            "duration":""
-                            }, {
-                            "title":"<b>MS2400 Implementing and Managing Microsft Exchange Server 2003</b>",
-                            "companyName":"Conredsis, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"<b>MCSD Microsoft Certified Solutions Developer</b>",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":""
-                            }, {
-                            "title":"AngularJS de 0 a 100",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Html5 y Css3",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Html5 Avanzado",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Técnicas SEO",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Bootstrap 3",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Css Avanzado y Práctico",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Responsive Design",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Javascript",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Mi primer juego en HTML5",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Especial Javascript Animaciones",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"JSON",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"ITIL1: Introducción a la gestión de sistemas de información",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"SCRUM",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"100 trucos de productividad con Excel",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Como tomar desiciones",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Reuniones eficaces",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Cómo gestionar mejor tu tiempo",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Horas y fechas en Excel",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Microsoft Excel 2013 VBA básico",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Moodle para administradores",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Microsoft project 2010",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Cómo manejar el estrés",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Cómo mejorar tu confianza",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Unity 2D: Video juego de plataformas",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            },{
-                            "title":"<b>Course 20410D: Installing and Configuring Windows Server® 2012</b>",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":"40 Horas"
-                            },{
-                            "title":"<b>Course 20411D: Administering Windows Server® 2012</b>",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":"40 Horas"
-                            }
+                    "projects": {
+                        "title": "Proyectos",
+                        "items": [{
+                            "title": "Implementación PROFIT Plus (Administrativo, Nómina, Producción y Contabilidad)",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Fecha de comienzo enero del 2017",
+                            "description": "Instalación, configuración y puesta en marcha de módulos de PROFIT Plus Administrativo, Nómina, Producción y Contabilidad en la empresa Editorial Notitarde, C.A.",
+                            "members": "Jorge Torres, Alberto Osio"
+                        }, {
+                            "title": "Portal notita.notitarde.com",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Fecha de comienzo febrero de 2014",
+                            "description": "Se innova solución web para la carga de fotos a publicar en el suplemento NOTITA, lo que permite a los usuarios ingresar al portal notita.notitarde.com, optimizando el proceso de envió y publicación de fotos para el suplemento.",
+                            "members": "Jorge Torres, Andrés Villanueva"
+                        }, {
+                            "title": "<b>Migración Tecnología COM a .NET</b>",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Fecha de comienzo agosto de 2012",
+                            "description": "Se realizó la migración del núcleo de desarrollo del portal www.notitarde.com, el cual estaba desarrollado en tecnología COM (Component Object Model) y se actualió a NetFramework 4.0",
+                            "members": "Jorge Torres, Andrés Villanueva"
+                        }
+                        ]
+                    },
+                    "courses": {
+                        "title": "Formación",
+                        "items": [{
+                            "title": "<b>MCPD Microsoft Certified Professional Developer</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": ""
+                        }, {
+                            "title": "JAVA Programmer",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": ""
+                        }, {
+                            "title": "<b>Base de Datos Oracle 10g: Programación PL/SQL</b>",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "<b>Object Oriented Programming Using Visual Studio</b>",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "<b>Developing Web Applications Using Microsoft Visual Studio</b>",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Desarrollo de Habilidades Supervisorias",
+                            "companyName": "Fundametal, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Finanzas Personales: En ruta a la libertad financiera",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Photoshop CS2 para Preprensa",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "PDF para Preprensa",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Manejo Operativo del Sistema de Personal Integrado V.8.5.1 Nivel Basico",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Presentación de SPI ORACLE V.8.5.1 – Reconversion Monetaria",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Diseño de Pantallas en Enterprise One 12.0",
+                            "companyName": "Amazzing Global, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Advanced Report Design JDEdwards Enterprise E812",
+                            "companyName": "Amazzing Global, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Tool's Foundation JDEdwards Enterprise E812",
+                            "companyName": "Amazzing Global, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Basic Report Design JDEdwards Enterprise E812",
+                            "companyName": "Amazzing Global, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Liderazgo Transformacional",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Introducción a las Redes",
+                            "companyName": "Keys, S.A.",
+                            "duration": ""
+                        }, {
+                            "title": "<b>MS2400 Implementing and Managing Microsft Exchange Server 2003</b>",
+                            "companyName": "Conredsis, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "<b>MCSD Microsoft Certified Solutions Developer</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": ""
+                        }, {
+                            "title": "AngularJS de 0 a 100",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Html5 y Css3",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Html5 Avanzado",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Técnicas SEO",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Bootstrap 3",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Css Avanzado y Práctico",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Responsive Design",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Javascript",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Mi primer juego en HTML5",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Especial Javascript Animaciones",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "JSON",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "ITIL1: Introducción a la gestión de sistemas de información",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "SCRUM",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "100 trucos de productividad con Excel",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Como tomar desiciones",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Reuniones eficaces",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Cómo gestionar mejor tu tiempo",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Horas y fechas en Excel",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Microsoft Excel 2013 VBA básico",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Moodle para administradores",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Microsoft project 2010",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Cómo manejar el estrés",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Cómo mejorar tu confianza",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Unity 2D: Video juego de plataformas",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "<b>Course 20410D: Installing and Configuring Windows Server® 2012</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": "40 Horas"
+                        }, {
+                            "title": "<b>Course 20411D: Administering Windows Server® 2012</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": "40 Horas"
+                        }, {
+                            "title": "<b>Course 20412D: Configuring Advanced Windows Server® 2012 Services</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": "40 Horas"
+                        }
                         ],
                     },
-                    "kwonledge":{
-                        "title":"Conocimientos Técnicos",
-                        "items":[{
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating and Styling HTML Pages"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Forms to Collect and Validate User Input"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Sending and Receiving Data by Using the XMLHTTPRequest Object"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Sending and Receiving Data by Using the jQuery Library"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Styling Text by Using CSS3"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Styling Block Elements"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Pseudo-classes and Pseudo-elements"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Enhancing Graphical Effects by Using CSS3"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Objects and Methods by Using JavaScript"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Writing Well-Structured JavaScript Code"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Custom Objects"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Extending Objects"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Interactive Pages by Using HTML5 APIs"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Caching Offline Data by Using the Application Cache API"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Persisting User Data by Using the Local Storage API"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Supporting Multiple Form Factors"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Interactive Graphics by Using SVG"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Applying CSS Transitions"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Applying CSS Key-frame Animations"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Implementing Real-time Communication by Using Web Sockets"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Using the Web Socket API"                            
-                            },{                            
-                            "title":"Performing Background Processing by Using Web Workers",
-                            "description":"Using the Web Socket API"                            
-                            },{                            
-                            "title":"Performing Background Processing by Using Web Workers",
-                            "description":"Performing Asynchronous Processing by Using Web Workers"                            
-                            }
-   
+                    "kwonledge": {
+                        "title": "Conocimientos Técnicos",
+                        "items": [{
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating and Styling HTML Pages"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Forms to Collect and Validate User Input"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Sending and Receiving Data by Using the XMLHTTPRequest Object"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Sending and Receiving Data by Using the jQuery Library"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Styling Text by Using CSS3"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Styling Block Elements"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Pseudo-classes and Pseudo-elements"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Enhancing Graphical Effects by Using CSS3"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Objects and Methods by Using JavaScript"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Writing Well-Structured JavaScript Code"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Custom Objects"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Extending Objects"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Interactive Pages by Using HTML5 APIs"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Caching Offline Data by Using the Application Cache API"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Persisting User Data by Using the Local Storage API"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Supporting Multiple Form Factors"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Interactive Graphics by Using SVG"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Applying CSS Transitions"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Applying CSS Key-frame Animations"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Implementing Real-time Communication by Using Web Sockets"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Using the Web Socket API"
+                        }, {
+                            "title": "Performing Background Processing by Using Web Workers",
+                            "description": "Using the Web Socket API"
+                        }, {
+                            "title": "Performing Background Processing by Using Web Workers",
+                            "description": "Performing Asynchronous Processing by Using Web Workers"
+                        }
+
 
                         ]
                     },
-                    "references":{
-                        "title":"Referencias",
-                        "items":[{                            
-                            "title":"Natasha Machado",
-                            "phone":"+58(414)594.80.82"
-                            },{                            
-                            "title":"Luiz Arraiz",
-                            "phone":"+52 1(81)1865.69.05"
-                            },{                            
-                            "title":"Luz Celeste Alvarado",
-                            "phone":"+58(414)593.30.11"
-                            }
+                    "references": {
+                        "title": "Referencias",
+                        "items": [{
+                            "title": "Natasha Machado",
+                            "phone": "+58(414)594.80.82"
+                        }, {
+                            "title": "Luiz Arraiz",
+                            "phone": "+52 1(81)1865.69.05"
+                        }, {
+                            "title": "Luz Celeste Alvarado",
+                            "phone": "+58(414)593.30.11"
+                        }, {
+                            "title": "Lisbet Obispo",
+                            "phone": "+54(9)11-6578-2869"
+                        }
                         ]
-                    }, 
-                    "pages":{
-                        "page1":"Destrezas - Logros - Proyectos - Certificaciones",
-                        "page2":"Referencias Personales - Dominio en conocimiento"
+                    },
+                    "pages": {
+                        "page1": "Destrezas - Logros - Proyectos - Certificaciones",
+                        "page2": "Referencias Personales - Dominio en conocimiento"
                     }
                 };
-                var en ={
-                    "candidate":{
-                        "firstName":"Jorge L.",
-                        "lastName":"Torres A.",
-                        "specialty":"Professional Developer",
-                        "image":"candidate.jpg"
+                var en = {
+                    "candidate": {
+                        "firstName": "Jorge L.",
+                        "lastName": "Torres A.",
+                        "specialty": "Professional Developer",
+                        "image": "candidate.jpg"
                     },
-                    "profile":{
-                        "title":"Profile",
-                        "description":"Microsoft certified professional developer, with experience developing business solutions in .net (C #) platform, certified in HTML5, CCS3 and JavaScript, interested in learning new knowledge every day."
+                    "profile": {
+                        "title": "Profile",
+                        "description": "Microsoft certified professional developer, with experience developing business solutions in .net (C #) platform, certified in HTML5, CCS3 and JavaScript, interested in learning new knowledge every day."
                     },
-                    "contact":{
-                        "title":"Contact",
-                        "phone":"+58(424)460.0577",
-                        "mail":"jorgtowers@gmail.com",
-                        "skype":"jorgtowers",
-                        "website":"jorgtowers.github.com",
-                        "location":"Carabobo, Venezuela"
+                    "contact": {
+                        "title": "Contact",
+                        "phone": "+58(424)460.0577",
+                        "mail": "jorgtowers@gmail.com",
+                        "skype": "jorgtowers",
+                        "website": "jorgtowers.github.com",
+                        "location": "Carabobo, Venezuela"
                     },
-                    "personalSkill":{
-                        "title":"Personal Skills",
-                        "items":[{
-                            "title":"Leader",
-                            "percent":"98"
-                            },{
-                             "title":"Patiente",
-                             "percent":"80"   
-                            },{
-                             "title":"Tolerant",
-                             "percent":"70"   
-                            },{
-                             "title":"Guide ",
-                             "percent":"30"   
-                            },{
-                             "title":"Motivator",
-                             "percent":"50"   
-                            }
+                    "personalSkill": {
+                        "title": "Personal Skills",
+                        "items": [{
+                            "title": "Leader",
+                            "percent": "98"
+                        }, {
+                            "title": "Patiente",
+                            "percent": "80"
+                        }, {
+                            "title": "Tolerant",
+                            "percent": "70"
+                        }, {
+                            "title": "Guide ",
+                            "percent": "30"
+                        }, {
+                            "title": "Motivator",
+                            "percent": "50"
+                        }
                         ]
                     },
-                    "professionalSkill":{
-                        "title":"Professional Skills",
-                        "items":[{
-                            "title":"Javascript",
-                            "percent":"98"
-                            },{
-                             "title":"CSharp (C#)",
-                             "percent":"98"   
-                            },{
-                             "title":"HTML5",
-                             "percent":"98"   
-                            },{
-                             "title":"CSS3",
-                             "percent":"95"   
-                            },{
-                             "title":"POO",
-                             "percent":"98"   
-                            },{
-                             "title":"Microsoft Excel",
-                             "percent":"80"   
-                            },{
-                             "title":"Microsoft Visio",
-                             "percent":"60"   
-                            },{
-                             "title":"Microsoft Project",
-                             "percent":"40"   
-                            },{
-                             "title":"ITIL",
-                             "percent":"50"   
-                            },{
-                             "title":"PHP",
-                             "percent":"30"   
-                            },{
-                             "title":"JSON",
-                             "percent":"98"   
-                            },{
-                             "title":"AngularJS",
-                             "percent":"30"   
-                            }
+                    "professionalSkill": {
+                        "title": "Professional Skills",
+                        "items": [{
+                            "title": "Javascript",
+                            "percent": "98"
+                        }, {
+                            "title": "CSharp (C#)",
+                            "percent": "98"
+                        }, {
+                            "title": "HTML5",
+                            "percent": "98"
+                        }, {
+                            "title": "CSS3",
+                            "percent": "95"
+                        }, {
+                            "title": "POO",
+                            "percent": "98"
+                        }, {
+                            "title": "Microsoft Excel",
+                            "percent": "80"
+                        }, {
+                            "title": "Microsoft Visio",
+                            "percent": "60"
+                        }, {
+                            "title": "Microsoft Project",
+                            "percent": "40"
+                        }, {
+                            "title": "ITIL",
+                            "percent": "50"
+                        }, {
+                            "title": "PHP",
+                            "percent": "30"
+                        }, {
+                            "title": "JSON",
+                            "percent": "98"
+                        }, {
+                            "title": "AngularJS",
+                            "percent": "30"
+                        }
                         ]
                     },
-                    "workExperience":{
-                        "title":"Work Experience",
-                        "items":[{
-                            "title":"<b>Information Technology Manager</b>",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "period":"August de 2016 – Currently (6 months)"
-                            }, {
-                            "title":"HTML5, Css3 y Javascript Instructor",
-                            "companyName":"Lourtec, S.A.",
-                            "period":"April de 2016 – Currently (10 months)"
-                            } , {
-                            "title":"Web Development Supervisor",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "period":"May de 2011 – Currently (5 years 9 months)"
-                            } , {
-                            "title":"C# Instructor",
-                            "companyName":"Lourtec, S.A.",
-                            "period":"Febrary 2015 – March 2015 (2 months)"
-                            } , {
-                            "title":"Systems Supervisor",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "period":"May 2004 – Mayo 2011 (7 years 1 month)"
-                            }
-                        ]
-                    }, 
-                    "certification":{
-                        "title":"Certifications",
-                        "items":[{
-                            "logo":"microsoft.png",
-                            "title":"<b>MCP: Microsoft Certified Professional</b>",
-                            "description":"Microsoft, License number: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
-                            "companyName":"Microsoft",
-                            "duration":"December 2015 – Currently"
-                            },{
-                            "logo":"microsoft.png",
-                            "title":"<b>MS: Programming in HTML5 with JavaScript and CSS3</b>",
-                            "description":"Microsoft, License number: F543-1409 Transcript ID: 1176383 Access Code: Certificacion",
-                            "companyName":"Microsoft",
-                            "duration":"December 2015 – Currently"
-                            }
+                    "workExperience": {
+                        "title": "Work Experience",
+                        "items": [{
+                            "title": "<b>Information Technology Manager</b>",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "period": "August de 2016 – Currently (6 months)"
+                        }, {
+                            "title": "HTML5, Css3 y Javascript Instructor",
+                            "companyName": "Lourtec, S.A.",
+                            "period": "April de 2016 – Currently (10 months)"
+                        }, {
+                            "title": "Web Development Supervisor",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "period": "May de 2011 – Currently (5 years 9 months)"
+                        }, {
+                            "title": "C# Instructor",
+                            "companyName": "Lourtec, S.A.",
+                            "period": "Febrary 2015 – March 2015 (2 months)"
+                        }, {
+                            "title": "Systems Supervisor",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "period": "May 2004 – Mayo 2011 (7 years 1 month)"
+                        }
                         ]
                     },
-                    "awards":{
-                        "title":"Awards",
-                        "items":[{                            
-                            "title":"Successful 5-year compliance in Editorial Notitarde C.A",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"December 2009"
-                            },{                            
-                            "title":"Successful 10-year compliance in Editorial Notitarde C.A",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"December 2014"
-                            }
+                    "certification": {
+                        "title": "Certifications",
+                        "items": [{
+                            "logo": "microsoft.png",
+                            "title": "<b>MCP: Microsoft Certified Professional</b>",
+                            "description": "Microsoft, License number: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
+                            "companyName": "Microsoft",
+                            "duration": "December 2015 – Currently"
+                        }, {
+                            "logo": "microsoft.png",
+                            "title": "<b>MS: Programming in HTML5 with JavaScript and CSS3</b>",
+                            "description": "Microsoft, License number: F543-1409 Transcript ID: 1176383 Access Code: Certificacion",
+                            "companyName": "Microsoft",
+                            "duration": "December 2015 – Currently"
+                        }
                         ]
                     },
-                    "projects":{
-                        "title":"Projects",
-                        "items":[{                            
-                            "title":"Implementation PROFIT Plus (Administrativo, Nómina, Producción y Contabilidad)",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"Starting date January 2017",
-                            "description":"Installation, configuration and start-up of PROFIT Plus modules Administrative, Payroll, Production and Accounting in the company Editorial Notitarde, C.A.",
-                            "members":"Jorge Torres, Alberto Osio"
-                            },{                            
-                            "title":"Web site notita.notitarde.com",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"Starting date Febrary 2014",
-                            "description":"A web solution for uploading photos to be published in the NOTITA supplement is being developed, which allows users to access the portal notita.notitarde.com, optimizing the process of sending and publishing photos for the supplement.",
-                            "members":"Jorge Torres, Andrés Villanueva"
-                            },{                            
-                            "title":"<b>Migration Technology COM to .NET</b>",
-                            "companyName":"Editorial Notitarde, C.A.",
-                            "duration":"Starting date August 2012",
-                            "description":"The development kernel of the www.notitarde.com portal was developed, which was developed in COM (Component Object Model) technology and updated to NetFramework 4.0",
-                            "members":"Jorge Torres, Andrés Villanueva"
-                            }
+                    "awards": {
+                        "title": "Awards",
+                        "items": [{
+                            "title": "Successful 5-year compliance in Editorial Notitarde C.A",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "December 2009"
+                        }, {
+                            "title": "Successful 10-year compliance in Editorial Notitarde C.A",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "December 2014"
+                        }
                         ]
                     },
-                    "courses":{
-                        "title":"Courses",
-                        "items":[{
-                            "title":"<b>MCPD Microsoft Certified Professional Developer</b>",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":""
-                            }, {
-                            "title":"JAVA Programmer",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":""
-                            } , {
-                            "title":"<b>Base de Datos Oracle 10g: Programación PL/SQL</b>",
-                            "companyName":"",
-                            "duration":""
-                            } , {
-                            "title":"<b>Object Oriented Programming Using Visual Studio</b>",
-                            "companyName":"",
-                            "duration":""
-                            } , {
-                            "title":"<b>Developing Web Applications Using Microsoft Visual Studio</b>",
-                            "companyName":"",
-                            "duration":""
-                            } , {
-                            "title":"Desarrollo de Habilidades Supervisorias",
-                            "companyName":"Fundametal, C.A.",
-                            "duration":""
-                            } , {
-                            "title":"Finanzas Personales: En ruta a la libertad financiera",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Photoshop CS2 para Preprensa",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"PDF para Preprensa",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Manejo Operativo del Sistema de Personal Integrado V.8.5.1 Nivel Basico",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Presentación de SPI ORACLE V.8.5.1 – Reconversion Monetaria",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Diseño de Pantallas en Enterprise One 12.0",
-                            "companyName":"Amazzing Global, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"Advanced Report Design JDEdwards Enterprise E812",
-                            "companyName":"Amazzing Global, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"Tool's Foundation JDEdwards Enterprise E812",
-                            "companyName":"Amazzing Global, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"Basic Report Design JDEdwards Enterprise E812",
-                            "companyName":"Amazzing Global, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"Liderazgo Transformacional",
-                            "companyName":"",
-                            "duration":""
-                            }, {
-                            "title":"Introducción a las Redes",
-                            "companyName":"Keys, S.A.",
-                            "duration":""
-                            }, {
-                            "title":"<b>MS2400 Implementing and Managing Microsft Exchange Server 2003</b>",
-                            "companyName":"Conredsis, C.A.",
-                            "duration":""
-                            }, {
-                            "title":"<b>MCSD Microsoft Certified Solutions Developer</b>",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":""
-                            }, {
-                            "title":"AngularJS de 0 a 100",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Html5 y Css3",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Html5 Avanzado",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Técnicas SEO",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Bootstrap 3",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Css Avanzado y Práctico",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Responsive Design",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Javascript",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Mi primer juego en HTML5",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Especial Javascript Animaciones",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"JSON",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"ITIL1: Introducción a la gestión de sistemas de información",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"SCRUM",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"100 trucos de productividad con Excel",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Como tomar desiciones",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Reuniones eficaces",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Cómo gestionar mejor tu tiempo",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Horas y fechas en Excel",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Microsoft Excel 2013 VBA básico",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Moodle para administradores",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Microsoft project 2010",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Cómo manejar el estrés",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Cómo mejorar tu confianza",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            }, {
-                            "title":"Unity 2D: Video juego de plataformas",
-                            "companyName":"Video2Brain",
-                            "duration":""
-                            },{
-                            "title":"<b>Course 20410D: Installing and Configuring Windows Server® 2012</b>",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":"40 Horas"
-                            },{
-                            "title":"<b>Course 20411D: Administering Windows Server® 2012</b>",
-                            "companyName":"Lourtec, S.A.",
-                            "duration":"40 Horas"
-                            }
+                    "projects": {
+                        "title": "Projects",
+                        "items": [{
+                            "title": "Implementation PROFIT Plus (Administrativo, Nómina, Producción y Contabilidad)",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Starting date January 2017",
+                            "description": "Installation, configuration and start-up of PROFIT Plus modules Administrative, Payroll, Production and Accounting in the company Editorial Notitarde, C.A.",
+                            "members": "Jorge Torres, Alberto Osio"
+                        }, {
+                            "title": "Web site notita.notitarde.com",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Starting date Febrary 2014",
+                            "description": "A web solution for uploading photos to be published in the NOTITA supplement is being developed, which allows users to access the portal notita.notitarde.com, optimizing the process of sending and publishing photos for the supplement.",
+                            "members": "Jorge Torres, Andrés Villanueva"
+                        }, {
+                            "title": "<b>Migration Technology COM to .NET</b>",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Starting date August 2012",
+                            "description": "The development kernel of the www.notitarde.com portal was developed, which was developed in COM (Component Object Model) technology and updated to NetFramework 4.0",
+                            "members": "Jorge Torres, Andrés Villanueva"
+                        }
+                        ]
+                    },
+                    "courses": {
+                        "title": "Courses",
+                        "items": [{
+                            "title": "<b>MCPD Microsoft Certified Professional Developer</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": ""
+                        }, {
+                            "title": "JAVA Programmer",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": ""
+                        }, {
+                            "title": "<b>Base de Datos Oracle 10g: Programación PL/SQL</b>",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "<b>Object Oriented Programming Using Visual Studio</b>",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "<b>Developing Web Applications Using Microsoft Visual Studio</b>",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Desarrollo de Habilidades Supervisorias",
+                            "companyName": "Fundametal, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Finanzas Personales: En ruta a la libertad financiera",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Photoshop CS2 para Preprensa",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "PDF para Preprensa",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Manejo Operativo del Sistema de Personal Integrado V.8.5.1 Nivel Basico",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Presentación de SPI ORACLE V.8.5.1 – Reconversion Monetaria",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Diseño de Pantallas en Enterprise One 12.0",
+                            "companyName": "Amazzing Global, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Advanced Report Design JDEdwards Enterprise E812",
+                            "companyName": "Amazzing Global, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Tool's Foundation JDEdwards Enterprise E812",
+                            "companyName": "Amazzing Global, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Basic Report Design JDEdwards Enterprise E812",
+                            "companyName": "Amazzing Global, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "Liderazgo Transformacional",
+                            "companyName": "",
+                            "duration": ""
+                        }, {
+                            "title": "Introducción a las Redes",
+                            "companyName": "Keys, S.A.",
+                            "duration": ""
+                        }, {
+                            "title": "<b>MS2400 Implementing and Managing Microsft Exchange Server 2003</b>",
+                            "companyName": "Conredsis, C.A.",
+                            "duration": ""
+                        }, {
+                            "title": "<b>MCSD Microsoft Certified Solutions Developer</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": ""
+                        }, {
+                            "title": "AngularJS de 0 a 100",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Html5 y Css3",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Html5 Avanzado",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Técnicas SEO",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Bootstrap 3",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Css Avanzado y Práctico",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Responsive Design",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Javascript",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Mi primer juego en HTML5",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Especial Javascript Animaciones",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "JSON",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "ITIL1: Introducción a la gestión de sistemas de información",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "SCRUM",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "100 trucos de productividad con Excel",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Como tomar desiciones",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Reuniones eficaces",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Cómo gestionar mejor tu tiempo",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Horas y fechas en Excel",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Microsoft Excel 2013 VBA básico",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Moodle para administradores",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Microsoft project 2010",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Cómo manejar el estrés",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Cómo mejorar tu confianza",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "Unity 2D: Video juego de plataformas",
+                            "companyName": "Video2Brain",
+                            "duration": ""
+                        }, {
+                            "title": "<b>Course 20410D: Installing and Configuring Windows Server® 2012</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": "40 Horas"
+                        }, {
+                            "title": "<b>Course 20411D: Administering Windows Server® 2012</b>",
+                            "companyName": "Lourtec, S.A.",
+                            "duration": "40 Horas"
+                        }
                         ],
                     },
-                    "kwonledge":{
-                        "title":"Technical knowledge",
-                        "items":[{
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating and Styling HTML Pages"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Forms to Collect and Validate User Input"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Sending and Receiving Data by Using the XMLHTTPRequest Object"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Sending and Receiving Data by Using the jQuery Library"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Styling Text by Using CSS3"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Styling Block Elements"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Pseudo-classes and Pseudo-elements"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Enhancing Graphical Effects by Using CSS3"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Objects and Methods by Using JavaScript"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Writing Well-Structured JavaScript Code"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Custom Objects"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Extending Objects"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Interactive Pages by Using HTML5 APIs"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Caching Offline Data by Using the Application Cache API"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Persisting User Data by Using the Local Storage API"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Supporting Multiple Form Factors"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Creating Interactive Graphics by Using SVG"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Applying CSS Transitions"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Applying CSS Key-frame Animations"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Implementing Real-time Communication by Using Web Sockets"                            
-                            },{                            
-                            "title":"Instructor HTML5, Css3 y Javascript",
-                            "description":"Using the Web Socket API"                            
-                            },{                            
-                            "title":"Performing Background Processing by Using Web Workers",
-                            "description":"Using the Web Socket API"                            
-                            },{                            
-                            "title":"Performing Background Processing by Using Web Workers",
-                            "description":"Performing Asynchronous Processing by Using Web Workers"                            
-                            }
-   
+                    "kwonledge": {
+                        "title": "Technical knowledge",
+                        "items": [{
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating and Styling HTML Pages"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Forms to Collect and Validate User Input"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Sending and Receiving Data by Using the XMLHTTPRequest Object"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Sending and Receiving Data by Using the jQuery Library"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Styling Text by Using CSS3"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Styling Block Elements"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Pseudo-classes and Pseudo-elements"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Enhancing Graphical Effects by Using CSS3"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Objects and Methods by Using JavaScript"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Writing Well-Structured JavaScript Code"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Custom Objects"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Extending Objects"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Interactive Pages by Using HTML5 APIs"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Caching Offline Data by Using the Application Cache API"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Persisting User Data by Using the Local Storage API"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Supporting Multiple Form Factors"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Creating Interactive Graphics by Using SVG"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Applying CSS Transitions"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Applying CSS Key-frame Animations"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Implementing Real-time Communication by Using Web Sockets"
+                        }, {
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Using the Web Socket API"
+                        }, {
+                            "title": "Performing Background Processing by Using Web Workers",
+                            "description": "Using the Web Socket API"
+                        }, {
+                            "title": "Performing Background Processing by Using Web Workers",
+                            "description": "Performing Asynchronous Processing by Using Web Workers"
+                        }
+
 
                         ]
                     },
-                    "references":{
-                        "title":"References",
-                        "items":[{                            
-                            "title":"Natasha Machado",
-                            "phone":"+58(414)594.80.82"
-                            },{                            
-                            "title":"Luiz Arraiz",
-                            "phone":"+52 1(81)1865.69.05"
-                            },{                            
-                            "title":"Luz Celeste Alvarado",
-                            "phone":"+58(414)593.30.11"
-                            }
+                    "references": {
+                        "title": "References",
+                        "items": [{
+                            "title": "Natasha Machado",
+                            "phone": "+58(414)594.80.82"
+                        }, {
+                            "title": "Luiz Arraiz",
+                            "phone": "+52 1(81)1865.69.05"
+                        }, {
+                            "title": "Luz Celeste Alvarado",
+                            "phone": "+58(414)593.30.11"
+                        }
                         ]
-                    }, 
-                    "pages":{
-                        "page1":"Skills - Achievements - Projects - Certifications",
-                        "page2":"Personal References - Knowledge Domain"
+                    },
+                    "pages": {
+                        "page1": "Skills - Achievements - Projects - Certifications",
+                        "page2": "Personal References - Knowledge Domain"
                     }
                 };
                 var fields = es;
-                if(QueryString.lang==='en')
-                    fields=en;  
+                if (QueryString.lang === 'en')
+                    fields = en;
 
                 var htmlfields = document.body.innerHTML.toString().match(/@{[a-zA-Z0-9.a-zA-Z0-9]+}/g);
 
                 for (var i = 0; i < htmlfields.length; i++) {
-                    var htmlField=htmlfields[i];
-                    var item = htmlField.replace(/@|{|}/g,'');
-                    var nameObj=item.substring(0,item.indexOf('.'));
-                    var nameProperty=item.substring(item.indexOf('.')+1);
+                    var htmlField = htmlfields[i];
+                    var item = htmlField.replace(/@|{|}/g, '');
+                    var nameObj = item.substring(0, item.indexOf('.'));
+                    var nameProperty = item.substring(item.indexOf('.') + 1);
                     var instanceObject = fields[nameObj];
-                    if(instanceObject!==undefined){    
+                    if (instanceObject !== undefined) {
                         var value = instanceObject[nameProperty];
-                        if(value.Type==='Array'){
-                            var struct = document.querySelectorAll("ul[ds='@{"+nameObj+'.'+nameProperty+"}']");
-                            var fieldsFather= struct[0];
-                            var structFieldsChilds=fieldsFather.children[0];
+                        if (value.Type === 'Array') {
+                            var struct = document.querySelectorAll("ul[ds='@{" + nameObj + '.' + nameProperty + "}']");
+                            var fieldsFather = struct[0];
+                            var structFieldsChilds = fieldsFather.children[0];
                             fieldsFather.children[0].remove();
                             var htmldataFields = structFieldsChilds.innerHTML.toString().match(/@[[a-zA-Z0-9.a-zA-Z0-9]+]/g);
-                            
-                            
+
+
                             for (var o = value.reverse().length - 1; o >= 0; o--) {
-                               var newLiP = document.createElement("li");
+                                var newLiP = document.createElement("li");
                                 newLiP.innerHTML = structFieldsChilds.innerHTML;
 
-                               var instanceChildObject=value[o];
-                                var valueChild="";var htmldataField="";
-                               for (var a = htmldataFields.length - 1; a >= 0; a--) {
-                                 htmldataField = htmldataFields[a];
-                                  var itemChild=htmldataField.replace(/@|[|]|/g,'').replace('[','').replace(']','');
-                                  var namePropertyChild=itemChild.replace(nameObj+"."+nameProperty+".","");
+                                var instanceChildObject = value[o];
+                                var valueChild = ""; var htmldataField = "";
+                                for (var a = htmldataFields.length - 1; a >= 0; a--) {
+                                    htmldataField = htmldataFields[a];
+                                    var itemChild = htmldataField.replace(/@|[|]|/g, '').replace('[', '').replace(']', '');
+                                    var namePropertyChild = itemChild.replace(nameObj + "." + nameProperty + ".", "");
                                     valueChild = instanceChildObject[namePropertyChild];
-                                    if(valueChild!==undefined)
-                                        newLiP.innerHTML = newLiP.innerHTML.toString().replace(htmldataField,valueChild);
-                               }
-                               
-                                
+                                    if (valueChild !== undefined)
+                                        newLiP.innerHTML = newLiP.innerHTML.toString().replace(htmldataField, valueChild);
+                                }
 
-                               fieldsFather.appendChild(newLiP);
+
+
+                                fieldsFather.appendChild(newLiP);
 
                             }
-                        } else {           
-                            document.body.innerHTML=document.body.innerHTML.toString().replace(htmlField,value);
+                        } else {
+                            document.body.innerHTML = document.body.innerHTML.toString().replace(htmlField, value);
                         }
-                    }    
+                    }
                 };
 
             }
@@ -4174,13 +4189,13 @@
         if (_Info) {
             console.log('info: "namespace.__(selector)", metodo abreviado de querySelectorAll(selector), retorna un arreglo de objetos a partir de su selector');
         }
-        namespace.j = function (selector,firstElement) {
+        namespace.j = function (selector, firstElement) {
             var items = document.querySelectorAll(selector);
-            if (typeof(firstElement) !== "undefined")
-                return items.ToArray().First();                
+            if (typeof (firstElement) !== "undefined")
+                return items.ToArray().First();
             else
                 return items.ToArray();
-            };
+        };
     }
     /*----------------------------
     * Para Usar como plantilla para nuevos metodos, metodos obsoletos y/o propiedades
