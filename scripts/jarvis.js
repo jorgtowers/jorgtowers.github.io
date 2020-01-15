@@ -336,7 +336,7 @@
                         "items": [{
                             "logo": "blockchain.png",
                             "title": "<b>IBM: Desarrollador Blockchain en Hyperledger Fabric</b>",
-                            "description": "IBM, Número de la licencia: Licencia: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
+                            "description": "IBM, Blockchain Id: 19da353f5faff8ccce683e96c1997862d04c6a04",
                             "companyName": "IBM/Business Blockchain",
                             "duration": "Diciembre de 2019 – actualidad"
                         },
