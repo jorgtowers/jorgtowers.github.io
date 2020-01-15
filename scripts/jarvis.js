@@ -216,12 +216,12 @@
                     "candidate": {
                         "firstName": "Jorge L.",
                         "lastName": "Torres A.",
-                        "specialty": "Desarrollador FrontEnd",
+                        "specialty": "Desarrollador Profesional",
                         "image": "candidate.jpg"
                     },
                     "profile": {
                         "title": "Perfil",
-                        "description": "Desarrollador profesional certificado por Microsoft, con experiencia desarrollando soluciones empresariales en plataforma .net (C#), certificado en HTML5, CCS3 y JavaScript, interesado en aprender cada día nuevos conocimientos."
+                        "description": "Desarrollador profesional certificado por Microsoft, certificacion en desarrollo Blockchain, con experiencia desarrollando soluciones empresariales en plataforma .net (C#), certificado en HTML5, CCS3 y JavaScript, interesado en aprender cada día nuevos conocimientos."
                     },
                     "contact": {
                         "title": "Contacto",
@@ -254,6 +254,9 @@
                     "professionalSkill": {
                         "title": "Habilidades Personales",
                         "items": [{
+                            "title": "Blockchain",
+                            "percent": "75"
+                        },{
                             "title": "Javascript",
                             "percent": "98"
                         }, {
@@ -287,6 +290,9 @@
                             "title": "JSON",
                             "percent": "98"
                         }, {
+                            "title": "Scrum",
+                            "percent": "80"
+                        }, {
                             "title": "AngularJS",
                             "percent": "30"
                         }
@@ -295,6 +301,10 @@
                     "workExperience": {
                         "title": "Experiencia Laboral",
                         "items": [{
+                            "title": "<b>CEO</b>",
+                            "companyName": "Solution Developer, C.A.",
+                            "period": "Julio de 2018 – actualidad"
+                        },{
                             "title": "<b>Developer Senior</b>",
                             "companyName": "GIGA Automation & IT",
                             "period": "Junio de 2017 – actualidad"
@@ -324,6 +334,13 @@
                     "certification": {
                         "title": "Certificaciones",
                         "items": [{
+                            "logo": "blockchain.png",
+                            "title": "<b>IBM: Desarrollador Blockchain en Hyperledger Fabric</b>",
+                            "description": "IBM, Número de la licencia: Licencia: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
+                            "companyName": "IBM/Business Blockchain",
+                            "duration": "Diciembre de 2019 – actualidad"
+                        },
+                            {
                             "logo": "microsoft.png",
                             "title": "<b>MCP: Microsoft Certified Professional</b>",
                             "description": "Microsoft, Número de la licencia: Licencia: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
@@ -380,6 +397,10 @@
                             "title": "<b>MCPD Microsoft Certified Professional Developer</b>",
                             "companyName": "Lourtec, S.A.",
                             "duration": ""
+                        }, {
+                            "title": "<b>Desarrollador Blockchain en Hyperledger Fabric</b>",
+                            "companyName": "Business Blockchain",
+                            "duration": "40h"
                         }, {
                             "title": "JAVA Programmer",
                             "companyName": "Lourtec, S.A.",
@@ -647,7 +668,7 @@
                         "title": "Referencias",
                         "items": [{
                             "title": "Natasha Machado",
-                            "phone": "+58(414)594.80.82"
+                            "phone": "+57(311)2173941"
                         }, {
                             "title": "Luiz Arraiz",
                             "phone": "+52 1(81)1865.69.05"
