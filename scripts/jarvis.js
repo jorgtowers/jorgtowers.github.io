@@ -1163,7 +1163,7 @@
                             "percent": "80"
                         }, {
                             "title": "Italian",
-                            "skill": "Basic (Read, Write)",,
+                            "skill": "Basic (Read, Write)",
                             "percent": "30"
                         }
                         ]
