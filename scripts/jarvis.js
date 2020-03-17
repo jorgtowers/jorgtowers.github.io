@@ -682,12 +682,12 @@
                         ]
                     },
                     "languajes": {
-                        "title": "Idiomas",
+                        "title": "Idioms",
                         "items": [{
                             "title": "Ingles",
                             "skill": "Basico-Intermedio (Lectura, Escritura, Hablarlo)",
                         }, {
-                            "title": "Cumplimiento exitoso de 10 años en Editorial Notitarde C.A",
+                            "title": "Italiano",
                             "skill": "Basico (Lectura, Escritura)",
                         }
                         ]
@@ -1142,6 +1142,17 @@
                         }, {
                             "title": "Lisbet Obispo",
                             "phone": "+54(9)11-6578-2869"
+                        }
+                        ]
+                    },
+                    "languajes": {
+                        "title": "Idioms",
+                        "items": [{
+                            "title": "English",
+                            "skill": "Basic-Intermediate (Read, Write, Speak)",
+                        }, {
+                            "title": "Italian",
+                            "skill": "Basic (Read, Write)",
                         }
                         ]
                     },
