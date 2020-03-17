@@ -681,6 +681,17 @@
                         }
                         ]
                     },
+                    "languajes": {
+                        "title": "Idiomas",
+                        "items": [{
+                            "title": "Ingles",
+                            "skill": "Basico-Intermedio (Lectura, Escritura, Hablarlo)",
+                        }, {
+                            "title": "Cumplimiento exitoso de 10 años en Editorial Notitarde C.A",
+                            "skill": "Basico (Lectura, Escritura)",
+                        }
+                        ]
+                    },
                     "pages": {
                         "page1": "Destrezas - Logros - Proyectos - Certificaciones",
                         "page2": "Referencias Personales - Dominio en conocimiento"
