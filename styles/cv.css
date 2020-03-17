@@ -445,3 +445,31 @@ ul#ulReferences>li>small {
     margin-top: -0.5em;
     padding: .9em;
 }
+
+ul#ulLanguajes {
+    list-style: none;
+    padding-left: .5em;
+    font-size: .8em;
+}
+ul#ulLanguajes>li {
+    margin-bottom: .4em;
+    width: 47%;
+    float: left;
+    margin-left: 1em;
+}
+
+ul#ulLanguajes>li>div {
+       width: 200px;
+    border: 1px solid;
+    height: 10px;
+    margin-top: .1em;
+    overflow: hidden;
+    float: right;
+}
+
+ul#ulLanguajes>li>div>b {
+    display: block;
+    height: 6px;
+    background: #035965;
+    margin: 2px;
+}
