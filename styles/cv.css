@@ -473,3 +473,7 @@ ul#ulLanguajes>li>div>b {
     background: #035965;
     margin: 2px;
 }
+
+article {
+    clear: both;
+}
