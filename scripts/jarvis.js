@@ -684,11 +684,17 @@
                     "languajes": {
                         "title": "Idioms",
                         "items": [{
+                            "title": "Español",
+                            "skill": "Nativo",
+                            "percent": "100"
+                        },{
                             "title": "Ingles",
                             "skill": "Basico-Intermedio (Lectura, Escritura, Hablarlo)",
+                            "percent": "80"
                         }, {
                             "title": "Italiano",
                             "skill": "Basico (Lectura, Escritura)",
+                            "percent": "30"
                         }
                         ]
                     },
@@ -1148,11 +1154,17 @@
                     "languajes": {
                         "title": "Idioms",
                         "items": [{
+                            "title": "Spanish",
+                            "skill": "Native",
+                            "percent": "100"
+                        },{
                             "title": "English",
                             "skill": "Basic-Intermediate (Read, Write, Speak)",
+                            "percent": "80"
                         }, {
                             "title": "Italian",
-                            "skill": "Basic (Read, Write)",
+                            "skill": "Basic (Read, Write)",,
+                            "percent": "30"
                         }
                         ]
                     },
