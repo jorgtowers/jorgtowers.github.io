@@ -139,6 +139,16 @@
 		<p class="txt90deg">@{pages.page2}</p>
 	</div>
 	<div class="col-11 bg-gray txt-green">
+		<article title="Languajes">
+			<header>
+				<h3><img src="../images/9.png" alt=""> @{languajes.title}</h3>
+			</header>
+			<section>			
+			<ul id='ulLanguajes' ds='@{languajes.items}'>
+				<li>@[languajes.items.description]</li>
+			</ul>
+			</section>
+		</article>
 		<article title="Knowledge">
 			<header>
 				<h3><img src="../images/5.png" alt=""> @{kwonledge.title}</h3>
