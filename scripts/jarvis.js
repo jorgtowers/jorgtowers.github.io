@@ -715,6 +715,20 @@
                         }
                         ]
                     },
+                    "education": {
+                        "title": "Estudios",
+                        "items": [{
+                            "title": "Bachiller",
+                            "institute": "U.E. Alejo Zuloaga (Venezuela)",
+                        },{
+                            "title": "T.S.U. Informatica",
+                            "institute": "IUTEPAL - Instituto Universitario de Tecnología Juan Pablo Pérez Alfonzo (Venezuela)",
+                        }, {
+                            "title": "Microsoft Certified Professional",
+                            "institute": "Lourtec Valencia (Venezuela)",
+                        }
+                        ]
+                    },
                     "pages": {
                         "page1": "Destrezas - Logros - Proyectos - Certificaciones",
                         "page2": "Referencias Personales - Dominio en conocimiento"
