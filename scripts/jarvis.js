@@ -303,31 +303,48 @@
                         "items": [{
                             "title": "<b>CEO</b>",
                             "companyName": "Solution Developer, C.A.",
-                            "period": "Julio de 2018 – actualidad"
+                            "period": "Julio de 2018 – actualidad",
+                            "observation":"Desarrollo de aplicaciones empresariales.\
+                                        <br>Desarrollo de aplicaciones moviles.\
+                                        <br>Diseño de infraestrura de redes y cableado estructurado.\
+                                        <br>Consultoria de sistemas\
+                                        <br>Servicio de Tecnología de Información empresarial"
                         },{
                             "title": "<b>Developer Senior</b>",
                             "companyName": "GIGA Automation & IT",
-                            "period": "Junio de 2017 – actualidad"
+                            "period": "Junio de 2017 – actualidad",
+                            "observation":"Desarrollado Senior en TAMSA (TENARIS), durando 2 anos, pude hacer varios proyectos en plataforma .net en lenguaje C# y HTML5 Javascript,  dentro de los mas destacados: \
+                                        <br>Servicio de Control de Tubos Recepción de material.\
+                                        <br>Servicio de Yardas y ubicación de en google maps para ubicación de los contenedores en los patios de los almacenes.\
+                                        <br>Servicio de integración con Microsoft Excel y  addins.\
+                                        <br>Servicio de upload de data via XML a Web Services.\
+                                        <br>y soportes en general de los desarrollos realizados"
                         },{
                             "title": "<b>Director General de Tecnología</b>",
                             "companyName": "World Gold Corp, C.A.",
-                            "period": "Octubre de 2017 – actualidad"
+                            "period": "Octubre de 2017 – actualidad",
+                            "observation":"Consultoria de sistemas\
+                                        <br>Servicio de Tecnología de Información empresarial"
                         }, {
                             "title": "Gerente de Tecnología de Información",
                             "companyName": "Editorial Notitarde, C.A.",
-                            "period": "Agosto de 2016 – Octubre de 2017"
+                            "period": "Agosto de 2016 – Octubre de 2017",
+                            "observation":"Gerencia de Tecnología de Información"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
                             "companyName": "Lourtec, S.A.",
-                            "period": "Abril de 2016 – Noviembre de 2016"
+                            "period": "Abril de 2016 – Noviembre de 2016",                            
+                            "observation":"Instructor de carrera oficial 70-480"
                         }, {
                             "title": "Supervisor de Desarrollo Web",
                             "companyName": "Editorial Notitarde, C.A.",
-                            "period": "Mayo de 2004 – Agosto de 2016 (12 años)"
+                            "period": "Mayo de 2004 – Agosto de 2016 (12 años)",                            
+                            "observation":"Supervisor del area de desarrollo web"
                         }, {
                             "title": "Instructor de C#",
                             "companyName": "Lourtec, S.A.",
-                            "period": "Febrero de 2015 – Marzo de 2015 (2 meses)"
+                            "period": "Febrero de 2015 – Marzo de 2015 (2 meses)",                            
+                            "observation":"Instructor de carrera oficial 70-483"
                         }
                         ]
                     },
