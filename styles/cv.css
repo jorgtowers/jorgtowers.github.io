@@ -477,3 +477,4 @@ ul#ulLanguajes>li>div>b {
 article {
     clear: both;
 }
+ul#ulWorkExperience>li>span.obs {font-weight: normal;display: block;font-size: 0.7em;width: 100%;/* background: red; */color: gray;line-height: 11px;margin-top: 6px;}
