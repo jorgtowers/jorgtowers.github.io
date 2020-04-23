@@ -281,8 +281,8 @@
                             "title": "Microsoft Project",
                             "percent": "40"
                         }, {
-                            "title": "ITIL",
-                            "percent": "50"
+                            "title": "Wordpress",
+                            "percent": "80"
                         }, {
                             "title": "PHP",
                             "percent": "30"
@@ -293,7 +293,7 @@
                             "title": "Scrum",
                             "percent": "80"
                         }, {
-                            "title": "AngularJS",
+                            "title": "ReactJS",
                             "percent": "30"
                         }
                         ]
@@ -329,23 +329,23 @@
                             "title": "Gerente de Tecnología de Información",
                             "companyName": "Editorial Notitarde, C.A.",
                             "period": "Agosto de 2016 – Octubre de 2017",
-                            "observation":"Gerencia de Tecnología de Información"
+                            "observation":"Gerencia de Tecnología de Información, soporte tecnico a usuario y a servicios de la suite editorial PROTEC Media (Adonline, Milenium Editor, Milenium Designer, Quay)"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
                             "companyName": "Lourtec, S.A.",
                             "period": "Abril de 2016 – Noviembre de 2016",                            
                             "observation":"Instructor de carrera oficial 70-480"
-                        },/* {
+                        }, {
                             "title": "Supervisor de Desarrollo Web",
                             "companyName": "Editorial Notitarde, C.A.",
                             "period": "Mayo de 2004 – Agosto de 2016 (12 años)",                            
-                            "observation":"Supervisor del area de desarrollo web"
-                        }, */{
+                            "observation":"Supervisor del area de desarrollo web, soporte tecnico a usuario y a servicios de la suite editorial PROTEC Media (Adonline, Milenium Editor, Milenium Designer, Quay)"
+                        },/* {
                             "title": "Instructor de C#",
                             "companyName": "Lourtec, S.A.",
                             "period": "Febrero de 2015 – Marzo de 2015 (2 meses)",                            
                             "observation":"Instructor de carrera oficial 70-483"
-                        }
+                        }*/
                         ]
                     },
                     "certification": {
@@ -393,12 +393,20 @@
                             "duration": "Fecha de comienzo enero del 2017",
                             "description": "Instalación, configuración y puesta en marcha de módulos de PROFIT Plus Administrativo, Nómina, Producción y Contabilidad en la empresa Editorial Notitarde, C.A.",
                             "members": "Jorge Torres, Alberto Osio"
-                        }, {
+                        }, 
+                        /*{
                             "title": "Portal notita.notitarde.com",
                             "companyName": "Editorial Notitarde, C.A.",
                             "duration": "Fecha de comienzo febrero de 2014",
                             "description": "Se innova solución web para la carga de fotos a publicar en el suplemento NOTITA, lo que permite a los usuarios ingresar al portal notita.notitarde.com, optimizando el proceso de envió y publicación de fotos para el suplemento.",
                             "members": "Jorge Torres, Andrés Villanueva"
+                        },*/
+                        {
+                            "title": "<b>Instalación Suite PROTEC MEDIA </b>",
+                            "companyName": "Editorial Notitarde, C.A.",
+                            "duration": "Fecha de comienzo agosto de 2008",
+                            "description": "Instalación y configuración suite PROTEC Media (Adonline, Milenium Editor, Milenium Designer, Quay",
+                            "members": "Jorge Torres, Nilcio Leon"
                         }, {
                             "title": "<b>Migración Tecnología COM a .NET</b>",
                             "companyName": "Editorial Notitarde, C.A.",
