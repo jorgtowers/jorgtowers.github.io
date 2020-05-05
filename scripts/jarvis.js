@@ -353,19 +353,19 @@
                         "items": [{
                             "logo": "SPOPC.png",
                             "title": "<b>Scrum Product Owner Professional Certificate (SPOPC)</b>",
-                            "description": "Scrum Product Owner Professional Certificate (SPOPC)",
+                            "description": "SPOPC, Id: 51588635783182",
                             "companyName": "CertiProf",
                             "duration": "Marzo de 2020"
                         },{
                             "logo": "SMPC.png",
                             "title": "<b>Scrum Manager Professional Certificate (SMPC)</b>",
-                            "description": "Scrum Manager Professional Certificate (SMPC)",
+                            "description": "SMPC, Id: 11588206316912",
                             "companyName": "CertiProf",
                             "duration": "Marzo de 2020"
                         },{
                             "logo": "SFPC.png",
                             "title": "<b>Scrum Foundation Professional Certificate (SFPC)</b>",
-                            "description": "Scrum Foundation Professional Certificate (SFPC)",
+                            "description": "SFPC, Id: 61587687562468",
                             "companyName": "CertiProf",
                             "duration": "Marzo de 2020"
                         },{
