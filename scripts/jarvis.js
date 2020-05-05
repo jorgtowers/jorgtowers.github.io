@@ -351,6 +351,24 @@
                     "certification": {
                         "title": "Certificaciones",
                         "items": [{
+                            "logo": "SPOPC.png",
+                            "title": "<b>Scrum Product Owner Professional Certificate (SPOPC)</b>",
+                            "description": "Scrum Product Owner Professional Certificate (SPOPC)",
+                            "companyName": "CertiProf",
+                            "duration": "Marzo de 2020"
+                        },{
+                            "logo": "SMPC.png",
+                            "title": "<b>Scrum Manager Professional Certificate (SMPC)</b>",
+                            "description": "Scrum Manager Professional Certificate (SMPC)",
+                            "companyName": "CertiProf",
+                            "duration": "Marzo de 2020"
+                        },{
+                            "logo": "SFPC.png",
+                            "title": "<b>Scrum Foundation Professional Certificate (SFPC)</b>",
+                            "description": "Scrum Foundation Professional Certificate (SFPC)",
+                            "companyName": "CertiProf",
+                            "duration": "Marzo de 2020"
+                        },{
                             "logo": "blockchain.png",
                             "title": "<b>IBM: Desarrollador Blockchain en Hyperledger Fabric</b>",
                             "description": "IBM, Blockchain Id: 19da353f5faff8ccce683e96c1997862d04c6a04",
