@@ -106,19 +106,7 @@
 			</section>
 		</article>
 		
-		<article title="Awards">
-			<header>
-				<h3><img src="../images/88.png" alt=""> @{awards.title}</h3>
-			</header>
-			<section>
-			<ul id='ulAwards' ds='@{awards.items}'>
-				<li>				
-					<p>@[awards.items.title]</p>
-						<span>@[awards.items.companyName] - @[awards.items.duration]</span>
-						 </li>
-			</ul>
-			</section>
-		</article>
+		
 		<article title="Projects">
 			<header>
 				<h3><img src="../images/9.png" alt=""> @{projects.title}</h3>
@@ -149,6 +137,19 @@
 			<section>			
 			<ul id='ulLanguajes' ds='@{languajes.items}'>
 				<li>@[languajes.items.title] <div><b title="@[languajes.items.skill]" style="width:@[languajes.items.percent]%"></b></div></li>
+			</ul>
+			</section>
+		</article>
+		<article title="Awards">
+			<header>
+				<h3><img src="../images/88.png" alt=""> @{awards.title}</h3>
+			</header>
+			<section>
+			<ul id='ulAwards' ds='@{awards.items}'>
+				<li>				
+					<p>@[awards.items.title]</p>
+						<span>@[awards.items.companyName] - @[awards.items.duration]</span>
+						 </li>
 			</ul>
 			</section>
 		</article>
