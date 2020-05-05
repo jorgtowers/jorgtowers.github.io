@@ -851,11 +851,17 @@
                         "items": [{
                             "title": "<b>Developer Senior</b>",
                             "companyName": "GIGA Automation & IT",
-                            "period": "Jun 2017 – Currently"
+                            "period": "Junio de 2017 – March 2020",
+                            "observation":"Developer Senior on TAMSA (TENARIS), participating in projects on .net platform in C # language and HTML5 Javascript, among the most outstanding: \
+                                        <br> Tube Control Service Material reception. \
+                                        <br> Yards Service and location of in google maps for location of the containers in the yards of the warehouses. \
+                                        <br> Integration service with Microsoft Excel and addins. \
+                                        <br> Data upload service via XML to Web Services. \
+                                        <br> and general supports of the developments made"
                         }, {
                             "title": "<b>Director IT</b>",
                             "companyName": "World Gold Corp, C.A.",
-                            "period": "October 2017 – Currently"
+                            "period": "October 2017 – Octubre 2018"
                         }, {
                             "title": "Information Technology Manager",
                             "companyName": "Editorial Notitarde, C.A.",
