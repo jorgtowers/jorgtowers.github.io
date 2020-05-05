@@ -291,7 +291,7 @@
                             "percent": "98"
                         }, {
                             "title": "Scrum",
-                            "percent": "80"
+                            "percent": "100"
                         }, {
                             "title": "ReactJS",
                             "percent": "30"
@@ -802,6 +802,9 @@
                     "professionalSkill": {
                         "title": "Professional Skills",
                         "items": [{
+                            "title": "Blockchain",
+                            "percent": "75"
+                        },{
                             "title": "Javascript",
                             "percent": "98"
                         }, {
@@ -826,8 +829,8 @@
                             "title": "Microsoft Project",
                             "percent": "40"
                         }, {
-                            "title": "ITIL",
-                            "percent": "50"
+                            "title": "Wordpress",
+                            "percent": "80"
                         }, {
                             "title": "PHP",
                             "percent": "30"
@@ -835,7 +838,10 @@
                             "title": "JSON",
                             "percent": "98"
                         }, {
-                            "title": "AngularJS",
+                            "title": "Scrum",
+                            "percent": "100"
+                        }, {
+                            "title": "ReactJS",
                             "percent": "30"
                         }
                         ]
@@ -872,17 +878,42 @@
                     "certification": {
                         "title": "Certifications",
                         "items": [{
+                            "logo": "SPOPC.png",
+                            "title": "<b>Scrum Product Owner Professional Certificate (SPOPC)</b>",
+                            "description": "SPOPC, Id: 51588635783182",
+                            "companyName": "CertiProf",
+                            "duration": "Marzo de 2020"
+                        },{
+                            "logo": "SMPC.png",
+                            "title": "<b>Scrum Manager Professional Certificate (SMPC)</b>",
+                            "description": "SMPC, Id: 11588206316912",
+                            "companyName": "CertiProf",
+                            "duration": "Marzo de 2020"
+                        },{
+                            "logo": "SFPC.png",
+                            "title": "<b>Scrum Foundation Professional Certificate (SFPC)</b>",
+                            "description": "SFPC, Id: 61587687562468",
+                            "companyName": "CertiProf",
+                            "duration": "Marzo de 2020"
+                        },{
+                            "logo": "blockchain.png",
+                            "title": "<b>IBM: Desarrollador Blockchain en Hyperledger Fabric</b>",
+                            "description": "IBM, Blockchain Id: 19da353f5faff8ccce683e96c1997862d04c6a04",
+                            "companyName": "IBM/Business Blockchain",
+                            "duration": "Diciembre de 2019 – actualidad"
+                        },
+                            {
                             "logo": "microsoft.png",
                             "title": "<b>MCP: Microsoft Certified Professional</b>",
-                            "description": "Microsoft, License number: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
+                            "description": "Microsoft, Número de la licencia: Licencia: F542-6709 Transcript ID: 1176383 Access Code: Certificacion",
                             "companyName": "Microsoft",
-                            "duration": "December 2015 – Currently"
+                            "duration": "Diciembre de 2015 – actualidad"
                         }, {
                             "logo": "microsoft.png",
                             "title": "<b>MS: Programming in HTML5 with JavaScript and CSS3</b>",
-                            "description": "Microsoft, License number: F543-1409 Transcript ID: 1176383 Access Code: Certificacion",
+                            "description": "Microsoft, Número de la licencia: Licencia: F543-1409 Transcript ID: 1176383 Access Code: Certificacion",
                             "companyName": "Microsoft",
-                            "duration": "December 2015 – Currently"
+                            "duration": "Diciembre de 2015 – actualidad"
                         }
                         ]
                     },
@@ -1222,6 +1253,20 @@
                             "title": "Italian",
                             "skill": "Basic (Read, Write)",
                             "percent": "30"
+                        }
+                        ]
+                    },
+                     "education": {
+                        "title": "Studies",
+                        "items": [{
+                            "title": "Bachiller",
+                            "institute": "U.E. Alejo Zuloaga (Venezuela)",
+                        },{
+                            "title": "T.S.U. Informatica",
+                            "institute": "IUTEPAL - Instituto Universitario de Tecnología Juan Pablo Pérez Alfonzo (Venezuela)",
+                        }, {
+                            "title": "Microsoft Certified Professional",
+                            "institute": "Lourtec Valencia (Venezuela)",
                         }
                         ]
                     },
