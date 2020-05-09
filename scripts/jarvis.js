@@ -895,13 +895,6 @@
                             "description": "SDPC, Id: 51588979089527",
                             "companyName": "CertiProf",
                             "duration": "Marzo de 2020"
-                        },
-{
-                            "logo": "SPOPC.png",
-                            "title": "<b>Scrum Product Owner Professional Certificate (SPOPC)</b>",
-                            "description": "SPOPC, Id: 51588635783182",
-                            "companyName": "CertiProf",
-                            "duration": "Marzo de 2020"
                         },{
                             "logo": "SPOPC.png",
                             "title": "<b>Scrum Product Owner Professional Certificate (SPOPC)</b>",
