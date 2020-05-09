@@ -352,8 +352,8 @@
                         "title": "Certificaciones",
                         "items": [{
                             "logo": "SDPC.png",
-                            "title": "<b>Scrum Developer Professional Certificate (SPOPC)</b>",
-                            "description": "SPOPC, Id: 51588979089527",
+                            "title": "<b>Scrum Developer Professional Certificate (SDPC)</b>",
+                            "description": "SDPC, Id: 51588979089527",
                             "companyName": "CertiProf",
                             "duration": "Marzo de 2020"
                         },{
@@ -891,8 +891,8 @@
                         "title": "Certifications",
                         "items": [{
                             "logo": "SDPC.png",
-                            "title": "<b>Scrum Developer Professional Certificate (SPOPC)</b>",
-                            "description": "SPOPC, Id: 51588979089527",
+                            "title": "<b>Scrum Developer Professional Certificate (SDPC)</b>",
+                            "description": "SDPC, Id: 51588979089527",
                             "companyName": "CertiProf",
                             "duration": "Marzo de 2020"
                         },
