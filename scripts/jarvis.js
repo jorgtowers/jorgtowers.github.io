@@ -301,6 +301,13 @@
                     "workExperience": {
                         "title": "Experiencia Laboral",
                         "items": [{
+                            "title": "<b>Gerente de Tecnología de Informacion para VZLA</b>",
+                            "companyName": "Alimentos Heinz, C.A.",
+                            "period": "Noviembre de 2020 – Febrero 2021",
+                            "observation":"Gerente del area de proyectos, manejo de presupuesto, \
+                                        <br>generador de reportes de analisis financieros automatizados\
+                                        <br>Servicio de automatizacion en procesos empresariales"
+                        },{
                             "title": "<b>CEO</b>",
                             "companyName": "Solution Developer, C.A.",
                             "period": "Julio de 2018 – actualidad",
@@ -855,6 +862,12 @@
                     "workExperience": {
                         "title": "Work Experience",
                         "items": [{
+                            "title": "<b>IT Manager VZLA</b>",
+                            "companyName": "Alimentos Heinz, C.A. (Kraft Heinz Corporation)",
+                            "period": "November 2020 – Febrary 2021",
+                            "observation":"IT Manager for VZLA region, manager of support people, and organization budget for IT\
+                                        <br> Leader on automatization process for business and automation of financial reports for business"
+                        },{
                             "title": "<b>Developer Senior</b>",
                             "companyName": "GIGA Automation & IT",
                             "period": "Junio de 2017 – March 2020",
@@ -1265,11 +1278,16 @@
                             "percent": "100"
                         },{
                             "title": "English",
-                            "skill": "Basic-Intermediate (Read, Write, Speak)",
+                            "skill": "Intermediate (Read, Write, Speak)",
                             "percent": "80"
                         }, {
                             "title": "Italian",
                             "skill": "Basic (Read, Write)",
+                            "percent": "30"
+                        }
+                        , {
+                            "title": "Portugues Brazilian",
+                            "skill": "Basic (Read, Conversational)",
                             "percent": "30"
                         }
                         ]
