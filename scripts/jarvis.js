@@ -821,7 +821,10 @@
                             "title": "Javascript",
                             "percent": "98"
                         }, {
-                            "title": "Microsoft.Net CSharp (C#)",
+                            "title": "Microsoft.Net (C#)",
+                            "percent": "98"
+                        },{
+                            "title": "Entity Framework",
                             "percent": "98"
                         }, {
                             "title": "HTML5",
@@ -1161,6 +1164,24 @@
                         "title": "Technical knowledge",
                         "items": [{
                             "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Developments of Web API RESTful (CRUD) on .NetCore and .NetFramework using EntityFramework"
+                        },{
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Developments of Websites WebForms/MVC on .NetCore and .NetFramework using EntityFramework"
+                        },{
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Developments of Winforms .NetCore and .NetFramework using EntityFramework"
+                        },{
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Developments of Windows Services .NetFramework using EntityFramework"
+                        },{
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Developments of AddIns for Microsoft Excel based on WCF services using EntityFramework combined with ORACLE"
+                        },{
+                            "title": "Instructor HTML5, Css3 y Javascript",
+                            "description": "Developments of BackEnd and FrontEnd on .NetCore and .NetFramework using EntityFramework for ReactJS"
+                        },{
+                            "title": "Instructor HTML5, Css3 y Javascript",
                             "description": "Creating and Styling HTML Pages"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
@@ -1170,19 +1191,10 @@
                             "description": "Sending and Receiving Data by Using the XMLHTTPRequest Object"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
-                            "description": "Sending and Receiving Data by Using the jQuery Library"
+                            "description": "Sending and Receiving Data by Using the JavaScript Libraries"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
                             "description": "Styling Text by Using CSS3"
-                        }, {
-                            "title": "Instructor HTML5, Css3 y Javascript",
-                            "description": "Styling Block Elements"
-                        }, {
-                            "title": "Instructor HTML5, Css3 y Javascript",
-                            "description": "Pseudo-classes and Pseudo-elements"
-                        }, {
-                            "title": "Instructor HTML5, Css3 y Javascript",
-                            "description": "Enhancing Graphical Effects by Using CSS3"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
                             "description": "Creating Objects and Methods by Using JavaScript"
@@ -1191,7 +1203,7 @@
                             "description": "Writing Well-Structured JavaScript Code"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
-                            "description": "Creating Custom Objects"
+                            "description": "Creating Custom Objects, Prototype, Modules"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
                             "description": "Extending Objects"
@@ -1209,9 +1221,6 @@
                             "description": "Supporting Multiple Form Factors"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
-                            "description": "Creating Interactive Graphics by Using SVG"
-                        }, {
-                            "title": "Instructor HTML5, Css3 y Javascript",
                             "description": "Applying CSS Transitions"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
@@ -1221,9 +1230,6 @@
                             "description": "Implementing Real-time Communication by Using Web Sockets"
                         }, {
                             "title": "Instructor HTML5, Css3 y Javascript",
-                            "description": "Using the Web Socket API"
-                        }, {
-                            "title": "Performing Background Processing by Using Web Workers",
                             "description": "Using the Web Socket API"
                         }, {
                             "title": "Performing Background Processing by Using Web Workers",
@@ -1258,7 +1264,7 @@
                             "percent": "100"
                         },{
                             "title": "English",
-                            "skill": "Intermediate (Read, Write, Speak)",
+                            "skill": "B1 Intermediate (Read, Write, Speak)",
                             "percent": "80"
                         }, {
                             "title": "Italian",
