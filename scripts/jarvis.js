@@ -883,15 +883,20 @@
                         }, {
                             "title": "Information Technology Manager",
                             "companyName": "Editorial Notitarde, C.A.",
-                            "period": "August 2016 – October 2017"
+                            "period": "August 2016 – October 2017",
+                            "observation":"I created and small ERP for this company, using C# as Core with SQL Server Database, include a WCF Services \
+                                            <br>comunication between Backend and FrontEnd, include continuous maintainces and enhacements for FrontEnd incorporated \
+                                            <br>EcmaScript (ES6+) and Modules"
                         }, {
                             "title": "HTML5, Css3 y Javascript Instructor",
                             "companyName": "Lourtec, S.A.",
-                            "period": "April 2016 – November 2016"
+                            "period": "April 2016 – November 2016",
+                            "observation":"Instructor for official course 70-480: Programming in HTML5 with JavaScript and CSS3"
                         }, {
                             "title": "C# Instructor",
                             "companyName": "Lourtec, S.A.",
-                            "period": "Febrary 2015 – March 2015"
+                            "period": "Febrary 2015 – March 2015",
+                            "observation":"Instructor for official course 70-483: Programming in C#"
                         }
                         ]
                     },
