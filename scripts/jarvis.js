@@ -815,13 +815,13 @@
                     "professionalSkill": {
                         "title": "Professional Skills",
                         "items": [{
-                            "title": "Blockchain",
+                            "title": "Microsoft .NetCore",
                             "percent": "75"
                         },{
                             "title": "Javascript",
                             "percent": "98"
                         }, {
-                            "title": "CSharp (C#)",
+                            "title": "Microsoft.Net CSharp (C#)",
                             "percent": "98"
                         }, {
                             "title": "HTML5",
@@ -829,9 +829,6 @@
                         }, {
                             "title": "CSS3",
                             "percent": "95"
-                        }, {
-                            "title": "POO",
-                            "percent": "98"
                         }, {
                             "title": "Microsoft Excel",
                             "percent": "80"
@@ -855,7 +852,10 @@
                             "percent": "100"
                         }, {
                             "title": "ReactJS",
-                            "percent": "30"
+                            "percent": "60"
+                        }, {
+                            "title": "React Native",
+                            "percent": "35"
                         }
                         ]
                     },
@@ -878,10 +878,6 @@
                                         <br> Data upload service via XML to Web Services. \
                                         <br> and general supports of the developments made"
                         }, {
-                            "title": "<b>Director IT</b>",
-                            "companyName": "World Gold Corp, C.A.",
-                            "period": "October 2017 – Octubre 2018"
-                        }, {
                             "title": "Information Technology Manager",
                             "companyName": "Editorial Notitarde, C.A.",
                             "period": "August 2016 – October 2017"
@@ -889,10 +885,6 @@
                             "title": "HTML5, Css3 y Javascript Instructor",
                             "companyName": "Lourtec, S.A.",
                             "period": "April 2016 – November 2016"
-                        }, {
-                            "title": "Web Development Supervisor",
-                            "companyName": "Editorial Notitarde, C.A.",
-                            "period": "May 2014 – August 2016"
                         }, {
                             "title": "C# Instructor",
                             "companyName": "Lourtec, S.A.",
@@ -920,18 +912,6 @@
                             "description": "SMPC, Id: 11588206316912",
                             "companyName": "CertiProf",
                             "duration": "Marzo de 2020"
-                        },{
-                            "logo": "SFPC.png",
-                            "title": "<b>Scrum Foundation Professional Certificate (SFPC)</b>",
-                            "description": "SFPC, Id: 61587687562468",
-                            "companyName": "CertiProf",
-                            "duration": "Marzo de 2020"
-                        },{
-                            "logo": "blockchain.png",
-                            "title": "<b>IBM: Desarrollador Blockchain en Hyperledger Fabric</b>",
-                            "description": "IBM, Blockchain Id: 19da353f5faff8ccce683e96c1997862d04c6a04",
-                            "companyName": "IBM/Business Blockchain",
-                            "duration": "Diciembre de 2019 – actualidad"
                         },
                             {
                             "logo": "microsoft.png",
