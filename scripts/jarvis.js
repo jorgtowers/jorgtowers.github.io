@@ -816,7 +816,7 @@
                         "title": "Professional Skills",
                         "items": [{
                             "title": "Microsoft .NetCore",
-                            "percent": "75"
+                            "percent": "80"
                         },{
                             "title": "Javascript",
                             "percent": "98"
@@ -859,12 +859,21 @@
                         }, {
                             "title": "React Native",
                             "percent": "35"
+                        }, {
+                            "title": "AngularJS",
+                            "percent": "40"
                         }
                         ]
                     },
                     "workExperience": {
                         "title": "Work Experience",
                         "items": [{
+                            "title": "<b>NET Developer Senior</b>",
+                            "companyName": "Streambe, inc",
+                            "period": "December 2021 – September 2022",
+                            "observation":"As Developer Senior I developed solutions for clients .net based,\
+                                            i worked under MVC Patterns connected with SQL Server, i created REST API applications using EntityFramework"
+                        },{
                             "title": "<b>IT Manager VZLA</b>",
                             "companyName": "Alimentos Heinz, C.A. (Kraft Heinz Corporation)",
                             "period": "November 2020 – Febrary 2021",
@@ -1168,6 +1177,12 @@
                     "kwonledge": {
                         "title": "Technical knowledge",
                         "items": [{
+                            "title": "IT Manager",
+                            "description": "Handle of support team and developer team, infraesturue team"
+                        },{
+                            "title": "NET Developer",
+                            "description": "Build REST API solutions, Interfaces with ERP like SAP or JDEdwards "
+                        },{
                             "title": "Instructor HTML5, Css3 y Javascript",
                             "description": "Developments of Web API RESTful (CRUD) on .NetCore and .NetFramework using EntityFramework"
                         },{
@@ -1269,7 +1284,7 @@
                             "percent": "100"
                         },{
                             "title": "English",
-                            "skill": "B1 Intermediate (Read, Write, Speak)",
+                            "skill": "B2 Upper Intermediate (Read, Write, Speak)",
                             "percent": "80"
                         }, {
                             "title": "Italian",
