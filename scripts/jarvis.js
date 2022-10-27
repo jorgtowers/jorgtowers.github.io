@@ -1285,7 +1285,7 @@
                         },{
                             "title": "English",
                             "skill": "B2 Upper Intermediate (Read, Write, Speak)",
-                            "percent": "80"
+                            "percent": "75"
                         }, {
                             "title": "Italian",
                             "skill": "Basic (Read, Write)",
