@@ -10,7 +10,7 @@
 </style>
 <div id="map-canvas"></div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjr3sVxObseKM2M3jIVteD0jPojyB2BdY"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjr3sVxObseKM2M3jIVteD0jPojyB2BdY" onload="init()"></script>
 <script>
 
   var data={
@@ -1068,11 +1068,38 @@
 ]
 }
 
-  $(document).ready(function () {
+    function drawMap(latlng) {
+        var myOptions = {
+            zoom: 10,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        // place the infowindow.  Invisible, without content.
+        var infowindow = new google.maps.InfoWindow({
+            content: '',
+        });
+        //READ FROM JSON
+        //$.getJSON('data/agents.json', function (data) {
+            $.each(data.markers, function (i, marker_data) {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(marker_data.latitude, marker_data.longitude),
+              icon:'nmarker.png',
+                    map: map,
+                    title: marker_data.title,
+                });
+                // when the client clicks on a marker we set the content and bind the position to the marker
+                google.maps.event.addListener(marker, 'click', function() {
+                  infowindow.setContent(marker_data.address);
+                  infowindow.setPosition(this.getPosition())
+                  infowindow.setMap(map);
+                });
+            });
+        //});
+    }
+ var init=()=>{
 
-     
-    
-    var defaultLatLng = new google.maps.LatLng(-25.975769, 32.582499); // Default
+   var defaultLatLng = new google.maps.LatLng(-25.975769, 32.582499); // Default
     if (navigator.geolocation) {
         function success(pos) {
             // Location found, show map with these coordinates
@@ -1090,35 +1117,16 @@
     } else {
         drawMap(defaultLatLng); // No geolocation support, show default map
     }
-    function drawMap(latlng) {
-        var myOptions = {
-            zoom: 10,
-            center: latlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-        // place the infowindow.  Invisible, without content.
-        var infowindow = new google.maps.InfoWindow({
-            content: '',
-        });
-        //READ FROM JSON
-        //$.getJSON('data/agents.json', function (data) {
-            $.each(data.markers, function (i, marker_data) {
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(marker_data.latitude, marker_data.longitude),
-	            icon:'nmarker.png',
-                    map: map,
-                    title: marker_data.title,
-                });
-                // when the client clicks on a marker we set the content and bind the position to the marker
-                google.maps.event.addListener(marker, 'click', function() {
-                  infowindow.setContent(marker_data.address);
-                  infowindow.setPosition(this.getPosition())
-                  infowindow.setMap(map);
-                });
-            });
-        //});
-    }
+ }
+
+ 
+ 
+
+  $(document).ready(function () {
+
+     
+    
+   
   });
 </script>
 </body></html>
