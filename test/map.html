@@ -1,0 +1,1124 @@
+<html>
+<body>
+<style>
+  #map-canvas {
+    height: 500px;
+  }
+  .gm-style-iw{ /* infowindow */
+    width: 200px;
+  }
+</style>
+<div id="map-canvas"></div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjr3sVxObseKM2M3jIVteD0jPojyB2BdY"></script>
+<script>
+
+  var data={
+    markers:[
+  {
+    "longitude": -68.00524,
+    "latitude": 10.15441,
+    "title": "LA REFORMA",
+    "address": "Naguanagua AV BOLIVAR VIEJA NAGUANAGUA"
+  },
+  {
+    "longitude": -67.59957,
+    "latitude": 10.14039,
+    "title": "VIA VENETON",
+    "address": "Naguanagua AV 4 FRENTE DE CC VIA VENETON"
+  },
+  {
+    "longitude": -67.59852,
+    "latitude": 10.14112,
+    "title": "PANADERIA MAÑONGO I",
+    "address": "Naguanagua AV 2 MAÑONGO"
+  },
+  {
+    "longitude": -67.59841,
+    "latitude": 10.14159,
+    "title": "PANADERIA MAÑONGO II",
+    "address": "Naguanagua AV 2  MAÑONGO"
+  },
+  {
+    "longitude": -67.59936,
+    "latitude": 10.14445,
+    "title": "PORTAL",
+    "address": "Naguanagua C 1 KROMI MAÑONGO"
+  },
+  {
+    "longitude": -68.00471,
+    "latitude": 10.14541,
+    "title": "LAS PRINCESAS",
+    "address": "Naguanagua CC CRISTAL LA GRANJA"
+  },
+  {
+    "longitude": -68.00634,
+    "latitude": 10.14628,
+    "title": "GIMAR",
+    "address": "Naguanagua PASEO LA GRANJA"
+  },
+  {
+    "longitude": -68.00563,
+    "latitude": 10.1467,
+    "title": "GOCHO",
+    "address": "Naguanagua PASEO LA GRANJA"
+  },
+  {
+    "longitude": -68.00833,
+    "latitude": 10.14919,
+    "title": "CHANGO",
+    "address": "Naguanagua AV UNIVERSIDAD ENTRADA ECONOMATO"
+  },
+  {
+    "longitude": -68.00864,
+    "latitude": 10.1501,
+    "title": "BOMBA STA ANA",
+    "address": "Naguanagua BOMBA SANTA ANA"
+  },
+  {
+    "longitude": -68.01199,
+    "latitude": 10.1512,
+    "title": "PINA",
+    "address": "Naguanagua ZONA POLICIA MOTORIZADA"
+  },
+  {
+    "longitude": -68.00877,
+    "latitude": 10.15227,
+    "title": "NESTOR",
+    "address": "Naguanagua PLAZA URDANETA"
+  },
+  {
+    "longitude": -68.01357,
+    "latitude": 10.15251,
+    "title": "PAN COLON",
+    "address": "Naguanagua C 186  CAPRENCO"
+  },
+  {
+    "longitude": -68.01254,
+    "latitude": 10.15423,
+    "title": "MIRIAN",
+    "address": "Naguanagua C 188 CAPRENCO"
+  },
+  {
+    "longitude": -68.01016,
+    "latitude": 10.15567,
+    "title": "LUISA",
+    "address": "Naguanagua AV 190"
+  },
+  {
+    "longitude": -68.01219,
+    "latitude": 10.15568,
+    "title": "CHINO",
+    "address": "Naguanagua AV 190 MERCADO TARAPIO"
+  },
+  {
+    "longitude": -68.00962,
+    "latitude": 10.15794,
+    "title": "TRIGUS NAGUANAGUA",
+    "address": "Naguanagua AV UNIVERSIDAD /191B"
+  },
+  {
+    "longitude": -68.00999,
+    "latitude": 10.15973,
+    "title": "TOÑO",
+    "address": "Naguanagua AV UNIVERSIDAD CC LA CAMPIÑA"
+  },
+  {
+    "longitude": -68.00999,
+    "latitude": 10.16013,
+    "title": "DUGLAS",
+    "address": "Naguanagua AV UNIVERSIDAD CC LA CAMPIÑA"
+  },
+  {
+    "longitude": -68.01056,
+    "latitude": 10.16189,
+    "title": "CAFETAL",
+    "address": "Naguanagua URB ROTAFE"
+  },
+  {
+    "longitude": -68.01128,
+    "latitude": 10.1675,
+    "title": "CANEY",
+    "address": "Naguanagua VIVIENDA RURAL DE BARBULA"
+  },
+  {
+    "longitude": -68.01135,
+    "latitude": 10.16983,
+    "title": "PAN CATEDRATICO",
+    "address": "Naguanagua C VALMORE RODRIGUEZ"
+  },
+  {
+    "longitude": -68.00796,
+    "latitude": 10.17147,
+    "title": "EDUARDO",
+    "address": "Naguanagua C SUCRE. VIVIENDA RURAL"
+  },
+  {
+    "longitude": -67.47585,
+    "latitude": 10.05039,
+    "title": "PUMA",
+    "address": "Carlos Arvelo Carlos Arvelo,Guigue (MEJORAR DIRECCION)"
+  },
+  {
+    "longitude": -67.47121,
+    "latitude": 10.04586,
+    "title": "CHEO",
+    "address": "Carlos Arvelo Carlos Arvelo,Guigue (MEJORAR DIRECCION)"
+  },
+  {
+    "longitude": -67.55054,
+    "latitude": 10.05086,
+    "title": "LUPE",
+    "address": "Carlos Arvelo Via Central Tacarigua salida del sector cascabel"
+  },
+  {
+    "longitude": -67.56048,
+    "latitude": 10.11002,
+    "title": "PAN ROBLE",
+    "address": "Los Guayos Av Bolivar de los Guayos Fte Pescaderia los Manglares"
+  },
+  {
+    "longitude": -67.56251,
+    "latitude": 10.1119,
+    "title": "PAN ROBLE 2",
+    "address": "Los Guayos AVENIDA BOLIVAR  SALIDA A LA AUTOPISTA"
+  },
+  {
+    "longitude": -67.57574,
+    "latitude": 10.1136,
+    "title": "TIENDA MERYMAR",
+    "address": "San Diego Zona industrial castillito,dentro del terminal de pasajeros del Big Low ."
+  },
+  {
+    "longitude": -67.57574,
+    "latitude": 10.1136,
+    "title": "FUENTE DE SODA FATIMA",
+    "address": "San Diego Zona industrial castillito,dentro del terminal de pasajeros del Big Low ."
+  },
+  {
+    "longitude": -67.57574,
+    "latitude": 10.1136,
+    "title": "ALEX",
+    "address": "San Diego Zona industrial castillito,dentro del terminal de pasajeros del Big Low ."
+  },
+  {
+    "longitude": -67.57491,
+    "latitude": 10.12312,
+    "title": "MARACUCHA",
+    "address": "San Diego Avenida Julio Centeno Municipio San Diego sector Campo Solo"
+  },
+  {
+    "longitude": -67.57505,
+    "latitude": 10.12304,
+    "title": "TU PRENSA PLUS",
+    "address": "San Diego Avenida Julio Centeno Municipio San Diego C.Cial Metro Plaza"
+  },
+  {
+    "longitude": -67.57503,
+    "latitude": 10.12448,
+    "title": "LOS MIÑOTOS",
+    "address": "San Diego Avenida Julio Centeno Municipio San Diego sector Los Jarales"
+  },
+  {
+    "longitude": -67.57392,
+    "latitude": 10.12336,
+    "title": "AZUL",
+    "address": "San Diego Entrada Urbanizacion Los Jarales"
+  },
+  {
+    "longitude": -67.57486,
+    "latitude": 10.1252,
+    "title": "LOS JARALES",
+    "address": "San Diego Avenida Julio Centeno Municipio San Diego sector Los Jarales"
+  },
+  {
+    "longitude": -67.57464,
+    "latitude": 10.15267,
+    "title": "JOJOTO",
+    "address": "San Diego Avenida Julio Centeno Urbanizacion Bosqueserino"
+  },
+  {
+    "longitude": -67.57465,
+    "latitude": 10.15239,
+    "title": "PARADOR TURISTICO BOSQUESERINO",
+    "address": "San Diego Avenida Julio Centeno Urbanizacion Bosqueserino"
+  },
+  {
+    "longitude": -67.57438,
+    "latitude": 10.15356,
+    "title": "TRUFAS CAFÑ",
+    "address": "San Diego Urbanizacion El Remanso C.Comercial el Remanso"
+  },
+  {
+    "longitude": -67.57438,
+    "latitude": 10.15356,
+    "title": "YUNNIS",
+    "address": "San Diego Urbanizacion El Remanso C.Comercial el Remanso"
+  },
+  {
+    "longitude": -67.56071,
+    "latitude": 10.16553,
+    "title": "LA CHINA",
+    "address": "San Diego Sector La Cumaca"
+  },
+  {
+    "longitude": -67.57521,
+    "latitude": 10.13079,
+    "title": "DELIPAN",
+    "address": "San Diego Avenida Julio centeno El Morro II"
+  },
+  {
+    "longitude": -68.00268,
+    "latitude": 10.11223,
+    "title": "CC CEDEÑO",
+    "address": "Norte AV BOLIVAR   C/C  AV CEDEÑO"
+  },
+  {
+    "longitude": -67.59707,
+    "latitude": 10.11568,
+    "title": "LOMAS DEL ESTE",
+    "address": "Norte URB LOMAS DEL ESTE"
+  },
+  {
+    "longitude": -68.00166,
+    "latitude": 10.11196,
+    "title": "LUNCHERIA",
+    "address": "Norte AV BOLIVAR   C/C  NAVAS ESPINOLAS"
+  },
+  {
+    "longitude": -68.00311,
+    "latitude": 10.11556,
+    "title": "K TORRE VALENCIA",
+    "address": "Norte AV BOLIVAR FRENTE DE AUTOVAL"
+  },
+  {
+    "longitude": -68.00312,
+    "latitude": 10.11765,
+    "title": "HOTEL EMPERADOR",
+    "address": "Norte AV 148 ENTRE 101 Y AV BOLIVAR"
+  },
+  {
+    "longitude": -68.00347,
+    "latitude": 10.11764,
+    "title": "PROVINCIAL",
+    "address": "Norte AV BOLIVAR A LADO DE BANCO PROVINCIAL"
+  },
+  {
+    "longitude": -68.00527,
+    "latitude": 10.119,
+    "title": "DIST HS 2000",
+    "address": "Norte AV ROJAS QUEIPO"
+  },
+  {
+    "longitude": -68.00405,
+    "latitude": 10.12166,
+    "title": "TRIGUS BANAVEN",
+    "address": "Norte AV BOLIVAR TORRE BANAVEN"
+  },
+  {
+    "longitude": -68.00476,
+    "latitude": 10.12176,
+    "title": "SUPERSONICO",
+    "address": "Norte FRENTE CC CARRIBEAN"
+  },
+  {
+    "longitude": -68.00408,
+    "latitude": 10.12411,
+    "title": "MARIFER",
+    "address": "Norte AV BOLIVAR ZONA LOS SAUCES"
+  },
+  {
+    "longitude": -68.00531,
+    "latitude": 10.12524,
+    "title": "GRAFITTY PIO",
+    "address": "Norte FRENTE A TIENDAS MULTIMAX"
+  },
+  {
+    "longitude": -68.00791,
+    "latitude": 10.12493,
+    "title": "BOMBA PREBO",
+    "address": "Norte EST DE SERVICIO PREBO"
+  },
+  {
+    "longitude": -68.00476,
+    "latitude": 10.12595,
+    "title": "CAMORUCO",
+    "address": "Norte AV BOLIVAR ZONA LOS CAMORUCOS"
+  },
+  {
+    "longitude": -68.005,
+    "latitude": 10.12682,
+    "title": "CONSOLIDADO",
+    "address": "Norte AV BOLIVAR ZONA LOS CAMORUCOS"
+  },
+  {
+    "longitude": -68.00509,
+    "latitude": 10.12673,
+    "title": "PAN DELICIAS",
+    "address": "Norte AV BOLIVAR  AL LADO DE PDVSA"
+  },
+  {
+    "longitude": -68.00316,
+    "latitude": 10.12698,
+    "title": "PAN TARBES",
+    "address": "Norte CC SAN JOSE DE TARBES"
+  },
+  {
+    "longitude": -68.00363,
+    "latitude": 10.12669,
+    "title": "UNION PASTORA",
+    "address": "Norte C  138  SAN JOSE DE TARBES"
+  },
+  {
+    "longitude": -68.00296,
+    "latitude": 10.12512,
+    "title": "TORIGALLO",
+    "address": "Norte AV BOLIVAR FRENTE A ASADO TORIGALLO"
+  },
+  {
+    "longitude": -68.00596,
+    "latitude": 10.1334,
+    "title": "PAN JUNIOR PAN",
+    "address": "Norte AV BOLIVAR FRENTE CC AV BOLIVAR"
+  },
+  {
+    "longitude": -68.00582,
+    "latitude": 10.13474,
+    "title": "RECREO",
+    "address": "Norte AV BOLIVAR ZONA LOS RECREO"
+  },
+  {
+    "longitude": -68.00654,
+    "latitude": 10.13732,
+    "title": "CC GUAPARO METEORO",
+    "address": "Norte AV BOLIVAR CC GUAPARO"
+  },
+  {
+    "longitude": -68.00758,
+    "latitude": 10.12356,
+    "title": "MARILU LUIS",
+    "address": "Norte ZONA PREBO FRENTE EDIF LOS MARILU"
+  },
+  {
+    "longitude": -68.0073,
+    "latitude": 10.12265,
+    "title": "TRIGUS AÑIL",
+    "address": "Norte CC AÑIL  PREBO"
+  },
+  {
+    "longitude": -68.00822,
+    "latitude": 10.12285,
+    "title": "MILTON",
+    "address": "Norte AV 105 PREBO"
+  },
+  {
+    "longitude": -68.00858,
+    "latitude": 10.12579,
+    "title": "2 E   ELIZABET",
+    "address": "Norte AV 137 PREBO FRENTE DE ASERCA"
+  },
+  {
+    "longitude": -68.00949,
+    "latitude": 10.12654,
+    "title": "BOD THE CORNER",
+    "address": "Norte REDOMA OTAMA VIÑEDO"
+  },
+  {
+    "longitude": -68.01403,
+    "latitude": 10.12787,
+    "title": "ARMANDO IGL SAN ANTONIO",
+    "address": "Norte FRENTE IGLESIA SAN ANTONIO"
+  },
+  {
+    "longitude": -68.01227,
+    "latitude": 10.12377,
+    "title": "DIAMANTE",
+    "address": "Norte DIAGONAL AL CC MEDITERRANE PLAZA"
+  },
+  {
+    "longitude": -68.01165,
+    "latitude": 10.12205,
+    "title": "SABANA LARGA",
+    "address": "Norte C 128  SABANA LARGA"
+  },
+  {
+    "longitude": -68.01675,
+    "latitude": 10.12299,
+    "title": "TRIGUS PARRAL",
+    "address": "Norte CC PARRAL  URB PARRAL"
+  },
+  {
+    "longitude": -67.59573,
+    "latitude": 10.12233,
+    "title": "JADE",
+    "address": "Norte C 127 SANTA CECILIA   REGISTRO"
+  },
+  {
+    "longitude": -68.00783,
+    "latitude": 10.12098,
+    "title": "NOVO MARKET",
+    "address": "Norte C 127 SANTA CECILIA"
+  },
+  {
+    "longitude": -68.00986,
+    "latitude": 10.12698,
+    "title": "PAN DE AZUCAR",
+    "address": "Norte AV CUATRICENTENARIA ZONA CHAGUARAMOS"
+  },
+  {
+    "longitude": -68.01872,
+    "latitude": 10.11409,
+    "title": "MANGUITA",
+    "address": "Norte AV CUATRICENTENARIA ZONA MANGUITA"
+  },
+  {
+    "longitude": -67.59529,
+    "latitude": 10.12703,
+    "title": "NELSON",
+    "address": "Trigal AV 88 / 134 B  TRIGALEÑA"
+  },
+  {
+    "longitude": -67.59524,
+    "latitude": 10.12489,
+    "title": "TRIGALEÑA",
+    "address": "Trigal AV 88 / 130  TRIGALEÑA"
+  },
+  {
+    "longitude": -67.59722,
+    "latitude": 10.12893,
+    "title": "FADAGIO",
+    "address": "Trigal AV 140 TRIGAL /89"
+  },
+  {
+    "longitude": -67.59887,
+    "latitude": 10.13578,
+    "title": "APOLO",
+    "address": "Trigal AV 91  FRENTE A CC PATIO TRIGAL"
+  },
+  {
+    "longitude": -67.59488,
+    "latitude": 10.12447,
+    "title": "AVENIDA NUNCIA",
+    "address": "Trigal AVENIDA 136 / 90"
+  },
+  {
+    "longitude": -67.59807,
+    "latitude": 10.13629,
+    "title": "PATIO",
+    "address": "Trigal CALLE 159 A / AV 91"
+  },
+  {
+    "longitude": -68.09236,
+    "latitude": 10.00451,
+    "title": "LAS MANZANAS",
+    "address": "Cojedes Entrada a las manzanas de Carabobo Junto a la Panaderia,Campo de Carabobo"
+  },
+  {
+    "longitude": -68.19004,
+    "latitude": 9.54559,
+    "title": "CACERES",
+    "address": "Cojedes Bloque de Buenos Aires Tinaquillo Cojedes"
+  },
+  {
+    "longitude": -68.19052,
+    "latitude": 9.54593,
+    "title": "AMARILIS",
+    "address": "Cojedes Bloque de Buenos Aires Tinaquillo Cojedes"
+  },
+  {
+    "longitude": -68.18251,
+    "latitude": 9.54553,
+    "title": "KIOSCO",
+    "address": "Cojedes Avenida Miranda C.Cial San Jose Tinaquillo"
+  },
+  {
+    "longitude": -68.18342,
+    "latitude": 9.54523,
+    "title": "CHECHE",
+    "address": "Cojedes Plaza Bolivar de Tinaquillo"
+  },
+  {
+    "longitude": -68.17578,
+    "latitude": 9.55249,
+    "title": "LA CAOBA",
+    "address": "Cojedes Final Avenida Miranda Tinaquillo"
+  },
+  {
+    "longitude": -68.18329,
+    "latitude": 9.54464,
+    "title": "BLOQUES",
+    "address": "Cojedes Plaza Bolivar esquina gimnasio Federico Sanchez Tinaquillo"
+  },
+  {
+    "longitude": -68.06522,
+    "latitude": 9.44433,
+    "title": "ANDRES",
+    "address": "Cojedes Via Tinaco sector La Guama"
+  },
+  {
+    "longitude": -68.26213,
+    "latitude": 9.42033,
+    "title": "PSJ",
+    "address": "Cojedes Av.Principal de Tinaco"
+  },
+  {
+    "longitude": -68.25561,
+    "latitude": 9.42001,
+    "title": "REÑA",
+    "address": "Cojedes Calle Silva Tinaco"
+  },
+  {
+    "longitude": -68.34377,
+    "latitude": 9.40019,
+    "title": "ZIRUMA",
+    "address": "Cojedes Redoma  del Mango entrada a San Carlos parada de Carros"
+  },
+  {
+    "longitude": -68.35113,
+    "latitude": 9.39515,
+    "title": "AROCHA",
+    "address": "Sur B Av.Ricaurte con Av Bolivar"
+  },
+  {
+    "longitude": -67.9983981,
+    "latitude": 10.1788601,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Kiosko Bomba PDV Branger"
+  },
+  {
+    "longitude": -67.9945036,
+    "latitude": 10.1791136,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Daniela CedeÑo"
+  },
+  {
+    "longitude": -68.0242054,
+    "latitude": 10.1448503,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Kiosco Ana RU"
+  },
+  {
+    "longitude": -68.016848,
+    "latitude": 10.1550766,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B El gusto del Sazon"
+  },
+  {
+    "longitude": -68.0121455,
+    "latitude": 10.1644717,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Panaderia Aveirense"
+  },
+  {
+    "longitude": -68.0169875,
+    "latitude": 10.1409678,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Panaderia Virgen de la Coromoto"
+  },
+  {
+    "longitude": -68.0113194,
+    "latitude": 10.1663937,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Panaderia Santisima Virgen de Fatima"
+  },
+  {
+    "longitude": -68.0178328,
+    "latitude": 10.1201478,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Kiosko Super Pollo"
+  },
+  {
+    "longitude": -68.0162528,
+    "latitude": 10.1445844,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Pregonero Ruiz Pineda I"
+  },
+  {
+    "longitude": -68.0027301,
+    "latitude": 10.1771509,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Kiosko Rafael Omana"
+  },
+  {
+    "longitude": -68.0214417,
+    "latitude": 10.1572018,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Panaderia El Gran Sabor del Pan"
+  },
+  {
+    "longitude": -68.0006483,
+    "latitude": 10.1619255,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Kiosko la Luz"
+  },
+  {
+    "longitude": -68.0001118,
+    "latitude": 10.1601091,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Panaderia Inversiones Feria 2014"
+  },
+  {
+    "longitude": -68.013801,
+    "latitude": 10.158456,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Empanadas Raul"
+  },
+  {
+    "longitude": -68.0215696,
+    "latitude": 10.143677,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Pregonero Ricardo Urriera"
+  },
+  {
+    "longitude": -68.0210408,
+    "latitude": 10.1201217,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Pregonero Trapichito"
+  },
+  {
+    "longitude": -68.0006483,
+    "latitude": 10.1619255,
+    "title": "ZONA SUR VALENCIA",
+    "address": "Sur B Pregonero Campo Carabobo"
+  },
+  {
+    "longitude": -67.58529,
+    "latitude": 10.09457,
+    "title": "LOS SAMANES",
+    "address": "Isabelica Barrio los samanes  avenida los samanes cruce con bello monte"
+  },
+  {
+    "longitude": -67.58223,
+    "latitude": 10.09543,
+    "title": "NUEVOS HORIZONTES",
+    "address": "Isabelica Urb.La isabelica"
+  },
+  {
+    "longitude": -67.57504,
+    "latitude": 10.09506,
+    "title": "PREGONERO",
+    "address": "Isabelica Sector la espiga de oro la Isabelica"
+  },
+  {
+    "longitude": -67.57421,
+    "latitude": 10.09539,
+    "title": "PREGONERO",
+    "address": "Isabelica Frente al Centro Comercial Paseo  Las Industrias"
+  },
+  {
+    "longitude": -67.5809,
+    "latitude": 10.10586,
+    "title": "PREGONERO",
+    "address": "Isabelica Parada puente Firestone autopista ARC con Av.Diego Cisneros"
+  },
+  {
+    "longitude": -67.58225,
+    "latitude": 10.09487,
+    "title": "METEORO",
+    "address": "Isabelica Urb La Isabelica diagonal a la clinica la Isabelica"
+  },
+  {
+    "longitude": -67.57346,
+    "latitude": 10.09204,
+    "title": "LA ORQUIDEA",
+    "address": "Isabelica Urbanizacion parque Valencia"
+  },
+  {
+    "longitude": -67.55318,
+    "latitude": 10.07549,
+    "title": "LOS BUCARES",
+    "address": "Isabelica Urbanizacion los Bucares Flor Amarilla"
+  },
+  {
+    "longitude": -67.57346,
+    "latitude": 10.09204,
+    "title": "MEGAMERCADO",
+    "address": "Isabelica Urbanizacion parque Valencia"
+  },
+  {
+    "longitude": -67.58196,
+    "latitude": 10.0944,
+    "title": "NORA",
+    "address": "Isabelica Urbanizacion la Isabelica, Mercado periferico"
+  },
+  {
+    "longitude": -67.54003,
+    "latitude": 10.1207,
+    "title": "HABIBI",
+    "address": "Guacara Segunda entrada de Ciudad Alianza Av,Ppal de Agua Sal  frente al CDI"
+  },
+  {
+    "longitude": -67.53342,
+    "latitude": 10.12281,
+    "title": "PLAZA CIUDAD ALIANZA",
+    "address": "Guacara Frente a la Iglesia y Plaza Bolivar de Ciudad Alianza, final avenida Nueva Valencia"
+  },
+  {
+    "longitude": -67.53119,
+    "latitude": 10.13136,
+    "title": "PIRELLI",
+    "address": "Guacara Punto de venta al lado del Automercado Luxor Carretera nacional con carretera via Araguita"
+  },
+  {
+    "longitude": -67.52364,
+    "latitude": 10.12134,
+    "title": "COMERCIAL ROKEROS",
+    "address": "Guacara Barrio la Juventud via Araguita"
+  },
+  {
+    "longitude": -67.52371,
+    "latitude": "1.013.342",
+    "title": "NAGUANAGUA",
+    "address": "Guacara Calle Carabobo con Marquez del Toro frente al banco caribe Guacara"
+  },
+  {
+    "longitude": -67.52404,
+    "latitude": 10.13388,
+    "title": "PLAZA GUACARA",
+    "address": "Guacara calle gonzalez arevalo frente a la plaza de Guacara"
+  },
+  {
+    "longitude": -67.52442,
+    "latitude": 10.13572,
+    "title": "JUAN",
+    "address": "Guacara Calle Piar frente al C.Cial Guacara Plaza"
+  },
+  {
+    "longitude": -67.52501,
+    "latitude": 10.1405,
+    "title": "HOSPITAL",
+    "address": "Guacara Inicio carretera via Vigirima al lado del Hospital de Guacara"
+  },
+  {
+    "longitude": -67.53029,
+    "latitude": 10.14131,
+    "title": "PANCHO",
+    "address": "Guacara Via Vigirima sector negro Primero"
+  },
+  {
+    "longitude": -67.52007,
+    "latitude": 10.13124,
+    "title": "EL LORO",
+    "address": "Guacara Via nuevo Turumo frente al campo de beisbol"
+  },
+  {
+    "longitude": -67.52172,
+    "latitude": 10.13367,
+    "title": "PALACIO DEL PAN",
+    "address": "Guacara Calle Carabobo frente al banco provincial"
+  },
+  {
+    "longitude": -67.51548,
+    "latitude": 10.13445,
+    "title": "PRUINCA",
+    "address": "Guacara CARRETERA Guacara-San Joaquin sector el Tigre Frente a PAPELES VENEZOLANOS PAVECA"
+  },
+  {
+    "longitude": -68.19233,
+    "latitude": 10.47264,
+    "title": "KIOSCO AZUL",
+    "address": "La Costa CARRETERA NACIONAL MORON CORO CON CALLE MIRANDA ENTRADA DE TUCACAS"
+  },
+  {
+    "longitude": -68.19285,
+    "latitude": 10.47335,
+    "title": "VARIEDADES JR",
+    "address": "La Costa AVENIDA HUGO CHAVEZ(VIA LAS LAPAS) DIAGONAL A LA CARRETERA MORON CORO"
+  },
+  {
+    "longitude": -68.1055,
+    "latitude": 10.29342,
+    "title": "TERMINAL DE PASAJEROS",
+    "address": "MorÑn TEMINAL D PASAJEROS DE MORON"
+  },
+  {
+    "longitude": -68.0084679,
+    "latitude": 10.1771896,
+    "title": "CENTRO VALENCIA",
+    "address": "Centro Buen Pastor"
+  },
+  {
+    "longitude": -68.0084673,
+    "latitude": 10.1771895,
+    "title": "CENTRO VALENCIA",
+    "address": "Centro Parada Soublette"
+  },
+  {
+    "longitude": -68.0056236,
+    "latitude": 10.1838791,
+    "title": "CENTRO VALENCIA",
+    "address": "Centro Kiosko Jacobo"
+  },
+  {
+    "longitude": -68.0178328,
+    "latitude": 10.1201478,
+    "title": "CENTRO VALENCIA",
+    "address": "Centro Kiosko Pirona"
+  },
+  {
+    "longitude": -68.002636,
+    "latitude": 10.1813448,
+    "title": "CENTRO VALENCIA",
+    "address": "Centro Kiosko Cardenas"
+  },
+  {
+    "longitude": -68.0032798,
+    "latitude": 10.1783004,
+    "title": "CENTRO VALENCIA",
+    "address": "Centro Al Lado ES Metro"
+  },
+  {
+    "longitude": -68.0041177,
+    "latitude": 10.1866387,
+    "title": "CENTRO VALENCIA",
+    "address": "Centro Pregonera CedeÑo"
+  },
+  {
+    "longitude": -68.00237,
+    "latitude": 10.27504,
+    "title": "MARINA DOS",
+    "address": "Puerto Cabello  DIAGONAL AL SEGURO SOCIAL DE PUERTO CABELLO"
+  },
+  {
+    "longitude": -68.00373,
+    "latitude": 10.28033,
+    "title": "ESTACION DE SERVICIO RANCHO G",
+    "address": "Puerto Cabello UBICADO EN LA ESTACION DE SERVICIO RANCHO GRANDE"
+  },
+  {
+    "longitude": -68.00301,
+    "latitude": 10.28063,
+    "title": "FINO PAN",
+    "address": "Puerto Cabello SECTOR RANCHO GRANDE PUERTO CABELLO BANCO PROVINCIAL"
+  },
+  {
+    "longitude": -68.00283,
+    "latitude": 10.28072,
+    "title": "CONSOLIDADO",
+    "address": "Puerto Cabello SECTOR RANCHO GRANDE PUERTO CABELLO FRENT A CORPBANCA"
+  },
+  {
+    "longitude": -68.00394,
+    "latitude": 10.28206,
+    "title": "LA MORENA",
+    "address": "Puerto Cabello AVENIDA BOLIVAR A MEDIA CUADRA DE LA CONCORDIA"
+  },
+  {
+    "longitude": -68.01089,
+    "latitude": 10.28169,
+    "title": "LANCEROS",
+    "address": "Puerto Cabello AVENIDA LA PAZ TERMINAL DE LA ALCANTARILLA"
+  },
+  {
+    "longitude": -68.02007,
+    "latitude": 10.28256,
+    "title": "SUERTE",
+    "address": "Puerto Cabello URBANIZACION CUMBOTO DOS DIAGONAL A FARMATODO"
+  },
+  {
+    "longitude": -68.01535,
+    "latitude": 10.28211,
+    "title": "PREGONERO",
+    "address": "Puerto Cabello AVENIDA LA PAZ FRENTE AL HOSPITAL PRINCE LARA PTO.CABELLO"
+  },
+  {
+    "longitude": -68.00355,
+    "latitude": 10.28497,
+    "title": "LA PLANCHITA",
+    "address": "Puerto Cabello MALENCON DE PUERTO CABELLO"
+  },
+  {
+    "longitude": -68.01089,
+    "latitude": 10.28169,
+    "title": "FE EN DIOS",
+    "address": "Puerto Cabello AVENDA LA PAZ SECTOR LA ALCANTARILLA PUERTO CABELLO"
+  },
+  {
+    "longitude": -68.01089,
+    "latitude": 10.28169,
+    "title": "PREGONERO",
+    "address": "Puerto Cabello AVENDA LA PAZ SECTOR LA ALCANTARILLA PUERTO CABELLO"
+  },
+  {
+    "longitude": -68.00452,
+    "latitude": 10.28195,
+    "title": "MIRANDA",
+    "address": "Puerto Cabello CALLE MIRANDA DE PUERTO CABELLO"
+  },
+  {
+    "longitude": -68.03353,
+    "latitude": 10.28226,
+    "title": "DINO",
+    "address": "Puerto Cabello BARRIO LA SORPRESA"
+  },
+  {
+    "longitude": -68.01451,
+    "latitude": 10.27479,
+    "title": "LA LLAVES",
+    "address": "Puerto Cabello ENTRADA A LA URBANIZACION LAS LLAVES"
+  },
+  {
+    "longitude": -68.02583,
+    "latitude": 10.27329,
+    "title": "AMARILLO",
+    "address": "Puerto Cabello BARRIO SANTA CRUZ CALLE PRINCIPAL"
+  },
+  {
+    "longitude": -68.0256,
+    "latitude": 10.27276,
+    "title": "HIPICO",
+    "address": "Puerto Cabello BARRIO SANTA CRUZ CALLE PRINCIPAL"
+  },
+  {
+    "longitude": -68.01089,
+    "latitude": 10.28169,
+    "title": "TERMINAL DE PASAJEROS",
+    "address": "Puerto Cabello TERMINAL DE PASAJEROS DE PUERTO CABELLO"
+  },
+  {
+    "longitude": -68.01089,
+    "latitude": 10.28169,
+    "title": "TERMINAL DE PASAJEROS",
+    "address": "Puerto Cabello TERMINAL DE PASAJEROS DE PUERTO CABELLO"
+  },
+  {
+    "longitude": -67.48198,
+    "latitude": 10.152,
+    "title": "PREGON JUAN ROJAS",
+    "address": "San Joaquin CARRETERA Guacara-San Joaquin sector Indiana primer semaforo San joaquin"
+  },
+  {
+    "longitude": -67.48086,
+    "latitude": 10.15385,
+    "title": "MARIA",
+    "address": "San Joaquin Via el EREIGUE frente al cementerio san joaquin"
+  },
+  {
+    "longitude": -67.46425,
+    "latitude": 10.15596,
+    "title": "PANADERIA IDEAL",
+    "address": "San Joaquin Carretera nacional Retorno san joaquin"
+  },
+  {
+    "longitude": -67.35042,
+    "latitude": 10.14579,
+    "title": "ROXANA",
+    "address": "Maracay  Diagonal al centro comercial parque Aragua en la esquina de las torres"
+  },
+  {
+    "longitude": -67.37561,
+    "latitude": 10.1712,
+    "title": "ESTADIUM",
+    "address": "Maracay Stadium la candelaria sr David,, sector la candelaria maracay"
+  },
+  {
+    "longitude": -67.37463,
+    "latitude": 10.18114,
+    "title": "EDITH",
+    "address": "Maracay Av Caracas del limÑn frente al Banesco"
+  },
+  {
+    "longitude": -67.37256,
+    "latitude": 10.15514,
+    "title": "IVAN",
+    "address": "Maracay Av los jabillos la Coromoto frente a la  panaderÑa mis aragua"
+  },
+  {
+    "longitude": -67.32404,
+    "latitude": 10.13218,
+    "title": "DIGA",
+    "address": "Maracay Centro comercial Diga Center panaderÑa Diga pan sector la morita"
+  },
+  {
+    "longitude": -67.35194,
+    "latitude": 10.14353,
+    "title": "OSWALDO",
+    "address": "Maracay Terminal de pasajeros maracay pasillo 1"
+  },
+  {
+    "longitude": -67.28222,
+    "latitude": 10.12229,
+    "title": "C.CIAL.BELLO HORIZONTE",
+    "address": "Turmero Tienda de conveniencia ubicada en la encrucijada al lado del peaje"
+  },
+  {
+    "longitude": -67.28251,
+    "latitude": 10.13336,
+    "title": "NENA",
+    "address": "Turmero Esquina Banesco calle petion  turmero"
+  },
+  {
+    "longitude": -67.2824,
+    "latitude": 10.13388,
+    "title": "PEDRO",
+    "address": "Turmero Pregonero en la esquina de la CICPC turmero"
+  },
+  {
+    "longitude": -67.28244,
+    "latitude": 10.13238,
+    "title": "PORTAL",
+    "address": "Turmero Kiosco frente a la bomba del gran murachi"
+  },
+  {
+    "longitude": -67.27385,
+    "latitude": 10.11131,
+    "title": "NEGRO",
+    "address": "Cagua Plaza sucre  de Cagua"
+  }
+]
+}
+
+  $(document).ready(function () {
+
+     
+    
+    var defaultLatLng = new google.maps.LatLng(-25.975769, 32.582499); // Default
+    if (navigator.geolocation) {
+        function success(pos) {
+            // Location found, show map with these coordinates
+            drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+        }
+        function fail(error) {
+            drawMap(defaultLatLng); // Failed to find location, show default map
+        }
+        // Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
+        navigator.geolocation.getCurrentPosition(success, fail, {
+            maximumAge: 500000,
+            enableHighAccuracy: true,
+            timeout: 6000
+        });
+    } else {
+        drawMap(defaultLatLng); // No geolocation support, show default map
+    }
+    function drawMap(latlng) {
+        var myOptions = {
+            zoom: 10,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        // place the infowindow.  Invisible, without content.
+        var infowindow = new google.maps.InfoWindow({
+            content: '',
+        });
+        //READ FROM JSON
+        //$.getJSON('data/agents.json', function (data) {
+            $.each(data.markers, function (i, marker_data) {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(marker_data.latitude, marker_data.longitude),
+	            icon:'nmarker.png',
+                    map: map,
+                    title: marker_data.title,
+                });
+                // when the client clicks on a marker we set the content and bind the position to the marker
+                google.maps.event.addListener(marker, 'click', function() {
+                  infowindow.setContent(marker_data.address);
+                  infowindow.setPosition(this.getPosition())
+                  infowindow.setMap(map);
+                });
+            });
+        //});
+    }
+  });
+</script>
+</body></html>
