@@ -782,7 +782,7 @@
                     },
                     "profile": {
                         "title": "Profile",
-                        "description": "Microsoft certified professional developer, with experience developing business solutions in .net (C #) platform, certified in HTML5, CCS3 and JavaScript, interested in learning new knowledge every day."
+                        "description": "Microsoft certified professional developer, with experience developing business solutions in .net (C#) platform, certified in HTML5, CCS3 and JavaScript, interested in learning new knowledge every day."
                     },
                     "contact": {
                         "title": "Contact",
@@ -868,6 +868,16 @@
                     "workExperience": {
                         "title": "Work Experience",
                         "items": [{
+                            "title": "<b>NET Developer Senior</b>",
+                            "companyName": "Dirmod, inc ",
+                            "period": "December 2022 – Current",
+                            "observation":"As Developer Senior I have been working with .NET Core creating RestApi, using CRQS pattern, some projects with NTier Arquitecture, applying Repository Patterns, creating backends solutions"
+                        },{
+                            "title": "<b>Scrum Master</b>",
+                            "companyName": "Claro Insurance, inc ",
+                            "period": "October 2022 – January 2023",
+                            "observation":"As Scrum Master promoted dayli meets, I followed the projects and the devs teams, I scheduled the planning and retrospective meets to improve after each iteration."
+                        },{
                             "title": "<b>NET Developer Senior</b>",
                             "companyName": "Streambe, inc",
                             "period": "December 2021 – September 2022",
@@ -983,7 +993,38 @@
                     },
                     "courses": {
                         "title": "Courses",
-                        "items": [{
+                        "items": [
+                        {
+                            "title": "<b>Moderm Software Arquitecture: DDD, Events, Microservices </b>",
+                            "companyName": "UDEMY",
+                            "duration": ""
+                        },
+                        {
+                            "title": "<b>React Native - The Practical Guide </b>",
+                            "companyName": "UDEMY",
+                            "duration": ""
+                        },
+                        {
+                            "title": "AWS Cloud Practitioner Essentials ",
+                            "companyName": "AWS Suscriptions",
+                            "duration": ""
+                        },
+                        {
+                            "title": "<b>Patrones de  diseño y principios SOLID  en C# .NET </b>",
+                            "companyName": "UDEMY",
+                            "duration": ""
+                        },
+                        {
+                            "title": "<b>Javascript ES6 - ES7 - ES8 - ES9 </b>",
+                            "companyName": "UDEMY",
+                            "duration": ""
+                        },
+                        {
+                            "title": "<b>Backend with Xamarin </b>",
+                            "companyName": "UDEMY",
+                            "duration": ""
+                        },                        
+                        {
                             "title": "<b>MCPD Microsoft Certified Professional Developer</b>",
                             "companyName": "Lourtec, S.A.",
                             "duration": ""
